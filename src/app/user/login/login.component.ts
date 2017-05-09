@@ -12,8 +12,6 @@ export class LoginComponent {
   constructor(public authService: AuthService, private router: Router) {}
   login() {
     this.authService.login();
-    // Send them to the homepage if they are logged in
-
   }
 }
 
