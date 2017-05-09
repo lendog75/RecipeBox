@@ -11,10 +11,9 @@ import {AuthService} from '../../providers/auth.service';
 export class LoginComponent {
   constructor(public authService: AuthService, private router: Router) {}
   login() {
-    this.authService.loginWithGoogle().then((data) => {
-      // Send them to the homepage if they are logged in
-      this.router.navigate(['']);
-    });
+    this.authService.login();
+    // Send them to the homepage if they are logged in
+
   }
 }
 

@@ -1,0 +1,48 @@
+<!--<nav class="navbar navbar-default">-->
+  <!--<div class="container-fluid">-->
+    <!--<div class="navbar-header">-->
+      <!--<a class="navbar-brand" href="#">Firebase Crud</a>-->
+    <!--</div>-->
+    <!--<div *ngIf="user" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
+
+      <!--<ul class="nav navbar-nav navbar-right">-->
+        <!--<li>Welcome {{ user.displayName }}</li>-->
+        <!--<li><a routerLink="/recipes" routerLinkActive="active">Recipes</a></li>-->
+        <!--<li><a routerLink="/user/detail" routerLinkActive="active">User Detail</a></li>-->
+        <!--<li><a (click)="logout()">Logout</a></li>-->
+      <!--</ul>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</nav>-->
+
+<!--user: {{ user | json }}-->
+<!--login: {{ loggedin }}-->
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Firebase Crud</a>
+    </div>
+    <div *ngIf="currentUser" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+      <ul class="nav navbar-nav navbar-right">
+        <li>Welcome {{ user.displayName }}</li>
+        <li><a routerLink="/recipes" routerLinkActive="active">Recipes</a></li>
+        <li><a routerLink="/user/detail" routerLinkActive="active">User Detail</a></li>
+        <li><a (click)="logout()">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!--<div style="width:100%; margin:0; padding:0; background-color: gray">-->
+  <!--<p>-->
+    <!--navbar-top works!-->
+  <!--</p>-->
+
+  <!--User: {{ currentUser | json }}<br>-->
+  <!--<button (click)="logout()">Logout</button>-->
+  <!--<a routerLink="/">Home</a>-->
+<!--</div>-->

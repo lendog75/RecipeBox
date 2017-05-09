@@ -1,20 +1,41 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Firebase Crud</a>
-    </div>
-    <div *ngIf="user" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<!--<nav class="navbar navbar-default">-->
+  <!--<div class="container-fluid">-->
+    <!--<div class="navbar-header">-->
+      <!--<a class="navbar-brand" href="#">Firebase Crud</a>-->
+    <!--</div>-->
+    <!--<div *ngIf="user" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
 
-      <ul class="nav navbar-nav navbar-right">
-        <li>Welcome {{ user.displayName }}</li>
-        <li><a routerLink="/recipes" routerLinkActive="active">Recipes</a></li>
-        <li><a routerLink="/user/detail" routerLinkActive="active">User Detail</a></li>
-        <li><a (click)="logout()">Logout</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+      <!--<ul class="nav navbar-nav navbar-right">-->
+        <!--<li>Welcome {{ user.displayName }}</li>-->
+        <!--<li><a routerLink="/recipes" routerLinkActive="active">Recipes</a></li>-->
+        <!--<li><a routerLink="/user/detail" routerLinkActive="active">User Detail</a></li>-->
+        <!--<li><a (click)="logout()">Logout</a></li>-->
+      <!--</ul>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</nav>-->
 
+<!--<div class="app-content">-->
+  <!--<router-outlet></router-outlet>-->
+<!--</div>-->
+
+
+
+<navbar-top *ngIf="currentUser"></navbar-top>
+
+<h1>
+  {{title}}
+</h1>
+
+
+
+User: {{ currentUser | json }}<br>
+
+<!--<button (click)="login()">Login</button>-->
+
+
+<br><br>
 <div class="app-content">
   <router-outlet></router-outlet>
 </div>
+

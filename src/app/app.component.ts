@@ -1,44 +1,20 @@
-import { Component } from '@angular/core';
-import {Router} from '@angular/router';
-import {AuthService} from './providers/auth.service';
-import {IUser} from './user/user';
-import {BehaviorSubject} from "rxjs";
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from './providers/auth.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'app works!';
-  public isLoggedIn: boolean;
+  currentUser;
 
-  user: IUser;
+  constructor (private authSvc: AuthService) {}
 
-  currentUser: BehaviorSubject<IUser>;
-
-
-  constructor(public authService: AuthService, private router: Router) {
-    // this.currentUser = null;
-    this.currentUser =  this.authService.currentUser;
-
-    this.currentUser.subscribe(usr => {
-        this.user = usr;
-      }
-    );
-
-   // this.getUser();
-  }
-
-  // getUser() {
-  //  this.currentUser.subscribe(usr => {
-  //       this.user = usr;
-  //       this.isLoggedIn = this.authService.isLoggedIn();
-  //     }
-  //   );
-  // }
-
-  logout() {
-    this.authService.logout();
+  ngOnInit () {
+    this.authSvc.user.subscribe(user => {
+      this.currentUser = user;
+    });
   }
 }

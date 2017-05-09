@@ -1,58 +1,47 @@
-import {Injectable} from '@angular/core';
-import {AngularFire, AuthProviders, AuthMethods} from 'angularfire2';
-import {IUser} from '../user/user';
+import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
+import {IUser} from '../user/user';
 import {Router} from '@angular/router';
+import { AngularFireAuth } from 'angularfire2/auth';
+import * as firebase from 'firebase/app';
 
 @Injectable()
 export class AuthService {
-  currentUser: BehaviorSubject<IUser> = new BehaviorSubject<IUser>(null);
+  authState: BehaviorSubject<IUser> = new BehaviorSubject<IUser>(null);
   redirectUrl: string;
+  user: Observable<firebase.User>;
 
-
-  constructor(public firebase: AngularFire, private router: Router) {
-     this.firebase.auth.subscribe(
-      (auth) => {
-        if (auth == null) {
-          console.log('Not Logged in.');
-        } else {
-          console.log('Successfully Logged in.');
-
-          const user = {
-            displayName: auth.auth.displayName
-          };
-
-          this.currentUser.next(user);
-        }
-      }
-    );
-  }
-
-  getUser(): BehaviorSubject<IUser> {
-    return this.currentUser;
+  constructor(public afAuth: AngularFireAuth, private router: Router) {
+    this.user = afAuth.authState;
+    this.getUser();
   }
 
   login() {
-    this.loginWithGoogle();
+    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+      .then(
+        x => {
+          this.authState.next(x.user);
+          localStorage.setItem('user', JSON.stringify(x.user));
+          this.router.navigateByUrl('');
+        }
+      );
   }
 
-  loginWithGoogle() {
-    return this.firebase.auth.login({
-      provider: AuthProviders.Google,
-      method: AuthMethods.Popup,
-    });
-  }
-
-   // Logs out the current user
   logout() {
-    this.firebase.auth.logout();
-    this.currentUser.next(null);
-    this.router.navigate(['/login']);
+    this.afAuth.auth.signOut();
+    this.authState.next(null);
+    localStorage.clear();
+    this.router.navigateByUrl('/login');
   }
 
-  // isLoggedIn(): boolean {
-  //   if()
-  //  console.log('login: 't his.firebase.auth.getAuth());
-  //   return this.currentUser.value ? true : false;
-  // }
+  getUser() {
+    const userFromStorage = localStorage.getItem('user');
+    if (userFromStorage) {
+      const user = JSON.parse(userFromStorage);
+      this.authState.next(user);
+    } else {
+      this.authState.next(null);
+    }
+  }
 }
+

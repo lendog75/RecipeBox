@@ -3,12 +3,19 @@ import { ActivatedRouteSnapshot, RouterStateSnapshot, Router, Route,
   CanActivate, CanActivateChild, CanLoad } from '@angular/router';
 
 import { AuthService } from './auth.service';
+import {IUser} from '../user/user';
 
 @Injectable()
 export  class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
+  currentUser;
 
-  constructor(private authService: AuthService,
-              private router: Router) { }
+  constructor(private authSvc: AuthService,
+              private router: Router) {
+
+    this.authSvc.authState.subscribe(user => {
+      this.currentUser = user;
+    });
+  }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     console.log('In canActivate: ' + state.url + 'login status: ' + this.checkLoggedIn(state.url));
@@ -26,12 +33,13 @@ export  class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
   }
 
   checkLoggedIn(url: string): boolean {
-    if (this.authService.currentUser.value) {
+
+    if (this.currentUser) {
       return true;
     }
 
-    // Retain the attempted URL for redirection
-    this.authService.redirectUrl = url;
+    // // Retain the attempted URL for redirection
+    this.authSvc.redirectUrl = url;
     this.router.navigate(['/login']);
     return false;
   }
