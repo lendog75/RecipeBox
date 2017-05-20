@@ -1,3 +1,23 @@
+<!--<p-growl [value]="msgs"></p-growl>-->
+
+<!--<h2 style="margin: .25em;">Test</h2>-->
+<!--<p-toolbar>-->
+  <!--<div class="ui-toolbar-group-left">-->
+    <!--<button pButton type="button" label="Home" icon="fa-home" routerLink="/" routerLinkActive="active"></button>-->
+    <!--<button pButton type="button" label="Recipes" icon="fa-folder-open" routerLink="/recipes" routerLinkActive="active"></button>-->
+
+    <!--<i class="fa fa-bars"></i>-->
+
+    <!--<p-splitButton label="Save" icon="fa-check"  [model]="items"></p-splitButton>-->
+  <!--</div>-->
+
+  <!--<div class="ui-toolbar-group-right">-->
+    <!--<button pButton type="button" icon="fa-search"></button>-->
+    <!--<i class="fa fa-bars"></i>-->
+    <!--<button pButton type="button" icon="fa-refresh"></button>-->
+    <!--<button pButton type="button" icon="fa-trash"></button>-->
+  <!--</div>-->
+<!--</p-toolbar>-->
 
 
 <!--<nav class="navbar navbar-default">-->
@@ -18,47 +38,80 @@
 <!--</nav>-->
 
 
-<nav style="margin:1em;">
-  <h2>RecipeBox</h2>
-</nav>
+<div class="brand">
+  <h2>RECIPE BOX</h2>
+</div>
 
-<nav class="navbar navbar-toggleable-md  navbar-light" style="background-color: rgba(240, 173, 78, 0.39);">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <!--<a class="navbar-brand" href="#">Navbar</a>-->
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/recipes" routerLinkActive="active">Recipes</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-
-    </ul>
-    <form class="form-inline my-2 my-lg-0" style="margin-right: auto!important">
-    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-    <ul class="navbar-nav">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          {{ currentUser.displayName}}
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" (click)="logout()">Logout</a>
-          <a class="dropdown-item" routerLink="/user/detail">Profile</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
+<div class="top-bar" id="realEstateMenu">
+  <div class="top-bar-left">
+    <ul class="menu" data-responsive-menu="accordion">
+      <li class="menu-text">Top Categories:</li>
+      <li><a href="#">Italian</a></li>
+      <li><a href="#">Mexican</a></li>
+      <li><a href="#">Indian</a></li>
     </ul>
   </div>
-</nav>
+  <div class="top-bar-right">
+    <!--<account></account>-->
+    <div *ngIf="currentUser">
+      <a class="nav-link" routerLink="/" routerLinkActive="active">HOME</a> |
+      <a class="nav-link" routerLink="/recipes" routerLinkActive="active">RECIPES</a> |
+      <a class="dropdown-item" (click)="logout()">LOGOUT</a> |
+      <a class="dropdown-item" routerLink="/user/detail">PROFILE</a>
+    </div>
+
+    <div *ngIf="!currentUser">
+      <a class="dropdown-item" routerLink="/login">Login</a>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+<!--<nav style="margin:1em;">-->
+  <!--<h2>RecipeBox</h2>-->
+<!--</nav>-->
+
+<!--<nav class="navbar navbar-toggleable-md  navbar-light" style="background-color: rgba(240, 173, 78, 0.39);">-->
+  <!--<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">-->
+    <!--<span class="navbar-toggler-icon"></span>-->
+  <!--</button>-->
+  <!--&lt;!&ndash;<a class="navbar-brand" href="#">Navbar</a>&ndash;&gt;-->
+  <!--<div class="collapse navbar-collapse" id="navbarNavDropdown">-->
+    <!--<ul class="navbar-nav">-->
+      <!--<li class="nav-item active">-->
+        <!--<a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>-->
+      <!--</li>-->
+      <!--<li class="nav-item">-->
+        <!--<a class="nav-link" routerLink="/recipes" routerLinkActive="active">Recipes</a>-->
+      <!--</li>-->
+      <!--<li class="nav-item">-->
+        <!--<a class="nav-link" href="#">Pricing</a>-->
+      <!--</li>-->
+
+    <!--</ul>-->
+    <!--<form class="form-inline my-2 my-lg-0" style="margin-right: auto!important">-->
+    <!--<input class="form-control mr-sm-2" type="text" placeholder="Search">-->
+    <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+    <!--</form>-->
+    <!--<ul class="navbar-nav">-->
+      <!--<li class="nav-item dropdown">-->
+        <!--<a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+          <!--{{ currentUser.displayName}}-->
+        <!--</a>-->
+        <!--<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">-->
+          <!--<a class="dropdown-item" (click)="logout()">Logout</a>-->
+          <!--<a class="dropdown-item" routerLink="/user/detail">Profile</a>-->
+          <!--<div class="dropdown-divider"></div>-->
+          <!--<a class="dropdown-item" href="#">Something else here</a>-->
+        <!--</div>-->
+      <!--</li>-->
+    <!--</ul>-->
+  <!--</div>-->
+<!--</nav>-->
 
 
 

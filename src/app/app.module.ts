@@ -11,11 +11,20 @@ import { NavbarTopComponent } from './navbar-top/navbar-top.component';
 import {AngularFireModule} from 'angularfire2';
 import {RouterModule, Routes} from '@angular/router';
 import {AuthGuard} from './providers/auth-guard.service';
-import {AngularFireAuth} from "angularfire2/auth";
-import { RecipeListComponent } from "./recipe/recipe-list/recipe-list.component";
-import { RecipeDetailComponent } from "./recipe/recipe-detail/recipe-detail.component";
-import { RecipeEditComponent } from "./recipe/recipe-edit/recipe-edit.component";
-import { UserDetailComponent } from "./user/user-detail/user-detail.component";
+import {AngularFireAuth} from 'angularfire2/auth';
+import { RecipeListComponent } from './recipe/recipe-list/recipe-list.component';
+import { RecipeDetailComponent } from './recipe/recipe-detail/recipe-detail.component';
+import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
+
+import {AccordionModule} from 'primeng/components/accordion/accordion';
+import {MenuItem} from 'primeng/components/common/api';
+import {RatingModule, ToolbarModule, ButtonModule,
+  SplitButtonModule, MessagesModule, GrowlModule} from 'primeng/primeng';
+import { RecipeCardComponent } from './recipe/recipe-card/recipe-card.component';
+import { SearchBoxComponent } from './search-box/search-box.component';
+import { AppFooterComponent } from './app-footer/app-footer.component';
+
 
 
 // Must export the config
@@ -49,14 +58,24 @@ const routes: Routes = [
     UserDetailComponent,
     RecipeEditComponent,
     RecipeDetailComponent,
-    RecipeListComponent
+    RecipeListComponent,
+    RecipeCardComponent,
+    SearchBoxComponent,
+    AppFooterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    AccordionModule,
+    RatingModule,
+    ToolbarModule,
+    ButtonModule,
+    SplitButtonModule,
+    MessagesModule,
+    GrowlModule
   ],
   providers: [
     AuthService,
