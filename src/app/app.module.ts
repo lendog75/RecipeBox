@@ -12,6 +12,7 @@ import {AngularFireModule} from 'angularfire2';
 import {RouterModule, Routes} from '@angular/router';
 import {AuthGuard} from './providers/auth-guard.service';
 import {AngularFireAuth} from 'angularfire2/auth';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { RecipeListComponent } from './recipe/recipe-list/recipe-list.component';
 import { RecipeDetailComponent } from './recipe/recipe-detail/recipe-detail.component';
 import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
@@ -80,7 +81,8 @@ const routes: Routes = [
   providers: [
     AuthService,
     AuthGuard,
-    AngularFireAuth
+    AngularFireAuth,
+    AngularFireDatabase
   ],
   bootstrap: [AppComponent]
 })
