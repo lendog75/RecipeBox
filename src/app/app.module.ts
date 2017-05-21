@@ -19,12 +19,12 @@ import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component'
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 
 import {AccordionModule} from 'primeng/components/accordion/accordion';
-import {MenuItem} from 'primeng/components/common/api';
 import {RatingModule, ToolbarModule, ButtonModule,
   SplitButtonModule, MessagesModule, GrowlModule} from 'primeng/primeng';
 import { RecipeCardComponent } from './recipe/recipe-card/recipe-card.component';
 import { SearchBoxComponent } from './search-box/search-box.component';
 import { AppFooterComponent } from './app-footer/app-footer.component';
+import { RecipeService } from './providers/recipe.service';
 
 
 
@@ -70,19 +70,21 @@ const routes: Routes = [
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
     RouterModule.forRoot(routes),
+    MessagesModule,
+
     AccordionModule,
-    RatingModule,
     ToolbarModule,
     ButtonModule,
     SplitButtonModule,
-    MessagesModule,
-    GrowlModule
+    GrowlModule,
+    RatingModule
   ],
   providers: [
     AuthService,
     AuthGuard,
     AngularFireAuth,
-    AngularFireDatabase
+    AngularFireDatabase,
+    RecipeService
   ],
   bootstrap: [AppComponent]
 })

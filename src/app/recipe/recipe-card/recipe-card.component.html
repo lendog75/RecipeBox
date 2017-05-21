@@ -1,7 +1,8 @@
 
 <div class="callout">
-  <p>Asian Beef with Snow Peas</p>
-  <p><img src="http://images.media-allrecipes.com/userphotos/560x315/971360.jpg"></p>
-  <p class="lead">Stir-fried beef in a light gingery sauce. Serve over steamed rice or hot egg noodles.</p>
+  <p>{{ recipe.title }}</p>
+ <p><img src="{{recipe.imagePath + '?raw=true'}}raw=true"></p>
+  <p class="lead">{{ recipe.description }}</p>
   <p class="subheader">by: lenny reed</p>
+  <p-rating [ngModel]="recipe.rating" readonly="true" stars="5" [cancel]="false"></p-rating>
 </div>

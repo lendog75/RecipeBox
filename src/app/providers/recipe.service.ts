@@ -9,10 +9,10 @@ import { Recipe } from '../shared/model/recipe';
 @Injectable()
 export class RecipeService {
 
-  constructor(private db: AngularFireDatabase) {
+  constructor (private db: AngularFireDatabase) {
   }
 
-  getRecipes(): Observable<Recipe[]> {
+  getRecipes (): Observable<Recipe[]> {
     return this.db.list('recipes')
       .do(console.log)
       .map(Recipe.fromJsonList);
