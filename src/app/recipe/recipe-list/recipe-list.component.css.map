@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,wBAAyB;EACvB,aAAc;IACZ,oBAAoB,EAAE,CAAC;IACvB,iBAAiB,EAAE,CAAC;IACpB,YAAY,EAAE,CAAC;AAInB,wBAAyB;EACvB,aAAc;IACZ,oBAAoB,EAAE,CAAC;IACvB,iBAAiB,EAAE,CAAC;IACpB,YAAY,EAAE,CAAC;AAInB,wBAAyB;EACvB,aAAc;IACZ,oBAAoB,EAAE,CAAC;IACvB,iBAAiB,EAAE,CAAC;IACpB,YAAY,EAAE,CAAC;AAInB,wBAAyB;EACvB,aAAc;IACZ,oBAAoB,EAAE,CAAC;IACvB,iBAAiB,EAAE,CAAC;IACpB,YAAY,EAAE,CAAC",
+"sources": ["recipe-list.component.scss"],
+"names": [],
+"file": "recipe-list.component.css"
+}

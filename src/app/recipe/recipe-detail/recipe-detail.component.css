@@ -1,0 +1,18 @@
+.heading h3 {
+  margin-bottom: 0;
+  text-transform: uppercase; }
+.heading small {
+  margin-left: 1em;
+  margin-top: 0;
+  text-transform: lowercase; }
+
+hr {
+  background-color: #91c11e;
+  border-bottom: 1px solid #31c568;
+  height: 1px;
+  background-image: linear-gradient(left, #f0f0f0, #8c8c8c, #f0f0f0); }
+
+h5 {
+  margin-top: .5em; }
+
+/*# sourceMappingURL=recipe-detail.component.css.map */

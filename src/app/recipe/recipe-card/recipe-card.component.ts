@@ -4,7 +4,7 @@ import {Rating} from 'primeng/primeng';
 @Component({
   selector: '[recipe-card]',
   templateUrl: './recipe-card.component.html',
-  styleUrls: ['./recipe-card.component.css']
+  styleUrls: ['./recipe-card.component.scss']
 })
 export class RecipeCardComponent implements OnInit {
 val: number = 6;

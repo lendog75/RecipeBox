@@ -1,11 +1,16 @@
-<div class="row column">
-  <p class="lead">Trending Recipes</p>
+<div class="row">
+  <h5 class="lead">Trending Recipes</h5>
 </div>
 
-<div class="row small-up-1 medium-up-2 large-up-3">
-    <div *ngFor="let recipe of recipes | async" recipe-card [recipe]="recipe" class="column"></div>
+<div class="card-columns">
+  <div class="card card-outline-primary" *ngFor="let recipe of recipes | async" recipe-card [recipe]="recipe"></div>
 </div>
 
-<div class="row column">
-  <a class="button hollow expanded">Load More</a>
+<div class="card card-outline-primary text-center">
+  <div class="card-block">
+      <a>Load More</a>
+  </div>
 </div>
+
+<br><br>
+

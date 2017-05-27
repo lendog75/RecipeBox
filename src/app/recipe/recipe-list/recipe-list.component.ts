@@ -6,7 +6,7 @@ import { Recipe } from '../../shared/model/recipe';
 @Component({
   selector: 'recipe-list',
   templateUrl: './recipe-list.component.html',
-  styleUrls: ['./recipe-list.component.css']
+  styleUrls: ['./recipe-list.component.scss']
 })
 export class RecipeListComponent implements OnInit {
 
@@ -20,6 +20,16 @@ export class RecipeListComponent implements OnInit {
     this.recipes.subscribe(r => {
       console.log(r);
     });
+
+     this.recipeSvc.getRecipe('581d03b827c7901ac094826c').subscribe(x => {
+      console.log('single recipe:' + JSON.stringify(x));
+    });
+
+
+
+    //this.recipeSvc.getRecipesByCategory('Italian').subscribe(x => {
+    //  console.log(x);
+    //});
   }
 
 }

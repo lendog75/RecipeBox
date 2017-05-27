@@ -1,0 +1,82 @@
+
+h1.brand {
+  flex: 1; text-align: left;
+  margin: .5em;
+  color: #4E6E00;
+  font-size: 2em;
+  font-family: 'ABeeZee', sans-serif;
+  margin: .25em;
+  font-weight: 600;
+
+  a {
+    color: #4E6E00;
+    text-decoration: none;
+  }
+}
+
+.heading {
+  display: flex;
+
+}
+
+
+.nav-top {
+  background-color: #91c11e;
+  display: flex;
+
+  ul {
+    list-style-type: none;
+    margin: .75em;
+    padding: 0;
+    li {
+      padding: 0;
+      margin: .25em;
+      display: inline-block;
+
+      a {
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    a, li {
+      color: white;
+    }
+
+  }
+}
+
+
+i.user, i.signout, i.alerts {
+ // position: absolute;
+  margin:.25em;
+  border: none;
+}
+
+i.user {
+  right: 0;
+  order: 3;
+}
+ i.signout  {
+   margin-top: 1em;
+   right: 0;
+   order: 2;
+}
+i.alerts {
+  margin-top: 1em;
+  margin-right: 0;
+  right: 0;
+  order: 1;
+}
+
+
+//ul {
+//  list-style-type: none;
+//}
+
+.fa {
+  color: #91c11e;
+}
+
+
+// http://paletton.com/#uid=12i0u0ktMjbltqKqcn9AMeCMz9j

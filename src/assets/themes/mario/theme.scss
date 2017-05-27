@@ -1,0 +1,26 @@
+@import 'theme/_variables';
+@import 'theme/_typography';
+@import 'theme/_navbar';
+@import 'theme/_buttons';
+@import 'theme/_lists';
+
+
+body {
+  font-family: $base-font-family;
+}
+
+.brand {
+  color: $brand-primary;
+  font-family: $brand-font-family;
+  margin: .25em;
+  font-weight: 600;
+}
+
+
+.callout-primary {
+  background-color:  $brand-primary-lighter;
+  border: 1px solid $brand-primary-dark;
+  padding:1em;
+
+}
+
