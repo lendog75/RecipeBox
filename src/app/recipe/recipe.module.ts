@@ -6,8 +6,8 @@ import { RecipeCardComponent } from './recipe-card/recipe-card.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RatingModule } from 'primeng/primeng';
-import { RouterModule } from "@angular/router";
-
+import { RouterModule } from '@angular/router';
+import {PanelModule} from 'primeng/primeng';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,8 @@ import { RouterModule } from "@angular/router";
     BrowserModule,
     FormsModule,
     RatingModule,
-    RouterModule
+    RouterModule,
+    PanelModule
   ],
   exports: [
     RecipeEditComponent,

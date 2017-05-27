@@ -12,4 +12,10 @@ a {
     .recipe-actions li .delete {
       color: #d9534f; }
 
+/deep/ .ui-panel-titlebar {
+  background-color: silver; }
+
+/deep/ .ui-panel {
+  background-color: silver; }
+
 /*# sourceMappingURL=recipe-card.component.css.map */

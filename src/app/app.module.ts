@@ -28,6 +28,7 @@ import { RecipeService } from './providers/recipe.service';
 import { NavbarMobileComponent } from './navbar-mobile/navbar-mobile.component';
 import { CategoryListComponent } from './category-list/category-list.component';
 import { RecipeModule } from './recipe/recipe.module';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 
 
@@ -74,6 +75,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     MessagesModule,
     RecipeModule,
+    BrowserAnimationsModule,
 
     AccordionModule,
     ToolbarModule,

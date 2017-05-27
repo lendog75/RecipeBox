@@ -6,6 +6,30 @@
   <p-rating [ngModel]="recipe.rating" readonly="true" stars="5" [cancel]="false"></p-rating>
 
 
+
+
+
+</div>
+<!--<div style="background-color:gray; text-align:center; width:100%; height: 1em;">-->
+  <!--<hr style="background-color: white; height: .5em; color: white; width: 50%;padding-top: 0.5em;">-->
+<!--</div>-->
+<!--<div style="background-color: silver; width: 100%; height: 5em;">-->
+  <!--<ul class="nav justify-content-center recipe-actions">-->
+    <!--<li class="nav-item">-->
+      <!--<i class="edit fa fa-edit fa-3x"></i>-->
+    <!--</li>-->
+    <!--<li class="nav-item">-->
+      <!--<i class="download fa fa-download fa-3x"></i>-->
+    <!--</li>-->
+    <!--<li class="nav-item">-->
+      <!--<i class="delete fa fa-minus-circle fa-3x"></i>-->
+    <!--</li>-->
+  <!--</ul>-->
+
+<!--</div>-->
+
+
+<p-panel header="Actions" [toggleable]="true" [style]="{'background-color':'gray;'}" collapsed="true">
   <ul class="nav justify-content-center recipe-actions">
     <li class="nav-item">
       <i class="edit fa fa-edit fa-3x"></i>
@@ -17,5 +41,4 @@
       <i class="delete fa fa-minus-circle fa-3x"></i>
     </li>
   </ul>
-</div>
-
+</p-panel>
