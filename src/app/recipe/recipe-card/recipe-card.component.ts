@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Recipe } from '../../shared/model/recipe';
-import {Rating} from 'primeng/primeng';
 @Component({
   selector: '[recipe-card]',
   templateUrl: './recipe-card.component.html',

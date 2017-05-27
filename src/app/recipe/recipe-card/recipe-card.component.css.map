@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAEA,CAAE;EACA,MAAM,EAAE,CAAC;EAET,WAAW,EAAE,IAAI",
+"mappings": "AACA,CAAE;EACA,MAAM,EAAE,CAAC;EACT,WAAW,EAAE,IAAI",
 "sources": ["recipe-card.component.scss"],
 "names": [],
 "file": "recipe-card.component.css"

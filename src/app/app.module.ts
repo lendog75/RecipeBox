@@ -26,6 +26,7 @@ import { SearchBoxComponent } from './search-box/search-box.component';
 import { AppFooterComponent } from './app-footer/app-footer.component';
 import { RecipeService } from './providers/recipe.service';
 import { NavbarMobileComponent } from './navbar-mobile/navbar-mobile.component';
+import { CategoryListComponent } from './category-list/category-list.component';
 
 
 
@@ -64,7 +65,8 @@ const routes: Routes = [
     RecipeCardComponent,
     SearchBoxComponent,
     AppFooterComponent,
-    NavbarMobileComponent
+    NavbarMobileComponent,
+    CategoryListComponent
   ],
   imports: [
     BrowserModule,

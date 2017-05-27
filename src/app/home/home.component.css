@@ -5,4 +5,10 @@ img.home-banner {
   height: 10em;
   width: 100%; }
 
+hr {
+  background-color: #91c11e;
+  border-bottom: 1px solid #31c568;
+  height: 1px;
+  background-image: linear-gradient(left, #f0f0f0, #8c8c8c, #f0f0f0); }
+
 /*# sourceMappingURL=home.component.css.map */

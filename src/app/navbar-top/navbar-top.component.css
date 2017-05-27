@@ -17,6 +17,11 @@ h1.brand {
 .nav-top {
   background-color: #91c11e;
   display: flex; }
+  .nav-top form {
+    text-align: right;
+    position: absolute;
+    right: 1em;
+    margin: .5em; }
   .nav-top ul {
     margin: .75em;
     padding: 0; }
