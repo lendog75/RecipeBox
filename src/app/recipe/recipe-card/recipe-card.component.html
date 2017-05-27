@@ -1,24 +1,21 @@
-<!--<div class="card" style="width: 20rem;">-->
 <img class="card-img-top img-fluid" src="{{recipe.imagePath + '?raw=true'}}raw=true" alt="Card image cap">
 <div class="card-block">
   <h4><a [routerLink]="['recipes',recipe.$key]">{{ recipe.title }}</a></h4>
   <p class="lead">{{ recipe.description }}</p>
-
-
-  <div class="row">
-    <div class="col col-sm-6">
-      <p class="subheader">by: lenny reed</p>
-    </div>
-    <div class="col col-sm-6">
-      <div class="card card-outline-primary mb-3 text-center">
-        <div class="card-block">
-        x | y | z
-        </div>
-      </div>
-    </div>
-  </div>
-
-
+  <p class="subheader">by: lenny reed</p>
   <p-rating [ngModel]="recipe.rating" readonly="true" stars="5" [cancel]="false"></p-rating>
+
+
+  <ul class="nav justify-content-center recipe-actions">
+    <li class="nav-item">
+      <i class="edit fa fa-edit fa-3x"></i>
+    </li>
+    <li class="nav-item">
+      <i class="download fa fa-download fa-3x"></i>
+    </li>
+    <li class="nav-item">
+      <i class="delete fa fa-minus-circle fa-3x"></i>
+    </li>
+  </ul>
 </div>
-<!--</div>-->
+

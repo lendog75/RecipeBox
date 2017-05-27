@@ -1,7 +1,7 @@
-
+@import '../../assets/themes/bootstrap/scss/_variables';
 
 .button {
-  background-color: #91c11e;
+  background-color: $brand-primary;
 }
 
 img.home-banner {
@@ -10,7 +10,7 @@ img.home-banner {
 }
 
 hr {
-  background-color: #91c11e;
+  background-color: $brand-primary;
   border-bottom: 1px solid #31c568;
   height: 1px;
   background-image: linear-gradient(left, #f0f0f0, #8c8c8c, #f0f0f0);

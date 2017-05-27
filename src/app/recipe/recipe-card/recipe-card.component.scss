@@ -1,7 +1,28 @@
+@import '../../../assets/themes/bootstrap/scss/_variables';
 
 a {
   margin: 0;
   font-weight: bold;
 }
 
+.recipe-actions {
+ padding: 0;
+
+  li {
+    margin: 1em;
+    cursor: pointer;
+
+    .edit {
+      color: $blue;
+    }
+
+    .download  {
+      //color: $blue;
+    }
+
+    .delete {
+      color: $red;
+    }
+  }
+}
 

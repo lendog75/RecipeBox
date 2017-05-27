@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "AAEA,YAAa;EACX,KAAK,EAAE,KAAK",
-"sources": ["category-list.component.scss"],
+"mappings": "AAEA,YAAa;EACX,KAAK,EC+4BuB,IAAM",
+"sources": ["category-list.component.scss","../../assets/themes/bootstrap/scss/_variables.scss"],
 "names": [],
 "file": "category-list.component.css"
 }

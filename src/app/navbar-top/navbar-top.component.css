@@ -33,7 +33,7 @@ h1.brand {
         padding: 0;
         margin: 0; }
     .nav-top ul a, .nav-top ul li {
-      color: white; }
+      color: #fff; }
 
 i.user, i.signout, i.alerts {
   margin: .25em;

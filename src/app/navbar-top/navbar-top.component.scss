@@ -1,3 +1,4 @@
+@import '../../assets/themes/bootstrap/scss/_variables';
 
 h1.brand {
   flex: 1;
@@ -20,7 +21,7 @@ h1.brand {
 }
 
 .nav-top {
-  background-color: #91c11e;
+  background-color: $brand-primary;
   display: flex;
 
   form {
@@ -43,7 +44,7 @@ h1.brand {
       }
     }
     a, li {
-      color: white;
+      color: $white;
     }
   }
 }
@@ -70,7 +71,7 @@ i.alerts {
 }
 
 .fa {
-  color: #91c11e;
+  color: $brand-primary;
 }
 
 // http://paletton.com/#uid=12i0u0ktMjbltqKqcn9AMeCMz9j

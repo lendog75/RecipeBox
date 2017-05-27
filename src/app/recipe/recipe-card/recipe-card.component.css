@@ -2,4 +2,14 @@ a {
   margin: 0;
   font-weight: bold; }
 
+.recipe-actions {
+  padding: 0; }
+  .recipe-actions li {
+    margin: 1em;
+    cursor: pointer; }
+    .recipe-actions li .edit {
+      color: #0275d8; }
+    .recipe-actions li .delete {
+      color: #d9534f; }
+
 /*# sourceMappingURL=recipe-card.component.css.map */

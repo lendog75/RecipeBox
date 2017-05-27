@@ -1,8 +1,9 @@
+@import '../../assets/themes/bootstrap/scss/_variables';
 
 .fa {
   padding: .25em;
 }
 
 .navbar-mobile{
-  color: white;
+  color: $white;
 }
