@@ -3,7 +3,22 @@
 <div class="card-block">
   <h4><a [routerLink]="['recipes',recipe.$key]">{{ recipe.title }}</a></h4>
   <p class="lead">{{ recipe.description }}</p>
-  <p class="subheader">by: lenny reed</p>
+
+
+  <div class="row">
+    <div class="col col-sm-6">
+      <p class="subheader">by: lenny reed</p>
+    </div>
+    <div class="col col-sm-6">
+      <div class="card card-outline-primary mb-3 text-center">
+        <div class="card-block">
+        x | y | z
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <p-rating [ngModel]="recipe.rating" readonly="true" stars="5" [cancel]="false"></p-rating>
 </div>
 <!--</div>-->

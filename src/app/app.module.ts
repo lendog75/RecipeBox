@@ -21,12 +21,13 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import {AccordionModule} from 'primeng/components/accordion/accordion';
 import {RatingModule, ToolbarModule, ButtonModule,
   SplitButtonModule, MessagesModule, GrowlModule} from 'primeng/primeng';
-import { RecipeCardComponent } from './recipe/recipe-card/recipe-card.component';
+
 import { SearchBoxComponent } from './search-box/search-box.component';
 import { AppFooterComponent } from './app-footer/app-footer.component';
 import { RecipeService } from './providers/recipe.service';
 import { NavbarMobileComponent } from './navbar-mobile/navbar-mobile.component';
 import { CategoryListComponent } from './category-list/category-list.component';
+import { RecipeModule } from './recipe/recipe.module';
 
 
 
@@ -43,6 +44,7 @@ export const firebaseConfig = {
 
 const routes: Routes = [
   { path: 'user/detail', component: UserDetailComponent, canActivate: [ AuthGuard ] },
+
   { path: 'recipes/:id/edit', component: RecipeEditComponent, canActivate: [ AuthGuard ] },
   { path: 'recipes/:id', component: RecipeDetailComponent, canActivate: [ AuthGuard ] },
   { path: 'recipes', component: RecipeListComponent, canActivate: [ AuthGuard ] },
@@ -59,10 +61,6 @@ const routes: Routes = [
     HomeComponent,
     NavbarTopComponent,
     UserDetailComponent,
-    RecipeEditComponent,
-    RecipeDetailComponent,
-    RecipeListComponent,
-    RecipeCardComponent,
     SearchBoxComponent,
     AppFooterComponent,
     NavbarMobileComponent,
@@ -75,6 +73,7 @@ const routes: Routes = [
     AngularFireModule.initializeApp(firebaseConfig),
     RouterModule.forRoot(routes),
     MessagesModule,
+    RecipeModule,
 
     AccordionModule,
     ToolbarModule,

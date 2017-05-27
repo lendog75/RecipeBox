@@ -3,7 +3,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs';
-import { Recipe } from '../shared/model/recipe';
+import { Recipe } from '../recipe/recipe';
 import { Category } from '../shared/model/category';
 import { FirebaseListFactoryOpts } from "angularfire2/interfaces";
 

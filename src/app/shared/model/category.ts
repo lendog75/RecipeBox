@@ -1,4 +1,4 @@
-import { Recipe } from './recipe';
+import { Recipe } from '../../recipe/recipe';
 export class Category {
   static fromJsonList (array): Category[] {
     return array.map(Category.fromJson);
