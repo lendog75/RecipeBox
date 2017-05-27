@@ -2,99 +2,20 @@
   <div class="heading">
     <h1 class="brand"><a href="/">RecipeBOX</a></h1>
     <i class="fa fa-sign-out signout " (click)="logout()"></i>
-    <i routerLink="/user/detail"  class="fa fa-user-circle fa-2x user"></i>
+    <i routerLink="/user/detail" class="fa fa-user-circle fa-2x user"></i>
   </div>
 
-  <nav class="nav-top" >
-    <ul class="">
-      <li>Top Categories:</li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Italian <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Mexican</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Indian</a>
-      </li>
+  <nav class="nav-top">
+    <ul class="list-inline">
+      <li class="list-inline-item">Top Categories:</li>
+      <li class="list-inline-item"  routerLink="/"><a>Italian</a></li>
+      <li class="list-inline-item"  routerLink="/"><a>Mexican</a></li>
+      <li class="list-inline-item"  routerLink="/"><a>Indian</a></li>
     </ul>
+
     <form class="form-inline my-2">
       <input class="form-control mr-sm-2" type="text" placeholder="Search">
       <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
     </form>
   </nav>
 </div>
-
-
-
-  <!--<div style="display: flex">-->
-    <!--<h1 style="flex: 1; text-align: left;" class="brand"><a href="/">RecipeBOX</a></h1>-->
-
-    <!--&lt;!&ndash;<i class="fa fa-comment alert"></i>&ndash;&gt;-->
-    <!--<i class="fa fa-sign-out mail "></i>-->
-    <!--<i routerLink="/user/detail"  class="fa fa-user-circle fa-2x user"></i>-->
-
-  <!--</div>-->
-
-
-
-<!--<nav class="navbar navbar-toggleable-md navbar-light bg-faded nav-top" >-->
-  <!--<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"-->
-          <!--data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"-->
-          <!--aria-label="Toggle navigation">-->
-    <!--<span class="navbar-toggler-icon"></span>-->
-  <!--</button>-->
-  <!--<a class="navbar-brand" href="#">Top Categories:</a>-->
-
-  <!--<div class="collapse navbar-collapse" style="display: flex" >-->
-    <!--<ul class="navbar-nav mr-auto">-->
-
-      <!--<li class="nav-item">-->
-        <!--<a class="nav-link" href="#">Italian <span class="sr-only">(current)</span></a>-->
-      <!--</li>-->
-      <!--<li class="nav-item">-->
-        <!--<a class="nav-link" href="#">Mexican</a>-->
-      <!--</li>-->
-      <!--<li class="nav-item">-->
-        <!--<a class="nav-link" href="#">Indian</a>-->
-      <!--</li>-->
-    <!--</ul>-->
-    <!--<form class="form-inline my-2 my-lg-0">-->
-      <!--<input class="form-control mr-sm-2" type="text" placeholder="Search">-->
-      <!--<button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>-->
-    <!--</form>-->
-    <!--&lt;!&ndash;<ul class="navbar-nav mr-auto" *ngIf="currentUser">&ndash;&gt;-->
-      <!--&lt;!&ndash;&lt;!&ndash;<li><a class="nav-link" routerLink="/" routerLinkActive="active">HOME</a></li>&ndash;&gt;&ndash;&gt;-->
-      <!--&lt;!&ndash;<li class="nav-item">&ndash;&gt;-->
-        <!--&lt;!&ndash;<a class="nav-link" routerLink="/recipes" routerLinkActive="active">RECIPES</a></li>&ndash;&gt;-->
-     <!--&lt;!&ndash;&ndash;&gt;-->
-
-    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
-  <!--</div>-->
-<!--</nav>-->
-
-<!--&lt;!&ndash;<div class="top-nav">&ndash;&gt;-->
-<!--&lt;!&ndash;<div class="top-nav-left">&ndash;&gt;-->
-<!--&lt;!&ndash;<ul class="menu">&ndash;&gt;-->
-<!--&lt;!&ndash;<li class="menu-text">Top Categories:</li>&ndash;&gt;-->
-<!--&lt;!&ndash;<li><a href="#">Italian</a></li>&ndash;&gt;-->
-<!--&lt;!&ndash;<li><a href="#">Mexican</a></li>&ndash;&gt;-->
-<!--&lt;!&ndash;<li><a href="#">Indian</a></li>&ndash;&gt;-->
-<!--&lt;!&ndash;</ul>&ndash;&gt;-->
-<!--&lt;!&ndash;</div>&ndash;&gt;-->
-<!--&lt;!&ndash;<div class="top-nav-right">&ndash;&gt;-->
-<!--&lt;!&ndash;<ul class="menu" data-responsive-menu="accordion" *ngIf="currentUser">&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;<li><a class="nav-link" routerLink="/" routerLinkActive="active">HOME</a></li>&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;<li><a routerLink="/recipes" routerLinkActive="active">RECIPES</a></li>&ndash;&gt;-->
-<!--&lt;!&ndash;<li><a (click)="logout()">LOGOUT</a></li>&ndash;&gt;-->
-<!--&lt;!&ndash;<li><a routerLink="/user/detail">PROFILE</a></li>&ndash;&gt;-->
-<!--&lt;!&ndash;</ul>&ndash;&gt;-->
-
-<!--&lt;!&ndash;<div *ngIf="!currentUser">&ndash;&gt;-->
-<!--&lt;!&ndash;<a class="dropdown-item" routerLink="/login">Login</a>&ndash;&gt;-->
-<!--&lt;!&ndash;</div>&ndash;&gt;-->
-<!--&lt;!&ndash;</div>&ndash;&gt;-->
-<!--&lt;!&ndash;</div>&ndash;&gt;-->
-
-
-

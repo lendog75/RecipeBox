@@ -18,14 +18,13 @@ h1.brand {
   background-color: #91c11e;
   display: flex; }
   .nav-top ul {
-    list-style-type: none;
     margin: .75em;
     padding: 0; }
     .nav-top ul li {
       padding: 0;
-      margin: .25em;
-      display: inline-block; }
+      margin: .25em; }
       .nav-top ul li a {
+        cursor: pointer;
         padding: 0;
         margin: 0; }
     .nav-top ul a, .nav-top ul li {
