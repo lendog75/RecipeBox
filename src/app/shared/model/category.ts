@@ -4,8 +4,8 @@ export class Category {
     return array.map(Category.fromJson);
   }
 
-  static fromJson ({ $key, title }): Category {
-    return new Category( $key, title, );
+  static fromJson ({$key, title}): Category {
+    return new Category($key, title);
   }
 
   constructor (public $key: string,
