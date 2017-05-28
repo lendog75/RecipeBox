@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { RecipeService } from '../../providers/recipe.service';
 import { Observable } from 'rxjs/Observable';
 import { Recipe } from '../recipe';
@@ -12,6 +12,11 @@ import { CategoryService } from '../../providers/category.service';
 })
 export class RecipeListComponent implements OnInit {
 
+  @Input()
+  set categoryId(id: string) {
+    this.loadRecipes(id);
+  }
+
   recipes: Observable<Recipe[]>;
 
   constructor(private recipeSvc: RecipeService,
@@ -21,8 +26,14 @@ export class RecipeListComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       const id = params['id'];
-      this.recipes = this.recipeSvc.getRecipesPerCategory(id);
-
+      this.loadRecipes(id);
     });
+  }
+
+  loadRecipes(id: string) {
+    if (id) {
+      this.recipes = this.recipeSvc.getRecipesPerCategory(id);
+    }
+
   }
 }
