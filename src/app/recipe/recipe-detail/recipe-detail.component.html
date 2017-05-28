@@ -4,7 +4,6 @@
     <li class="breadcrumb-item active">{{recipe.title}}</li>
   </ol>
   <br>
-
   <div class="container">
     <div class="heading">
       <h3>{{recipe.title}}</h3>
@@ -15,72 +14,65 @@
         <div class="col-md-6">
           <img class="card-img-top img-fluid" src="{{recipe.imagePath + '?raw=true'}}raw=true" alt="Card image cap">
         </div>
-        <div class="col-md-6">
-          <div style="padding:1em">
-            {{recipe.description}}
-          </div>
+        <div class="col-md-6" style="padding-left:1em; padding-top:1em;">
+          {{recipe.description}}
+        </div>
+        <div class="col-sm-12 col-md-12" *ngIf="recipeDetail">
+          <small style="padding:1em;">
+            Tips
+            <ul>
+              <li *ngFor="let tip of recipeDetail.tips">{{tip.value}}</li>
+            </ul>
+          </small>
         </div>
       </div>
     </div>
     <div class="card-block">
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-sm-6 col-md-3">
           <p-rating [ngModel]="recipe.rating" readonly="true"
                     stars="5" [cancel]="false" style="display: inline-block"></p-rating>
         </div>
-        <div class="col-md-3">
+        <div class="col-sm-6  col-md-3">
           <i class="fa fa-clock-o"></i> time {{recipe.cookTime}}
         </div>
-        <div class="col-md-3">
+        <div class="col-sm-6  col-md-3">
           <i class="fa fa-users"></i> serves {{recipe.serves}}
         </div>
-        <div class="col-md-3"><i class="fa fa-dashboard"></i> calories {{recipe.calories}}</div>
+        <div class="col-sm-6  col-md-3">
+          <i class="fa fa-dashboard"></i> calories {{recipe.calories}}
+        </div>
       </div>
 
-      <div class="row">
-        <div class="small-6 large-5 columns heading">
-          <hr>
-          <div class="container" style="margin-top: 1em">
-            <div class="row">
-              <div class="col-md-3">
-                <h5>Ingredients</h5>
-                <ul class="list-group">
-                  <li class="list-group-item">cook time: {{recipe.cookTime}}</li>
-                  <li class="list-group-item">serves: {{recipe.serves}}</li>
-                  <li class="list-group-item">calories: {{recipe.calories}}</li>
-                </ul>
-              </div>
-              <div class="col-md-9">
-                <h5>Directions</h5>
-                <ol>
-                  <li>Auto-layout for flexbox grid columns also means you can set
-                    the width of one column and the others will automatically resize around
-                    it. You may use predefined grid classes (as shown below), grid mixins,
-                    or inline widths.
-                  </li>
-                  <li>Auto-layout for flexbox grid columns also means you can set
-                    the width of one column and the others will automatically resize around
-                    it. You may use predefined grid classes (as shown below), grid mixins,
-                    or inline widths.
-                  </li>
-                  <li>Auto-layout for flexbox grid columns also means you can set
-                    the width of one column and the others will automatically resize around
-                    it. You may use predefined grid classes (as shown below), grid mixins,
-                    or inline widths.
-                  </li>
-                  <li>Auto-layout for flexbox grid columns also means you can set
-                    the width of one column and the others will automatically resize around
-                    it. You may use predefined grid classes (as shown below), grid mixins,
-                    or inline widths.
-                  </li>
-                </ol>
-              </div>
-            </div>
-          </div>
+      <div class="row" *ngIf="recipeDetail" style="margin-top: 1em">
+        <hr>
+        <div class="col-md-4">
+          <ul class="list-group">
+            <li class="active list-group-item">Ingredients</li>
+            <li *ngFor="let ingredient of recipeDetail.ingredients" class="list-group-item">
+              {{ingredient.amount}}
+              {{ingredient.unit}}
+              {{ingredient.name}}
+            </li>
+            <li class="active list-group-item">Other Items</li>
+            <li *ngFor="let stuff of recipeDetail.otherStuff" class="list-group-item">
+              {{stuff.name}}
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-8">
+          <h5>Directions</h5>
+          <ol>
+            <li *ngFor="let direction of recipeDetail.directions">
+              <h5>{{direction.title}}</h5>
+              {{direction.value}}
+            </li>
+          </ol>
         </div>
       </div>
     </div>
   </div>
 </div>
+<br><br><br>
 
 

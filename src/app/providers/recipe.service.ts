@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { Recipe } from '../recipe/recipe';
 import { Category } from '../shared/model/category';
 import { FirebaseListFactoryOpts } from "angularfire2/interfaces";
+import { RecipeDetail } from '../recipe/recipe-detail';
 
 
 @Injectable()
@@ -24,44 +25,12 @@ export class RecipeService {
       .map(Recipe.fromJson);
   }
 
+  getRecipeDetails(recipeId: any) {
+    return this.db.object('recipeDetails/' + recipeId)
+      .map(
+        RecipeDetail.fromJson
+      );
 
-   //getRecipesByCategory(category: string): Observable<Category> {
-   //  let xxx = this.db.object('category/' + category)
-   //   .map(x => x.recipes.push(this.getRecipe(x))
-   //     //Category.fromJson
-   //   );
-   //
-   //
-   // return xxx;
-   //}
-
-  //findCategoryByUrl(categoryUrl: string): Observable<Category> {
-  //  return this.db.list('category', {
-  //    query: {
-  //      orderByChild: 'url',
-  //      equalTo: categoryUrl
-  //    }
-  //  })
-  //    .map(results => results[0]);
-  //}
-
-  //findRecipeKeysPerCategoryUrl(categoryUrl: string,
-  //                           query: FirebaseListFactoryOpts = {}): Observable<string[]> {
-  //  return this.findCategoryByUrl(categoryUrl)
-  //    .do(val => console.log('category', val))
-  //    .filter(category => !!category)
-  //    .switchMap(category => this.db.list(`recipesPerCategory/${category.$key}`, query))
-  //    .map( lspc => lspc.map(lpc => lpc.$key) );
-  //}
-
-  //findRecipesForRecipeKeys(recipeKeys$: Observable<string[]>): Observable<Recipe[]> {
-  //  return recipeKeys$
-  //    .map(lspc => lspc.map(recipeKey => this.db.object('recipes/' + recipeKey)) )
-  //    .flatMap(fbojs => Observable.combineLatest(fbojs));
-  //}
-
-  //findAllRecipesForCategory(categoryUrl: string): Observable<Recipe[]> {
-  //  return this.findRecipesForRecipeKeys(this.findRecipeKeysPerCategoryUrl(categoryUrl));
-  //}
+  }
 }
 
