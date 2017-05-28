@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipeService } from '../../providers/recipe.service';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 import { Recipe } from '../recipe';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'recipe-list',
@@ -12,10 +13,17 @@ export class RecipeListComponent implements OnInit {
 
   recipes: Observable<Recipe[]>;
 
-  constructor(private recipeSvc: RecipeService) { }
+  constructor(private recipeSvc: RecipeService,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.recipes = this.recipeSvc.getRecipes();
+    this.route.params.subscribe(params => {
+      const id = params['id'];
+
+
+    });
+
+   // this.recipes = this.recipeSvc.getRecipes();
 
     //this.recipes.subscribe(r => {
     //  console.log(r);

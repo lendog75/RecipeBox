@@ -3,10 +3,9 @@
     CATEGORIES
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Italian</li>
-    <li class="list-group-item">Mexican</li>
-    <li class="list-group-item">Indian</li>
-    <li class="list-group-item">Thai</li>
-    <li class="list-group-item">German</li>
+    <li class="list-group-item" *ngFor="let category of categories | async"
+        [routerLink]="['/categories', category.$key]">
+      {{category.title}}
+    </li>
   </ul>
 </div>

@@ -28,7 +28,8 @@ import { RecipeService } from './providers/recipe.service';
 import { NavbarMobileComponent } from './navbar-mobile/navbar-mobile.component';
 import { CategoryListComponent } from './category-list/category-list.component';
 import { RecipeModule } from './recipe/recipe.module';
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CategoryService } from './providers/category.service';
 
 
 
@@ -49,6 +50,7 @@ const routes: Routes = [
   { path: 'recipes/:id/edit', component: RecipeEditComponent, canActivate: [ AuthGuard ] },
   { path: 'recipes/:id', component: RecipeDetailComponent, canActivate: [ AuthGuard ] },
   { path: 'recipes', component: RecipeListComponent, canActivate: [ AuthGuard ] },
+  { path: 'categories/:id', component: RecipeListComponent, canActivate: [ AuthGuard ] },
 
   { path: '', component: HomeComponent, canActivate: [ AuthGuard ]  },
   { path: 'login', component: LoginComponent }
@@ -89,7 +91,8 @@ const routes: Routes = [
     AuthGuard,
     AngularFireAuth,
     AngularFireDatabase,
-    RecipeService
+    RecipeService,
+    CategoryService
   ],
   bootstrap: [AppComponent]
 })
