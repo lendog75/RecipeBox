@@ -1,13 +1,9 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
-import * as firebase from 'firebase/app';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { Observable } from 'rxjs';
-import { Recipe } from '../recipe/recipe';
-import { Category } from '../shared/model/category';
-import { FirebaseListFactoryOpts } from "angularfire2/interfaces";
-import { RecipeDetail } from '../recipe/recipe-detail';
+import { Observable } from 'rxjs/Observable';
 
+import { Recipe } from '../recipe/recipe';
+import { RecipeDetail } from '../recipe/recipe-detail';
 
 @Injectable()
 export class RecipeService {
@@ -30,7 +26,22 @@ export class RecipeService {
       .map(
         RecipeDetail.fromJson
       );
+  }
 
+  getRecipesPerCategory(libKey: string): Observable<Recipe[]> {
+    // get the keys for the categories
+    const recipesPerCategory$ = this.db.list(`recipesPerCategory/${libKey}`);
+
+    // map the returned list of keys
+    // and get their details from the recipe node
+    return recipesPerCategory$
+      .map((RecipeKeys) => RecipeKeys
+        .map( (recipeKey) => {
+          return this.db.object(`recipes/${recipeKey.$key}`);
+        }))
+      .flatMap((res) => {
+        return Observable.combineLatest(res);
+      });
   }
 }
 

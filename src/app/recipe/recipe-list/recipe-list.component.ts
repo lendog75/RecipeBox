@@ -3,6 +3,7 @@ import { RecipeService } from '../../providers/recipe.service';
 import { Observable } from 'rxjs/Observable';
 import { Recipe } from '../recipe';
 import { ActivatedRoute } from '@angular/router';
+import { CategoryService } from '../../providers/category.service';
 
 @Component({
   selector: 'recipe-list',
@@ -14,28 +15,14 @@ export class RecipeListComponent implements OnInit {
   recipes: Observable<Recipe[]>;
 
   constructor(private recipeSvc: RecipeService,
+              private categorySvc: CategoryService,
               private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       const id = params['id'];
-
+      this.recipes = this.recipeSvc.getRecipesPerCategory(id);
 
     });
-
-   // this.recipes = this.recipeSvc.getRecipes();
-
-    //this.recipes.subscribe(r => {
-    //  console.log(r);
-    //});
-    //
-    // this.recipeSvc.getRecipe('581d03b827c7901ac094826c').subscribe(x => {
-    //  console.log('single recipe:' + JSON.stringify(x));
-    //});
-    //
-    //this.recipeSvc.getRecipesByCategory('Italian').subscribe(x => {
-    //  console.log(x);
-    //});
   }
-
 }
