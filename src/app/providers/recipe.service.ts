@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { Recipe } from '../recipe/recipe';
 import { RecipeDetail } from '../recipe/recipe-detail';
+import { Router } from "@angular/router";
 
 @Injectable()
 export class RecipeService {
@@ -11,7 +12,8 @@ export class RecipeService {
   recipes: FirebaseListObservable<Recipe[]>;
   recipeDetails: FirebaseListObservable<RecipeDetail[]>;
 
-  constructor (private db: AngularFireDatabase) {
+  constructor (private db: AngularFireDatabase,
+               private router: Router) {
     this.recipes = db.list('/recipes');
     this.recipeDetails = db.list('/recipeDetails');
   }
@@ -53,14 +55,13 @@ export class RecipeService {
 
   createRecipe(recipe: Recipe) {
     console.log('create');
-    this.recipes.push(recipe);
-
+    const recipeResponse = this.recipes.push(recipe);
+    this.router.navigate(['/recipes', recipeResponse.key, 'edit']);
   }
 
   createRecipeDetails(recipeId: string, recipeDetail: RecipeDetail) {
     console.log('create');
     this.recipeDetails.push(recipeDetail);
-
   }
 
   updateRecipe(recipe: Recipe) {
