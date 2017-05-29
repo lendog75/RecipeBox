@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { Recipe } from '../recipe';
 import { ActivatedRoute } from '@angular/router';
 import { CategoryService } from '../../providers/category.service';
-import { Category } from '../../shared/model/category';
+import { Category } from '../../category/category';
 
 @Component({
   selector: 'recipe-list',
