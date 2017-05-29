@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../providers/category.service';
 import { Category } from '../shared/model/category';
-import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'home',
@@ -13,7 +12,6 @@ export class HomeComponent implements OnInit {
   categoryId = '-KlKFkGJ0nxZDlK7Xtpe';
 
   constructor (private categorySvc: CategoryService) { }
-
 
   ngOnInit () {
     this.categorySvc.getCategory(this.categoryId).subscribe(x => {

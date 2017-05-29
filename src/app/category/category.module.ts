@@ -1,27 +1,28 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CategoryEditComponent } from './category-edit/category-edit.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CategoryDetailComponent } from './category-detail/category-detail.component';
 import { RecipeModule } from '../recipe/recipe.module';
-import { RouterModule } from "@angular/router";
+import { RouterModule } from '@angular/router';
+import { CategoryListComponent } from './category-list/category-list.component';
 
 @NgModule({
   declarations: [
-  CategoryEditComponent,
-  CategoryDetailComponent
+    CategoryEditComponent,
+    CategoryDetailComponent,
+    CategoryListComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     RouterModule,
     RecipeModule
-
   ],
   exports: [
-
+    CategoryListComponent
   ],
-  providers: [
-  ],
+  providers: [],
 })
-export class CategoryModule { }
+export class CategoryModule {
+}

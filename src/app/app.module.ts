@@ -26,13 +26,12 @@ import { SearchBoxComponent } from './search-box/search-box.component';
 import { AppFooterComponent } from './app-footer/app-footer.component';
 import { RecipeService } from './providers/recipe.service';
 import { NavbarMobileComponent } from './navbar-mobile/navbar-mobile.component';
-import { CategoryListComponent } from './category-list/category-list.component';
 import { RecipeModule } from './recipe/recipe.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CategoryService } from './providers/category.service';
-import { CategoryModule } from "./category/category.module";
-import { CategoryEditComponent } from "./category/category-edit/category-edit.component";
-import { CategoryDetailComponent } from "./category/category-detail/category-detail.component";
+import { CategoryModule } from './category/category.module';
+import { CategoryEditComponent } from './category/category-edit/category-edit.component';
+import { CategoryDetailComponent } from './category/category-detail/category-detail.component';
 
 
 
@@ -73,8 +72,7 @@ const routes: Routes = [
     UserDetailComponent,
     SearchBoxComponent,
     AppFooterComponent,
-    NavbarMobileComponent,
-    CategoryListComponent
+    NavbarMobileComponent
   ],
   imports: [
     BrowserModule,
