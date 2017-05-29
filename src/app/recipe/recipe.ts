@@ -19,7 +19,7 @@ export class Recipe {
       rating);
   }
 
-  constructor (public $key: string,
+  constructor (public key: string,
                public title: string,
                public subTitle: string,
                public description: string,

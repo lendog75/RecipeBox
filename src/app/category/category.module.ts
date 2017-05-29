@@ -7,6 +7,7 @@ import { RecipeModule } from '../recipe/recipe.module';
 import { RouterModule } from '@angular/router';
 import { CategoryListComponent } from './category-list/category-list.component';
 
+
 @NgModule({
   declarations: [
     CategoryEditComponent,

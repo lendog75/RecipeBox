@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './providers/auth.service';
-import {RatingModule} from 'primeng/primeng';
+import {Message} from 'primeng/primeng';
+import { GrowlService } from './providers/growl.service';
 
 @Component({
   selector: 'app-root',
@@ -10,14 +11,23 @@ import {RatingModule} from 'primeng/primeng';
 export class AppComponent implements OnInit {
   title = 'app works!';
   currentUser;
+  msgs: Message[] = [];
 
   val: number;
 
-  constructor (private authSvc: AuthService) {}
+  constructor (private authSvc: AuthService,
+               private growlService: GrowlService) {}
 
   ngOnInit () {
     this.authSvc.user.subscribe(user => {
       this.currentUser = user;
+    });
+
+
+    this.growlService.messages.subscribe(msg => {
+      if (msg) {
+        this.msgs.push(msg);
+      }
     });
   }
 }

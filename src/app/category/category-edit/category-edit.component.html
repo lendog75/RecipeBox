@@ -3,7 +3,7 @@
 
   <div class="card"  *ngIf="!isLoading">
     <div class="card-header bg-success" style="color:white">
-      Create Component Edit: {{isEdit}}
+      Create Category Create/Edit: {{isEdit}}
     </div>
     <div class="card-block">
       <form [formGroup]="catForm" novalidate (ngSubmit)="save(catForm.value, catForm.valid)">

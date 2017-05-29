@@ -4,10 +4,10 @@ import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { RecipeCardComponent } from './recipe-card/recipe-card.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import { RatingModule } from 'primeng/primeng';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { RouterModule } from '@angular/router';
-import {PanelModule} from 'primeng/primeng';
+import {PanelModule, TabViewModule, RatingModule} from 'primeng/primeng';
 
 @NgModule({
   declarations: [
@@ -18,8 +18,10 @@ import {PanelModule} from 'primeng/primeng';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     FormsModule,
     RatingModule,
+    TabViewModule,
     RouterModule,
     PanelModule
   ],

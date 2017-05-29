@@ -19,8 +19,10 @@ import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component'
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 
 import {AccordionModule} from 'primeng/components/accordion/accordion';
-import {RatingModule, ToolbarModule, ButtonModule,
-  SplitButtonModule, MessagesModule, GrowlModule} from 'primeng/primeng';
+import {
+  RatingModule, ToolbarModule, ButtonModule,
+  SplitButtonModule, MessagesModule, GrowlModule, TabViewModule
+} from 'primeng/primeng';
 
 import { SearchBoxComponent } from './search-box/search-box.component';
 import { AppFooterComponent } from './app-footer/app-footer.component';
@@ -32,6 +34,7 @@ import { CategoryService } from './providers/category.service';
 import { CategoryModule } from './category/category.module';
 import { CategoryEditComponent } from './category/category-edit/category-edit.component';
 import { CategoryDetailComponent } from './category/category-detail/category-detail.component';
+import { GrowlService } from "./providers/growl.service";
 
 
 
@@ -92,6 +95,7 @@ const routes: Routes = [
     GrowlModule,
     RatingModule,
 
+
     RecipeModule,
     CategoryModule
   ],
@@ -101,7 +105,8 @@ const routes: Routes = [
     AngularFireAuth,
     AngularFireDatabase,
     RecipeService,
-    CategoryService
+    CategoryService,
+    GrowlService
   ],
   bootstrap: [AppComponent]
 })
