@@ -19,7 +19,7 @@ export class RecipeListComponent implements OnInit {
   }
 
   recipes: Observable<Recipe[]>;
-  category: Category;
+
 
   constructor(private recipeSvc: RecipeService,
               private categorySvc: CategoryService,
@@ -36,17 +36,10 @@ export class RecipeListComponent implements OnInit {
     if (id) {
       console.log('id:' + id);
       this.loadRecipes(id);
-      this.loadCategory(id);
     }
   }
 
   loadRecipes(id: string) {
     this.recipes = this.recipeSvc.getRecipesPerCategory(id);
-  }
-
-  loadCategory(id: string) {
-    this.categorySvc.getCategory(id).subscribe(x => {
-      this.category = x;
-    });
   }
 }

@@ -32,6 +32,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CategoryService } from './providers/category.service';
 import { CategoryModule } from "./category/category.module";
 import { CategoryEditComponent } from "./category/category-edit/category-edit.component";
+import { CategoryDetailComponent } from "./category/category-detail/category-detail.component";
 
 
 
@@ -53,7 +54,7 @@ const routes: Routes = [
   { path: 'recipes/:id', component: RecipeDetailComponent, canActivate: [ AuthGuard ] },
   { path: 'recipes', component: RecipeListComponent, canActivate: [ AuthGuard ] },
 
-  { path: 'categories/:id', component: RecipeListComponent, canActivate: [ AuthGuard ] },
+  { path: 'categories/:id', component: CategoryDetailComponent, canActivate: [ AuthGuard ] },
   // { path: 'categories', component: RecipeListComponent, canActivate: [ AuthGuard ] },
   { path: 'categories/0/create', component: CategoryEditComponent, canActivate: [ AuthGuard ] },
   { path: 'categories/:id/edit', component: CategoryEditComponent, canActivate: [ AuthGuard ] },

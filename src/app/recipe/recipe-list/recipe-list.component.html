@@ -1,9 +1,4 @@
 <div style="margin: 1em">
-
-  <div class="row">
-    <h3 *ngIf="category">{{category.title }}</h3>
-  </div>
-
   <div class="card-columns">
     <div class="card card-outline-primary" *ngFor="let recipe of recipes | async" recipe-card [recipe]="recipe"></div>
   </div>

@@ -2,21 +2,14 @@
 <br><br>
 <div class="container">
   <div class="row">
-    <div class="col col-sm-12 col-md-12 col-lg-9">
-      <h3>15 minute meals</h3>
+    <div class="col col-sm-12 col-md-12 col-lg-9" *ngIf="category">
+      <h3> {{category.title}}</h3>
       <div style="display: inline-flex">
-        <span>
-          Is it really possible to make delicious 15-minute dinners? Sure it is!
-          Here are our top ten 15-minute dinner ideas below, and there are more easy
-          recipes where those come from. In addition to these fabulous 15-minute meals,
-          find more easy chicken breast dishes, more easy ground beef favorites, more easy
-          salmon recipes—you get the picture. Go with an easy chili recipe, or
-          consider brunchtime favorites like easy pancakes or easy frittatas.
-        </span>
+        <span> {{category.description}}</span>
         <img src="../../assets/img/images.jpeg" class="img-fluid hidden-md-down" alt="picture of space">
       </div>
       <br>
-      <button class="btn btn-primary">See them all</button>
+      <button [routerLink]="['/categories', '-KlKFkGJ0nxZDlK7Xtpe']" class="btn btn-primary">See them all</button>
     </div>
 
     <div class="col col-sm-12 col-md-12 col-lg-3 hidden-md-down">
@@ -24,7 +17,7 @@
     </div>
   </div>
   <hr>
-  <recipe-list categoryId="7"></recipe-list>
+  <recipe-list categoryId="-KlKFkGJ0nxZDlK7Xtpe"></recipe-list>
 </div>
 
 

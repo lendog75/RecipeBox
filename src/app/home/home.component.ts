@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoryService } from '../providers/category.service';
+import { Category } from '../shared/model/category';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'home',
@@ -6,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  category: Category;
+  categoryId = '-KlKFkGJ0nxZDlK7Xtpe';
 
-  constructor() { }
+  constructor (private categorySvc: CategoryService) { }
 
-  ngOnInit() {
+
+  ngOnInit () {
+    this.categorySvc.getCategory(this.categoryId).subscribe(x => {
+      this.category = x;
+    });
   }
 
 }
