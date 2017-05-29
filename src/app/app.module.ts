@@ -52,9 +52,11 @@ const routes: Routes = [
   { path: 'recipes/:id/edit', component: RecipeEditComponent, canActivate: [ AuthGuard ] },
   { path: 'recipes/:id', component: RecipeDetailComponent, canActivate: [ AuthGuard ] },
   { path: 'recipes', component: RecipeListComponent, canActivate: [ AuthGuard ] },
+  { path: 'recipes/0/create', component: RecipeEditComponent, canActivate: [ AuthGuard ] },
+  { path: 'recipes/:id/edit', component: RecipeEditComponent, canActivate: [ AuthGuard ] },
+
 
   { path: 'categories/:id', component: CategoryDetailComponent, canActivate: [ AuthGuard ] },
-  // { path: 'categories', component: RecipeListComponent, canActivate: [ AuthGuard ] },
   { path: 'categories/0/create', component: CategoryEditComponent, canActivate: [ AuthGuard ] },
   { path: 'categories/:id/edit', component: CategoryEditComponent, canActivate: [ AuthGuard ] },
 

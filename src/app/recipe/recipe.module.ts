@@ -32,8 +32,6 @@ import {PanelModule} from 'primeng/primeng';
   providers: [
    // AuthService,
    // AngularFireDatabase,
-   // RecipeService
   ],
-  // bootstrap: [AppComponent]
 })
 export class RecipeModule { }
