@@ -4,8 +4,9 @@
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item" *ngFor="let category of categories | async"
-        [routerLink]="['/categories', category.$key]">
-      {{category.title}}
+        [routerLink]="['/categories', category.key]">
+      {{category.title}}&nbsp;
+      <a [routerLink]="['/categories', category.key,'edit']">edit</a>
     </li>
   </ul>
 </div>

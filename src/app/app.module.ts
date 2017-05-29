@@ -30,6 +30,8 @@ import { CategoryListComponent } from './category-list/category-list.component';
 import { RecipeModule } from './recipe/recipe.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CategoryService } from './providers/category.service';
+import { CategoryModule } from "./category/category.module";
+import { CategoryEditComponent } from "./category/category-edit/category-edit.component";
 
 
 
@@ -50,7 +52,11 @@ const routes: Routes = [
   { path: 'recipes/:id/edit', component: RecipeEditComponent, canActivate: [ AuthGuard ] },
   { path: 'recipes/:id', component: RecipeDetailComponent, canActivate: [ AuthGuard ] },
   { path: 'recipes', component: RecipeListComponent, canActivate: [ AuthGuard ] },
+
   { path: 'categories/:id', component: RecipeListComponent, canActivate: [ AuthGuard ] },
+  // { path: 'categories', component: RecipeListComponent, canActivate: [ AuthGuard ] },
+  { path: 'categories/0/create', component: CategoryEditComponent, canActivate: [ AuthGuard ] },
+  { path: 'categories/:id/edit', component: CategoryEditComponent, canActivate: [ AuthGuard ] },
 
   { path: '', component: HomeComponent, canActivate: [ AuthGuard ]  },
   { path: 'login', component: LoginComponent }
@@ -76,7 +82,6 @@ const routes: Routes = [
     AngularFireModule.initializeApp(firebaseConfig),
     RouterModule.forRoot(routes),
     MessagesModule,
-    RecipeModule,
     BrowserAnimationsModule,
 
     AccordionModule,
@@ -84,7 +89,10 @@ const routes: Routes = [
     ButtonModule,
     SplitButtonModule,
     GrowlModule,
-    RatingModule
+    RatingModule,
+
+    RecipeModule,
+    CategoryModule
   ],
   providers: [
     AuthService,
