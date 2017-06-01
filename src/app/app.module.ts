@@ -32,6 +32,7 @@ import { GrowlService } from './providers/growl.service';
 import { AppRoutingModule } from './app-routing.module';
 import { RecipeAdminModule } from './recipe-admin/recipe-admin.module';
 import { UserModule } from './user/user.module';
+import { RecipeResolver } from './providers/recipe.resolver';
 
 
 // Must export the config
@@ -69,7 +70,6 @@ export const firebaseConfig = {
     GrowlModule,
     RatingModule,
 
-
     RecipeModule,
     RecipeAdminModule,
     CategoryModule,
@@ -83,7 +83,8 @@ export const firebaseConfig = {
     AngularFireDatabase,
     RecipeService,
     CategoryService,
-    GrowlService
+    GrowlService,
+    RecipeResolver
   ],
   bootstrap: [AppComponent]
 })

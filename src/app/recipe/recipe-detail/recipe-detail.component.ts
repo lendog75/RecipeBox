@@ -16,19 +16,10 @@ export class RecipeDetailComponent implements OnInit {
               private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.id = params['id'];
-      this.recipeSvc.getRecipe(this.id).subscribe(x => {
-        this.recipe = x;
-        console.log(this.recipe);
-      });
+    this.recipe = this.route.snapshot.data['recipe'];
 
-      this.recipeSvc.getRecipeDetails(this.id).subscribe(x => {
-        console.log('ddd');
-        this.recipeDetail = x;
-        console.log(this.recipeDetail);
-      });
+    this.recipeSvc.getRecipeDetails(this.recipe.key).subscribe(x => {
+      this.recipeDetail = x;
     });
   }
-
 }

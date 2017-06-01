@@ -8,7 +8,11 @@ import { CategoryDetailComponent } from './category-detail/category-detail.compo
 
 
 const routes: Routes = [
-  { path: 'categories/:id', component: CategoryDetailComponent, canActivate: [ AuthGuard ] },
+  {
+    path: 'categories/:id',
+    component: CategoryDetailComponent,
+    canActivate: [ AuthGuard ]
+  },
   { path: 'categories/0/create', component: CategoryEditComponent, canActivate: [ AuthGuard ] },
   { path: 'categories/:id/edit', component: CategoryEditComponent, canActivate: [ AuthGuard ] },
 ];

@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Recipe } from '../recipe';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { RecipeService } from '../../providers/recipe.service';
 import { ActivatedRoute } from '@angular/router';
 import { GrowlService, growlSeverity } from '../../providers/growl.service';
+import { Recipe } from "../../shared/model/recipe";
 
 @Component({
   selector: 'recipe-edit',
