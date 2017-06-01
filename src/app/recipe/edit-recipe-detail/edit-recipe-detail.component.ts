@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RecipeService } from '../../providers/recipe.service';
 import { Recipe } from '../recipe';
 import { Ingredient, RecipeDetail } from '../recipe-detail';
@@ -12,59 +12,45 @@ import { Ingredient, RecipeDetail } from '../recipe-detail';
 export class EditRecipeDetailComponent implements OnInit {
   @Input() recipeId: string;
   public recipeDetailForm: FormGroup;
-public recipeDetail: RecipeDetail;
+  public recipeDetail: RecipeDetail;
 
-  constructor(private recipeSvc: RecipeService,
-              private _fb: FormBuilder) { }
+  constructor (private recipeSvc: RecipeService,
+               private fb: FormBuilder) { }
 
-  ngOnInit() {
-      if (this.recipeId && this.recipeId !== '0') {
-        this.recipeSvc.getRecipeDetails(this.recipeId).subscribe(x => {
-          this.recipeDetail = x;
+  ngOnInit () {
+    this.recipeDetailForm = this.fb.group({
+      ingredients: this.fb.array([])
+    });
 
-          this.recipeDetail.ingredients.forEach(i => {
-            this.addIngredientx(i);
-          });
+    if (this.recipeId && this.recipeId !== '0') {
+      this.recipeSvc.getRecipeDetails(this.recipeId).subscribe(x => {
+        this.recipeDetail = x;
+
+        this.recipeDetail.ingredients.forEach(i => {
+          this.addIngredient(i);
         });
-      }
-
-    this.recipeDetailForm = this._fb.group({
-      ingredients: this._fb.array([
-        //this.initIngredient(),
-      ])
-    });
+      });
+    }
   }
 
-  initIngredient() {
-    return this._fb.group({
-      amount: [''],
-      unit: [''],
-      name: ['']
-    });
-  }
-
-  addIngredient() {
-    const control = <FormArray>this.recipeDetailForm.controls['ingredients'];
-    control.push(this.initIngredient());
-  }
-
-  initIngredientx(ingredient: Ingredient) {
-    return this._fb.group({
+  buildIngredient (ingredient: Ingredient) {
+    return this.fb.group({
       amount: [ingredient.amount],
       unit: [ingredient.unit],
       name: [ingredient.name]
     });
   }
 
-  addIngredientx(ingredient: Ingredient) {
+  addIngredient (ingredient?: Ingredient) {
+    if (!ingredient) {
+      ingredient = new Ingredient();
+    }
+
     const control = <FormArray>this.recipeDetailForm.controls['ingredients'];
-    control.push(this.initIngredientx(ingredient));
+    control.push(this.buildIngredient(ingredient));
   }
 
-  save(xxx: FormGroup) {
-    console.log(xxx.value);
-
+  save (form: FormGroup) {
+    console.log(form.value);
   }
-
-
 }
