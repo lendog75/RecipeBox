@@ -1,5 +1,5 @@
-
 <form [formGroup]="recipeDetailForm" novalidate (ngSubmit)="save(recipeDetailForm)">
+
   <!--  Ingredients -->
   <div class="card card-outline-primary">
     <div class="card-header bg-primary">
@@ -10,7 +10,8 @@
       <ul class="list-group list-group-flush">
         <li class="list-group-item"
             *ngFor="let ingredient of recipeDetailForm.controls.ingredients.controls; let i=index">
-          <div [formGroupName]="i" >
+          <div [formGroupName]="i">
+            <a (click)="removeListItem(recipeDetailForm.get('ingredients'), i)" style="float: right;">delete</a>
             <div class="form-group">
               <label>Amount</label>
               <input type="text" formControlName="amount" style="width:4em">
@@ -30,7 +31,6 @@
   </div>
 
   <br><br>
-
   <!--  Directions -->
   <div class="card card-outline-primary">
     <div class="card-header bg-primary">
@@ -40,8 +40,10 @@
     <div class="card-block" formArrayName="directions">
       <ul class="list-group list-group-flush">
         <li class="list-group-item"
-            *ngFor="let direction of recipeDetailForm.controls.directions.controls; let d=index">
-          <div [formGroupName]="d" >
+            *ngFor="let direction of recipeDetailForm.controls.directions.controls; let i=index">
+          <div [formGroupName]="i">
+            <a (click)="removeListItem(recipeDetailForm.get('directions'), i)"
+               style="float: right;">delete</a>
             <div class="form-group">
               <label>Title</label>
               <input class="form-control" type="text" formControlName="title">
@@ -58,8 +60,6 @@
 
 
   <br><br>
-
-
   <!--  Tips -->
   <div class="card card-outline-primary">
     <div class="card-header bg-primary">
@@ -69,18 +69,18 @@
     <div class="card-block" formArrayName="tips">
       <ul class="list-group list-group-flush">
         <li class="list-group-item"
-            *ngFor="let tip of recipeDetailForm.controls.tips.controls; let d=index">
-          <div [formGroupName]="d" class="form-group">
-              <textarea class="form-control" type="text" formControlName="value" rows="5"></textarea>
-            </div>
+            *ngFor="let tip of recipeDetailForm.controls.tips.controls; let i=index">
+          <div [formGroupName]="i" class="form-group">
+            <a (click)="removeListItem(recipeDetailForm.get('tips'), i)" style="float: right;">delete</a>
+            <textarea class="form-control" type="text" formControlName="value" rows="5"></textarea>
+          </div>
         </li>
       </ul>
     </div>
   </div>
 
 
-<br><br>
-
+  <br><br>
   <!--  Equipment -->
   <div class="card card-outline-primary">
     <div class="card-header bg-primary">
@@ -90,125 +90,16 @@
     <div class="card-block" formArrayName="otherStuff">
       <ul class="list-group list-group-flush">
         <li class="list-group-item"
-            *ngFor="let item of recipeDetailForm.controls.otherStuff.controls; let d=index">
-          <div [formGroupName]="d" class="form-group">
-              <input class="form-control" type="text" formControlName="name">
+            *ngFor="let item of recipeDetailForm.controls.otherStuff.controls; let i=index">
+          <div [formGroupName]="i" class="form-group">
+            <a (click)="removeListItem(recipeDetailForm.get('otherStuff'), i)" style="float: right;">delete</a>
+            <input class="form-control" type="text" formControlName="name">
           </div>
         </li>
       </ul>
     </div>
   </div>
 
-
   <button type="submit">save</button>
 </form>
 
-
-<!--<table class="table">-->
-<!--<thead>-->
-<!--<tr>-->
-<!--<th>#</th>-->
-<!--<th>Amount</th>-->
-<!--<th>Unit</th>-->
-<!--<th>Name</th>-->
-<!--</tr>-->
-<!--</thead>-->
-<!--<tbody>-->
-<!--<tr *ngFor="let ingredent of recipeDetailForm.controls.ingredents.controls; let i=index">-->
-<!--<th scope="row">1</th>-->
-<!--<td>Mark</td>-->
-<!--<td>Otto</td>-->
-<!--<td>@mdo</td>-->
-<!--</tr>-->
-
-<!--</tbody>-->
-<!--</table>-->
-
-
-<!--Direction-->
-<!--order-->
-<!--title-->
-<!--value-->
-<!--<div class="card">-->
-<!--<h5 class="card-header">Directions</h5>-->
-<!--<div class="card-block">-->
-<!--<table class="table">-->
-<!--<thead>-->
-<!--<tr>-->
-<!--<th>#</th>-->
-<!--<th>Order</th>-->
-<!--<th>Title</th>-->
-<!--<th>Value</th>-->
-<!--</tr>-->
-<!--</thead>-->
-<!--<tbody>-->
-<!--<tr>-->
-<!--<th scope="row">1</th>-->
-<!--<td>Mark</td>-->
-<!--<td>Otto</td>-->
-<!--<td>@mdo</td>-->
-<!--</tr>-->
-<!--<tr>-->
-<!--<th scope="row">2</th>-->
-<!--<td>Jacob</td>-->
-<!--<td>Thornton</td>-->
-<!--<td>@fat</td>-->
-<!--</tr>-->
-<!--</tbody>-->
-<!--</table>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--<br>-->
-
-
-<!--&lt;!&ndash;name&ndash;&gt;-->
-<!--<div class="card">-->
-<!--<h5 class="card-header">Equipment</h5>-->
-<!--<div class="card-block">-->
-<!--<table class="table">-->
-<!--<thead>-->
-<!--<tr>-->
-<!--<th>#</th>-->
-<!--<th>Name</th>-->
-<!--</tr>-->
-<!--</thead>-->
-<!--<tbody>-->
-<!--<tr>-->
-<!--<th scope="row">1</th>-->
-<!--<td>Mark</td>-->
-<!--</tr>-->
-<!--<tr>-->
-<!--<th scope="row">2</th>-->
-<!--<td>Jacob</td>-->
-<!--</tr>-->
-<!--</tbody>-->
-<!--</table>-->
-<!--</div>-->
-<!--</div>-->
-<!--<br>-->
-<!--&lt;!&ndash;value&ndash;&gt;-->
-<!--<div class="card">-->
-<!--<h5 class="card-header">Tips</h5>-->
-<!--<div class="card-block">-->
-<!--<table class="table">-->
-<!--<thead>-->
-<!--<tr>-->
-<!--<th>#</th>-->
-<!--<th>Value</th>-->
-<!--</tr>-->
-<!--</thead>-->
-<!--<tbody>-->
-<!--<tr>-->
-<!--<th scope="row">1</th>-->
-<!--<td>Mark</td>-->
-<!--</tr>-->
-<!--<tr>-->
-<!--<th scope="row">2</th>-->
-<!--<td>Jacob</td>-->
-<!--</tr>-->
-<!--</tbody>-->
-<!--</table>-->
-
-<!--</div>-->
-<!--</div>-->

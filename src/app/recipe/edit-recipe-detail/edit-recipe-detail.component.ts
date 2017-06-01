@@ -64,6 +64,11 @@ export class EditRecipeDetailComponent implements OnInit {
     control.push(this.buildIngredient(ingredient));
   }
 
+  removeListItem (list: FormArray, index) {
+    //const control = <FormArray>this.recipeDetailForm.controls['ingredients'];
+    list.removeAt(index);
+  }
+
   buildDirection (direction: Direction) {
     return this.fb.group({
       title: [direction.title],
