@@ -35,6 +35,7 @@ import { CategoryModule } from './category/category.module';
 import { CategoryEditComponent } from './category/category-edit/category-edit.component';
 import { CategoryDetailComponent } from './category/category-detail/category-detail.component';
 import { GrowlService } from "./providers/growl.service";
+import { RecipeEditContainerComponent } from "./recipe/recipe-edit-container/recipe-edit-container.component";
 
 
 
@@ -52,11 +53,11 @@ export const firebaseConfig = {
 const routes: Routes = [
   { path: 'user/detail', component: UserDetailComponent, canActivate: [ AuthGuard ] },
 
-  { path: 'recipes/:id/edit', component: RecipeEditComponent, canActivate: [ AuthGuard ] },
+  // { path: 'recipes/:id/edit', component: RecipeEditComponent, canActivate: [ AuthGuard ] },
   { path: 'recipes/:id', component: RecipeDetailComponent, canActivate: [ AuthGuard ] },
   { path: 'recipes', component: RecipeListComponent, canActivate: [ AuthGuard ] },
-  { path: 'recipes/0/create', component: RecipeEditComponent, canActivate: [ AuthGuard ] },
-  { path: 'recipes/:id/edit', component: RecipeEditComponent, canActivate: [ AuthGuard ] },
+  { path: 'recipes/0/create', component: RecipeEditContainerComponent, canActivate: [ AuthGuard ] },
+  { path: 'recipes/:id/edit', component: RecipeEditContainerComponent, canActivate: [ AuthGuard ] },
 
 
   { path: 'categories/:id', component: CategoryDetailComponent, canActivate: [ AuthGuard ] },

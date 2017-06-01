@@ -1,0 +1,20 @@
+
+<div class="container">
+  <p-tabView>
+    <div class="card">
+      <!--<div class="card"  *ngIf="!isLoading">-->
+      <div class="card-header bg-success" style="color:white">
+        Create/Edit Recipe:
+      </div>
+      <div class="card-block">
+        <p-tabPanel header="Summary Info">
+          <recipe-edit id="{{id}}"></recipe-edit>
+        </p-tabPanel>
+        <p-tabPanel header="Detail" [disabled]="!isEdit">
+          <edit-recipe-detail recipeId="{{id}}"></edit-recipe-detail>
+        </p-tabPanel>
+      </div>
+    </div>
+  </p-tabView>
+</div>
+

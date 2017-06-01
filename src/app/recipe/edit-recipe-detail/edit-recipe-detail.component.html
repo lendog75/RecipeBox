@@ -1,0 +1,144 @@
+<br><br>
+<div>
+
+</div>
+<form [formGroup]="recipeDetailForm" novalidate (ngSubmit)="save(recipeDetailForm)">
+  <div class="card">
+    <div class="card-header">
+      <h5 style="width: 50%;display: inline-block;">Ingredients</h5>
+      <i class="fa fa-plus-circle" style="float: right; cursor: pointer; color:green" (click)="addIngredient()"></i>
+    </div>
+    <div class="card-block" formArrayName="ingredients">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"
+              *ngFor="let ingredient of recipeDetailForm.controls.ingredients.controls; let i=index">
+            <div [formGroupName]="i" >
+              <div style="display: inline-block">
+                <label>Amount</label>
+                <input type="text" formControlName="amount" style="width:4em">
+              </div>
+              <div style="display: inline-block">
+                <label>Unit</label>
+                <input type="text" formControlName="unit" style="width:5em">
+              </div>
+              <div style="display: inline-block">
+                <label>Name</label>
+                <input type="text" formControlName="name">
+              </div>
+            </div>
+          </li>
+        </ul>
+    </div>
+  </div>
+  <button type="submit">save</button>
+</form>
+
+
+<!--<table class="table">-->
+<!--<thead>-->
+<!--<tr>-->
+<!--<th>#</th>-->
+<!--<th>Amount</th>-->
+<!--<th>Unit</th>-->
+<!--<th>Name</th>-->
+<!--</tr>-->
+<!--</thead>-->
+<!--<tbody>-->
+<!--<tr *ngFor="let ingredent of recipeDetailForm.controls.ingredents.controls; let i=index">-->
+<!--<th scope="row">1</th>-->
+<!--<td>Mark</td>-->
+<!--<td>Otto</td>-->
+<!--<td>@mdo</td>-->
+<!--</tr>-->
+
+<!--</tbody>-->
+<!--</table>-->
+
+
+<!--Direction-->
+<!--order-->
+<!--title-->
+<!--value-->
+<!--<div class="card">-->
+<!--<h5 class="card-header">Directions</h5>-->
+<!--<div class="card-block">-->
+<!--<table class="table">-->
+<!--<thead>-->
+<!--<tr>-->
+<!--<th>#</th>-->
+<!--<th>Order</th>-->
+<!--<th>Title</th>-->
+<!--<th>Value</th>-->
+<!--</tr>-->
+<!--</thead>-->
+<!--<tbody>-->
+<!--<tr>-->
+<!--<th scope="row">1</th>-->
+<!--<td>Mark</td>-->
+<!--<td>Otto</td>-->
+<!--<td>@mdo</td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<th scope="row">2</th>-->
+<!--<td>Jacob</td>-->
+<!--<td>Thornton</td>-->
+<!--<td>@fat</td>-->
+<!--</tr>-->
+<!--</tbody>-->
+<!--</table>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<br>-->
+
+
+<!--&lt;!&ndash;name&ndash;&gt;-->
+<!--<div class="card">-->
+<!--<h5 class="card-header">Equipment</h5>-->
+<!--<div class="card-block">-->
+<!--<table class="table">-->
+<!--<thead>-->
+<!--<tr>-->
+<!--<th>#</th>-->
+<!--<th>Name</th>-->
+<!--</tr>-->
+<!--</thead>-->
+<!--<tbody>-->
+<!--<tr>-->
+<!--<th scope="row">1</th>-->
+<!--<td>Mark</td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<th scope="row">2</th>-->
+<!--<td>Jacob</td>-->
+<!--</tr>-->
+<!--</tbody>-->
+<!--</table>-->
+<!--</div>-->
+<!--</div>-->
+<!--<br>-->
+<!--&lt;!&ndash;value&ndash;&gt;-->
+<!--<div class="card">-->
+<!--<h5 class="card-header">Tips</h5>-->
+<!--<div class="card-block">-->
+<!--<table class="table">-->
+<!--<thead>-->
+<!--<tr>-->
+<!--<th>#</th>-->
+<!--<th>Value</th>-->
+<!--</tr>-->
+<!--</thead>-->
+<!--<tbody>-->
+<!--<tr>-->
+<!--<th scope="row">1</th>-->
+<!--<td>Mark</td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<th scope="row">2</th>-->
+<!--<td>Jacob</td>-->
+<!--</tr>-->
+<!--</tbody>-->
+<!--</table>-->
+
+<!--</div>-->
+<!--</div>-->

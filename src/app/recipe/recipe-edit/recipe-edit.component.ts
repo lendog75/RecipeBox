@@ -1,22 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Recipe } from '../recipe';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { RecipeService } from '../../providers/recipe.service';
 import { ActivatedRoute } from '@angular/router';
-import { GrowlService, growlSeverity } from "../../providers/growl.service";
+import { GrowlService, growlSeverity } from '../../providers/growl.service';
 
 @Component({
+  selector: 'recipe-edit',
   templateUrl: './recipe-edit.component.html',
   styleUrls: ['./recipe-edit.component.scss']
 })
 export class RecipeEditComponent implements OnInit {
 
-  public recipeForm: FormGroup;
-  public submitted: boolean;
-  recipe: Recipe;
-  id: string;
-  isEdit: boolean;
-  isLoading = true;
+  @Input() id: string;
+
+
+   public recipeForm: FormGroup;
+   public submitted: boolean;
+   recipe: Recipe;
+   // id: string;
+   isEdit: boolean;
+   isLoading = true;
 
   constructor (private recipeSvc: RecipeService,
                private route: ActivatedRoute,
