@@ -1,28 +1,20 @@
-import { RecipeEditComponent } from '../recipe-admin/recipe-edit/recipe-edit.component';
+
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import {PanelModule, TabViewModule, RatingModule} from 'primeng/primeng';
+
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { RecipeCardComponent } from './recipe-card/recipe-card.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-import { RouterModule } from '@angular/router';
-import {PanelModule, TabViewModule, RatingModule} from 'primeng/primeng';
-import { RecipeEditContainerComponent } from '../recipe-admin/recipe-edit-container/recipe-edit-container.component';
-import { EditRecipeOtherComponent } from '../recipe-admin/edit-recipe-other/edit-recipe-other.component';
-import { EditRecipeDirectionsComponent } from '../recipe-admin/edit-recipe-directions/edit-recipe-directions.component';
-import { EditRecipeIngredientsComponent } from '../recipe-admin/edit-recipe-ingredients/edit-recipe-ingredients.component';
+import { RecipeRoutingModule } from './recipe-routing.module';
 
 @NgModule({
   declarations: [
-    RecipeEditComponent,
     RecipeDetailComponent,
     RecipeListComponent,
     RecipeCardComponent,
-    RecipeEditContainerComponent,
-    EditRecipeOtherComponent,
-    EditRecipeDirectionsComponent,
-    EditRecipeIngredientsComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,18 +23,13 @@ import { EditRecipeIngredientsComponent } from '../recipe-admin/edit-recipe-ingr
     RatingModule,
     TabViewModule,
     RouterModule,
-    PanelModule
+    PanelModule,
+    RecipeRoutingModule
   ],
   exports: [
-    RecipeEditComponent,
-    RecipeEditContainerComponent,
     RecipeDetailComponent,
     RecipeListComponent,
     RecipeCardComponent,
-  ],
-  providers: [
-   // AuthService,
-   // AngularFireDatabase,
-  ],
+  ]
 })
 export class RecipeModule { }

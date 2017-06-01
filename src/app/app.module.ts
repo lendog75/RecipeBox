@@ -9,14 +9,10 @@ import { HomeComponent } from './home/home.component';
 import {AuthService} from './providers/auth.service';
 import { NavbarTopComponent } from './navbar-top/navbar-top.component';
 import {AngularFireModule} from 'angularfire2';
-import {RouterModule, Routes} from '@angular/router';
 import {AuthGuard} from './providers/auth-guard.service';
 import {AngularFireAuth} from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { RecipeListComponent } from './recipe/recipe-list/recipe-list.component';
-import { RecipeDetailComponent } from './recipe/recipe-detail/recipe-detail.component';
-import { RecipeEditComponent } from './recipe-admin/recipe-edit/recipe-edit.component';
-import { UserDetailComponent } from './user/user-detail/user-detail.component';
+
 
 import {AccordionModule} from 'primeng/components/accordion/accordion';
 import {
@@ -32,12 +28,10 @@ import { RecipeModule } from './recipe/recipe.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CategoryService } from './providers/category.service';
 import { CategoryModule } from './category/category.module';
-import { CategoryEditComponent } from './category/category-edit/category-edit.component';
-import { CategoryDetailComponent } from './category/category-detail/category-detail.component';
-import { RecipeEditContainerComponent } from './recipe-admin/recipe-edit-container/recipe-edit-container.component';
 import { GrowlService } from './providers/growl.service';
-
-
+import { AppRoutingModule } from './app-routing.module';
+import { RecipeAdminModule } from './recipe-admin/recipe-admin.module';
+import { UserModule } from './user/user.module';
 
 
 // Must export the config
@@ -51,32 +45,11 @@ export const firebaseConfig = {
 };
 
 
-const routes: Routes = [
-  { path: 'user/detail', component: UserDetailComponent, canActivate: [ AuthGuard ] },
-
-  // { path: 'recipes/:id/edit', component: RecipeEditComponent, canActivate: [ AuthGuard ] },
-  { path: 'recipes/:id', component: RecipeDetailComponent, canActivate: [ AuthGuard ] },
-  { path: 'recipes', component: RecipeListComponent, canActivate: [ AuthGuard ] },
-  { path: 'recipes/0/create', component: RecipeEditContainerComponent, canActivate: [ AuthGuard ] },
-  { path: 'recipes/:id/edit', component: RecipeEditContainerComponent, canActivate: [ AuthGuard ] },
-
-
-  { path: 'categories/:id', component: CategoryDetailComponent, canActivate: [ AuthGuard ] },
-  { path: 'categories/0/create', component: CategoryEditComponent, canActivate: [ AuthGuard ] },
-  { path: 'categories/:id/edit', component: CategoryEditComponent, canActivate: [ AuthGuard ] },
-
-  { path: '', component: HomeComponent, canActivate: [ AuthGuard ]  },
-  { path: 'login', component: LoginComponent }
-];
-
-
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     HomeComponent,
     NavbarTopComponent,
-    UserDetailComponent,
     SearchBoxComponent,
     AppFooterComponent,
     NavbarMobileComponent
@@ -86,7 +59,6 @@ const routes: Routes = [
     FormsModule,
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    RouterModule.forRoot(routes),
     MessagesModule,
     BrowserAnimationsModule,
 
@@ -99,7 +71,10 @@ const routes: Routes = [
 
 
     RecipeModule,
-    CategoryModule
+    RecipeAdminModule,
+    CategoryModule,
+    UserModule,
+    AppRoutingModule,
   ],
   providers: [
     AuthService,

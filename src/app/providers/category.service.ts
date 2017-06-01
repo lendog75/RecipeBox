@@ -5,7 +5,7 @@ import {
 } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 
-import { Category } from '../category/category';
+import { Category } from '../shared/model/category';
 
 @Injectable()
 export class CategoryService {

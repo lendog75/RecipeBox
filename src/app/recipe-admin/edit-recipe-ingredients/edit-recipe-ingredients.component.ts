@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 
 import { RecipeService } from '../../providers/recipe.service';
-import { Ingredient, RecipeDetail } from "../../shared/model/recipe-detail";
+import { Ingredient, RecipeDetail } from '../../shared/model/recipe-detail';
 
 @Component({
   selector: 'edit-recipe-ingredients',

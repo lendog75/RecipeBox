@@ -6,7 +6,7 @@ import { CategoryDetailComponent } from './category-detail/category-detail.compo
 import { RecipeModule } from '../recipe/recipe.module';
 import { RouterModule } from '@angular/router';
 import { CategoryListComponent } from './category-list/category-list.component';
-
+import { CategoryRoutingModule } from './category-routing.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,8 @@ import { CategoryListComponent } from './category-list/category-list.component';
     BrowserModule,
     ReactiveFormsModule,
     RouterModule,
-    RecipeModule
+    RecipeModule,
+    CategoryRoutingModule
   ],
   exports: [
     CategoryListComponent
