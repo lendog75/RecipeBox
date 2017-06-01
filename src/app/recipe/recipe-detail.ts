@@ -10,8 +10,6 @@ export class RecipeDetail {
       directions,
       otherStuff,
       tips
-
-
     );
   }
 
@@ -32,7 +30,6 @@ export class Ingredient  {
 }
 
 export class Direction {
-  order: number;
   title: string;
   value: string;
 }

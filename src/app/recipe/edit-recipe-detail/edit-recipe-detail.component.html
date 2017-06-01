@@ -1,35 +1,105 @@
-<br><br>
-<div>
 
-</div>
 <form [formGroup]="recipeDetailForm" novalidate (ngSubmit)="save(recipeDetailForm)">
-  <div class="card">
-    <div class="card-header">
+  <!--  Ingredients -->
+  <div class="card card-outline-primary">
+    <div class="card-header bg-primary">
       <h5 style="width: 50%;display: inline-block;">Ingredients</h5>
       <i class="fa fa-plus-circle" style="float: right; cursor: pointer; color:green" (click)="addIngredient()"></i>
     </div>
     <div class="card-block" formArrayName="ingredients">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"
-              *ngFor="let ingredient of recipeDetailForm.controls.ingredients.controls; let i=index">
-            <div [formGroupName]="i" >
-              <div style="display: inline-block">
-                <label>Amount</label>
-                <input type="text" formControlName="amount" style="width:4em">
-              </div>
-              <div style="display: inline-block">
-                <label>Unit</label>
-                <input type="text" formControlName="unit" style="width:5em">
-              </div>
-              <div style="display: inline-block">
-                <label>Name</label>
-                <input type="text" formControlName="name">
-              </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"
+            *ngFor="let ingredient of recipeDetailForm.controls.ingredients.controls; let i=index">
+          <div [formGroupName]="i" >
+            <div class="form-group">
+              <label>Amount</label>
+              <input type="text" formControlName="amount" style="width:4em">
             </div>
-          </li>
-        </ul>
+            <div class="inlineFormInputGroup">
+              <label>Unit</label>
+              <input type="text" formControlName="unit" style="width:5em">
+            </div>
+            <div class="inlineFormInputGroup">
+              <label>Name</label>
+              <input type="text" formControlName="name">
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
+
+  <br><br>
+
+  <!--  Directions -->
+  <div class="card card-outline-primary">
+    <div class="card-header bg-primary">
+      <h5 style="width: 50%;display: inline-block;">Directions</h5>
+      <i class="fa fa-plus-circle" style="float: right; cursor: pointer; color:green" (click)="addDirection()"></i>
+    </div>
+    <div class="card-block" formArrayName="directions">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"
+            *ngFor="let direction of recipeDetailForm.controls.directions.controls; let d=index">
+          <div [formGroupName]="d" >
+            <div class="form-group">
+              <label>Title</label>
+              <input class="form-control" type="text" formControlName="title">
+            </div>
+            <div class="form-group">
+              <label>Value</label>
+              <textarea class="form-control" type="text" formControlName="value" rows="5"></textarea>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <br><br>
+
+
+  <!--  Tips -->
+  <div class="card card-outline-primary">
+    <div class="card-header bg-primary">
+      <h5 style="width: 50%;display: inline-block;">Tips</h5>
+      <i class="fa fa-plus-circle" style="float: right; cursor: pointer; color:green" (click)="addTip()"></i>
+    </div>
+    <div class="card-block" formArrayName="tips">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"
+            *ngFor="let tip of recipeDetailForm.controls.tips.controls; let d=index">
+          <div [formGroupName]="d" class="form-group">
+              <textarea class="form-control" type="text" formControlName="value" rows="5"></textarea>
+            </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+<br><br>
+
+  <!--  Equipment -->
+  <div class="card card-outline-primary">
+    <div class="card-header bg-primary">
+      <h5 style="width: 50%;display: inline-block;">Equipment</h5>
+      <i class="fa fa-plus-circle" style="float: right; cursor: pointer; color:green" (click)="addItem()"></i>
+    </div>
+    <div class="card-block" formArrayName="otherStuff">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"
+            *ngFor="let item of recipeDetailForm.controls.otherStuff.controls; let d=index">
+          <div [formGroupName]="d" class="form-group">
+              <input class="form-control" type="text" formControlName="name">
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
   <button type="submit">save</button>
 </form>
 
