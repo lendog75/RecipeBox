@@ -1,4 +1,4 @@
-import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
+import { RecipeEditComponent } from '../recipe-admin/recipe-edit/recipe-edit.component';
 import { NgModule } from '@angular/core';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
@@ -8,10 +8,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { RouterModule } from '@angular/router';
 import {PanelModule, TabViewModule, RatingModule} from 'primeng/primeng';
-import { RecipeEditContainerComponent } from './recipe-edit-container/recipe-edit-container.component';
-import { EditRecipeOtherComponent } from './edit-recipe-other/edit-recipe-other.component';
-import { EditRecipeDirectionsComponent } from './edit-recipe-directions/edit-recipe-directions.component';
-import { EditRecipeIngredientsComponent } from './edit-recipe-ingredients/edit-recipe-ingredients.component';
+import { RecipeEditContainerComponent } from '../recipe-admin/recipe-edit-container/recipe-edit-container.component';
+import { EditRecipeOtherComponent } from '../recipe-admin/edit-recipe-other/edit-recipe-other.component';
+import { EditRecipeDirectionsComponent } from '../recipe-admin/edit-recipe-directions/edit-recipe-directions.component';
+import { EditRecipeIngredientsComponent } from '../recipe-admin/edit-recipe-ingredients/edit-recipe-ingredients.component';
 
 @NgModule({
   declarations: [

@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from "@angular/forms";
-import { RecipeDetail, Stuff, Tip } from "../recipe-detail";
-import { RecipeService } from "../../providers/recipe.service";
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+
+import { RecipeService } from '../../providers/recipe.service';
+import { RecipeDetail, Stuff, Tip } from '../../shared/model/recipe-detail';
 
 @Component({
   selector: 'edit-recipe-other',

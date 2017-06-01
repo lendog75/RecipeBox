@@ -15,7 +15,7 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { RecipeListComponent } from './recipe/recipe-list/recipe-list.component';
 import { RecipeDetailComponent } from './recipe/recipe-detail/recipe-detail.component';
-import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
+import { RecipeEditComponent } from './recipe-admin/recipe-edit/recipe-edit.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 
 import {AccordionModule} from 'primeng/components/accordion/accordion';
@@ -34,8 +34,9 @@ import { CategoryService } from './providers/category.service';
 import { CategoryModule } from './category/category.module';
 import { CategoryEditComponent } from './category/category-edit/category-edit.component';
 import { CategoryDetailComponent } from './category/category-detail/category-detail.component';
-import { GrowlService } from "./providers/growl.service";
-import { RecipeEditContainerComponent } from "./recipe/recipe-edit-container/recipe-edit-container.component";
+import { RecipeEditContainerComponent } from './recipe-admin/recipe-edit-container/recipe-edit-container.component';
+import { GrowlService } from './providers/growl.service';
+
 
 
 

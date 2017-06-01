@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Recipe } from '../recipe';
+import { Recipe } from '../../shared/model/recipe';
 @Component({
   selector: '[recipe-card]',
   templateUrl: './recipe-card.component.html',

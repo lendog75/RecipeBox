@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { RecipeService } from '../../providers/recipe.service';
 import { Observable } from 'rxjs/Observable';
-import { Recipe } from '../recipe';
+import { Recipe } from '../../shared/model/recipe';
 import { ActivatedRoute } from '@angular/router';
 import { CategoryService } from '../../providers/category.service';
 

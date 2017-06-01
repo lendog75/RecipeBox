@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
-import { Direction, RecipeDetail } from '../recipe-detail';
 import { RecipeService } from '../../providers/recipe.service';
+import { Direction, RecipeDetail } from '../../shared/model/recipe-detail';
 
 @Component({
   selector: 'edit-recipe-directions',

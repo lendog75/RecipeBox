@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipeService } from '../../providers/recipe.service';
-import { Recipe } from '../recipe';
+import { Recipe } from '../../shared/model/recipe';
 import { ActivatedRoute } from '@angular/router';
-import { RecipeDetail } from '../recipe-detail';
+import { RecipeDetail } from '../../shared/model/recipe-detail';
 
 @Component({
   templateUrl: './recipe-detail.component.html',

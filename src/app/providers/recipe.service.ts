@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 
-import { Recipe } from '../recipe/recipe';
-import { RecipeDetail } from '../recipe/recipe-detail';
+import { Recipe } from '../shared/model/recipe';
+import { RecipeDetail } from '../shared/model/recipe-detail';
 import { Router } from "@angular/router";
 
 @Injectable()
