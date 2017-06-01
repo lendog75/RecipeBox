@@ -9,7 +9,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {PanelModule, TabViewModule, RatingModule} from 'primeng/primeng';
 import { RecipeEditContainerComponent } from './recipe-edit-container/recipe-edit-container.component';
-import { EditRecipeDetailComponent } from './edit-recipe-detail/edit-recipe-detail.component';
+import { EditRecipeOtherComponent } from './edit-recipe-other/edit-recipe-other.component';
+import { EditRecipeDirectionsComponent } from './edit-recipe-directions/edit-recipe-directions.component';
+import { EditRecipeIngredientsComponent } from './edit-recipe-ingredients/edit-recipe-ingredients.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { EditRecipeDetailComponent } from './edit-recipe-detail/edit-recipe-deta
     RecipeListComponent,
     RecipeCardComponent,
     RecipeEditContainerComponent,
-    EditRecipeDetailComponent,
+    EditRecipeOtherComponent,
+    EditRecipeDirectionsComponent,
+    EditRecipeIngredientsComponent,
   ],
   imports: [
     BrowserModule,
