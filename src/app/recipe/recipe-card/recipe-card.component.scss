@@ -1,36 +1,18 @@
 @import '../../../assets/themes/bootstrap/scss/_variables';
 
-a {
-  margin: 0;
-  font-weight: bold;
-}
 
-.recipe-actions {
- padding: 0;
-
-  li {
-    margin: 1em;
-    cursor: pointer;
-
-    .edit {
-      color: $blue;
-    }
-
-    .download  {
-      //color: $blue;
-    }
-
-    .delete {
-      color: $red;
-    }
+.card-block {
+  a {
+    margin: 0;
+    font-weight: bold;
   }
-}
 
-/deep/ .ui-panel-titlebar {
-  background-color: gray;
-}
+  .truncate {
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
-/deep/ .ui-panel {
-  background-color: silver;
 }
 

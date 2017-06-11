@@ -5,15 +5,14 @@
       <h3> {{category.title}}</h3>
       <div style="display: inline-flex">
         <span> {{category.description}}</span>
-        <img src="../../assets/img/categories/{{category.shortTitle}}.jpg" class="img-fluid hidden-md-down" alt="picture of space"
-          style="height:15em">
+        <img src="../../assets/img/categories/{{category.shortTitle}}.jpg" class="img-fluid hidden-md-down"
+             alt="picture of space"
+             style="height:15em">
       </div>
       <br>
       <button [routerLink]="['/categories', '-KlKFkGJ0nxZDlK7Xtpe']" class="btn btn-primary">See them all</button>
+      <hr>
     </div>
-
   </div>
-  <hr>
-
-
-<recipe-list categoryId="-KlKFkGJ0nxZDlK7Xtpe"></recipe-list>
+  <recipe-list categoryId="-KlKFkGJ0nxZDlK7Xtpe"></recipe-list>
+</div>
