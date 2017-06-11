@@ -4,7 +4,7 @@
     <div class="col col-sm-12 col-md-12 col-lg-12" *ngIf="category">
       <h3> {{category.title}}</h3>
       <div style="display: inline-flex">
-        <span> {{category.description}}</span>
+        <span class="hidden-md-down"> {{category.description}}</span>
         <img src="../../assets/img/categories/{{category.shortTitle}}.jpg" class="img-fluid hidden-md-down"
              alt="picture of space"
              style="height:15em">
