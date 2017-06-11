@@ -1,37 +1,33 @@
-<form [formGroup]="recipeDetailForm" novalidate (ngSubmit)="save(recipeDetailForm)">
-  <!--  Tips -->
-  <h5 style="width: 50%;display: inline-block;">Tips</h5>
-  <i class="fa fa-plus-circle" style="float: right; cursor: pointer; color:green" (click)="addTip()"></i>
+<!--<form [formGroup]="recipeDetailForm" novalidate (ngSubmit)="save(recipeDetailForm)">-->
+  <!--&lt;!&ndash;  Tips &ndash;&gt;-->
+  <!--<h5 style="width: 50%;display: inline-block;">Tips</h5>-->
+  <!--<i class="fa fa-plus-circle" style="float: right; cursor: pointer; color:green" (click)="addTip()"></i>-->
+    <!--<ul class="list-group list-group-flush" formArrayName="tips">-->
+      <!--<li class="list-group-item"-->
+          <!--*ngFor="let tip of getTips(recipeDetailForm); let i=index">-->
+        <!--<div [formGroupName]="i" class="form-group">-->
+          <!--<a (click)="removeListItem(recipeDetailForm.get('tips'), i)" style="float: right;">remove</a>-->
+          <!--<textarea class="form-control" type="text" formControlName="tips.value" rows="5"></textarea>-->
+        <!--</div>-->
+      <!--</li>-->
+    <!--</ul>-->
+  <!--<hr>-->
+  <!--<br><br>-->
+  <!--&lt;!&ndash;  Equipment &ndash;&gt;-->
+  <!--<h5 style="width: 50%;display: inline-block;">Equipment</h5>-->
+  <!--<i class="fa fa-plus-circle" style="float: right; cursor: pointer; color:green" (click)="addItem()"></i>-->
+  <!--&lt;!&ndash;<div >&ndash;&gt;-->
+    <!--<ul class="list-group list-group-flush" formArrayName="otherStuff" >-->
+      <!--<li class="list-group-item"-->
+          <!--*ngFor="let item of getEquipment(recipeDetailForm); let i=index">-->
+        <!--<div [formGroupName]="i" class="form-group">-->
+          <!--<a (click)="removeListItem(recipeDetailForm.get('otherStuff'), i)" style="float: right;">remove</a>-->
+          <!--<input class="form-control" type="text" formControlName="name">-->
+        <!--</div>-->
+      <!--</li>-->
+    <!--</ul>-->
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
 
-  <div formArrayName="tips">
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item"
-          *ngFor="let tip of recipeDetailForm.controls.tips.controls; let i=index">
-        <div [formGroupName]="i" class="form-group">
-          <a (click)="removeListItem(recipeDetailForm.get('tips'), i)" style="float: right;">remove</a>
-          <textarea class="form-control" type="text" formControlName="value" rows="5"></textarea>
-        </div>
-      </li>
-    </ul>
-  </div>
-
-  <hr>
-  <br><br>
-  <!--  Equipment -->
-  <h5 style="width: 50%;display: inline-block;">Equipment</h5>
-  <i class="fa fa-plus-circle" style="float: right; cursor: pointer; color:green" (click)="addItem()"></i>
-  <div formArrayName="otherStuff">
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item"
-          *ngFor="let item of recipeDetailForm.controls.otherStuff.controls; let i=index">
-        <div [formGroupName]="i" class="form-group">
-          <a (click)="removeListItem(recipeDetailForm.get('otherStuff'), i)" style="float: right;">remove</a>
-          <input class="form-control" type="text" formControlName="name">
-        </div>
-      </li>
-    </ul>
-  </div>
-
-  <button class="btn btn-success" type="submit">save</button>
-</form>
+  <!--<button class="btn btn-success" type="submit">save</button>-->
+<!--</form>-->
 
