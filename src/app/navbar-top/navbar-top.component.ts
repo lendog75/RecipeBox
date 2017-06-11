@@ -3,7 +3,7 @@ import { AuthService } from '../providers/auth.service';
 import { IUser } from '../shared/model/user';
 import { Router } from '@angular/router';
 import { CategoryService } from '../providers/category.service';
-import { Observable } from 'rxjs/observable';
+import { Observable } from 'rxjs';
 import { Category } from '../shared/model/category';
 
 @Component({
