@@ -1,7 +1,7 @@
 {
 "version": 3,
 "mappings": "AAEA,GAAI;EACF,OAAO,EAAE,KAAK;;AAGhB,cAAc;EACZ,KAAK,EC24BuB,IAAM",
-"sources": ["navbar-mobile.component.scss","../../assets/themes/bootstrap/scss/_variables.scss"],
+"sources": ["navbar-mobile.component.scss","../../assets/themes/_variables.scss"],
 "names": [],
 "file": "navbar-mobile.component.css"
 }

@@ -7,48 +7,43 @@
 
 // Core variables and mixins
 @import "variables";
-@import "mixins";
-@import "custom";
+@import "../../themes/bootstrap/scss/mixins";
+@import "../../themes/bootstrap/scss/custom";
 
 // Reset and dependencies
-@import "normalize";
-@import "print";
+@import "../../themes/bootstrap/scss/normalize";
+@import "../../themes/bootstrap/scss/print";
 
 // Core CSS
-@import "reboot";
-@import "type";
-@import "images";
-@import "code";
-@import "grid";
-@import "tables";
-@import "forms";
-@import "buttons";
+@import "../../themes/bootstrap/scss/reboot";
+@import "../../themes/bootstrap/scss/type";
+@import "../../themes/bootstrap/scss/images";
+@import "../../themes/bootstrap/scss/code";
+@import "../../themes/bootstrap/scss/grid";
+@import "../../themes/bootstrap/scss/tables";
+@import "../../themes/bootstrap/scss/forms";
+@import "../../themes/bootstrap/scss/buttons";
 
 // Components
-@import "transitions";
-@import "dropdown";
-@import "button-group";
-@import "input-group";
-@import "custom-forms";
-@import "nav";
-@import "navbar";
-@import "card";
-@import "breadcrumb";
-@import "pagination";
-@import "badge";
-@import "jumbotron";
-@import "alert";
-@import "progress";
-@import "media";
-@import "list-group";
-@import "responsive-embed";
-@import "close";
+@import "../../themes/bootstrap/scss/transitions";
+@import "../../themes/bootstrap/scss/dropdown";
+@import "../../themes/bootstrap/scss/button-group";
+@import "../../themes/bootstrap/scss/input-group";
+@import "../../themes/bootstrap/scss/custom-forms";
+@import "../../themes/bootstrap/scss/nav";
+@import "../../themes/bootstrap/scss/navbar";
+@import "../../themes/bootstrap/scss/card";
+@import "../../themes/bootstrap/scss/breadcrumb";
+@import "../../themes/bootstrap/scss/pagination";
+@import "../../themes/bootstrap/scss/badge";
+@import "../../themes/bootstrap/scss/jumbotron";
+@import "../../themes/bootstrap/scss/alert";
+@import "../../themes/bootstrap/scss/progress";
+@import "../../themes/bootstrap/scss/media";
+@import "../../themes/bootstrap/scss/list-group";
+@import "../../themes/bootstrap/scss/responsive-embed";
+@import "../../themes/bootstrap/scss/close";
 
-// Components w/ JavaScript
-@import "modal";
-@import "tooltip";
-@import "popover";
-@import "carousel";
 
 // Utility classes
-@import "utilities";
+@import "../../themes/bootstrap/scss/utilities";

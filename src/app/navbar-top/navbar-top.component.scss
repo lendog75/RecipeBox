@@ -1,4 +1,4 @@
-@import '../../assets/themes/bootstrap/scss/_variables';
+@import '../../assets/themes/variables';
 
 h1.brand {
   flex: 1;
@@ -44,7 +44,7 @@ h1.brand {
       }
     }
     a, li {
-      color: $white;
+      color: white;
     }
   }
 }

@@ -1,3 +1,6 @@
+.card-block a {
+  margin: 0;
+  font-weight: bold; }
 .card-block .truncate {
   width: 250px;
   white-space: nowrap;

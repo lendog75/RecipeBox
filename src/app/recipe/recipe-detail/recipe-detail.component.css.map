@@ -1,7 +1,7 @@
 {
 "version": 3,
 "mappings": "AAGE,WAAG;EACD,aAAa,EAAE,CAAC;EAChB,cAAc,EAAE,SAAS;AAE3B,cAAM;EACJ,WAAW,EAAE,GAAG;EAChB,UAAU,EAAE,CAAC;EACb,cAAc,EAAE,SAAS;;AAI7B,EAAG;EACD,gBAAgB,ECizBe,OAAqB;EDhzBpD,aAAa,EAAE,iBAAiB;EAChC,MAAM,EAAE,GAAG;EACX,gBAAgB,EAAE,gDAAgD;EAClE,MAAM,EAAE,GAAG;;AAGb,EAAG;EACD,UAAU,EAAE,IAAI",
-"sources": ["recipe-detail.component.scss","../../../assets/themes/bootstrap/scss/_variables.scss"],
+"sources": ["recipe-detail.component.scss","../../../assets/themes/_variables.scss"],
 "names": [],
 "file": "recipe-detail.component.css"
 }
