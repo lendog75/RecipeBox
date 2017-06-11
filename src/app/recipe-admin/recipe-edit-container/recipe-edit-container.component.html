@@ -10,6 +10,7 @@
         <p-tabPanel header="Summary Info">
           <recipe-edit id="{{id}}"></recipe-edit>
         </p-tabPanel>
+
         <p-tabPanel header="Ingredients" [disabled]="!isEdit">
           <edit-recipe-ingredients recipeId="{{id}}"></edit-recipe-ingredients>
         </p-tabPanel>
@@ -20,6 +21,10 @@
 
         <p-tabPanel header="Other" [disabled]="!isEdit">
           <edit-recipe-other recipeId="{{id}}"></edit-recipe-other>
+        </p-tabPanel>
+
+        <p-tabPanel header="Categories" [disabled]="!isEdit">
+          <edit-recipe-categories recipeId="{{id}}"></edit-recipe-categories>
         </p-tabPanel>
       </div>
     </div>

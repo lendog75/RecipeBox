@@ -1,0 +1,19 @@
+<h5>
+  CATEGORIES
+</h5>
+
+<form novalidate (ngSubmit)="save(selectedCategories)">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let category of categories;">
+      <div class="form-check">
+        <label class="form-check-label">
+          <p-checkbox name="groupname" value="{{category.key}}" [(ngModel)]="selectedCategories"></p-checkbox>
+          {{ category.shortTitle}}
+        </label>
+      </div>
+    </li>
+  </ul>
+  <button class="btn btn-success" type="submit">Save</button>
+</form>
+
+

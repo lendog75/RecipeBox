@@ -14,10 +14,10 @@ export class RecipeDetail {
   }
 
   constructor (public $key: string,
-               public ingredients: Ingredient[],
-               public  directions: Direction[],
-               public otherStuff: Stuff[],
-               public tips: Tip[],
+               public ingredients: Ingredient[] = [],
+               public  directions: Direction[] = [],
+               public otherStuff: Stuff[] = [],
+               public tips: Tip[] = [],
                ) {}
 }
 

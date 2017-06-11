@@ -33,6 +33,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RecipeAdminModule } from './recipe-admin/recipe-admin.module';
 import { UserModule } from './user/user.module';
 import { RecipeResolver } from './providers/recipe.resolver';
+import { RecipesPerCategoryService } from "./providers/recipes-per-category.service";
 
 
 // Must export the config
@@ -84,7 +85,8 @@ export const firebaseConfig = {
     RecipeService,
     CategoryService,
     GrowlService,
-    RecipeResolver
+    RecipeResolver,
+    RecipesPerCategoryService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,6 +1,6 @@
 <div class="hidden-sm-down">
   <div class="heading">
-    <h1 class="brand"><a href="/">RecipeBOX</a></h1>
+    <h1 class="brand"><a routerLink="/">RecipeBOX</a></h1>
     <i class="fa fa-sign-out signout " (click)="logout()"></i>
     <i routerLink="/user/detail" class="fa fa-user-circle fa-2x user"></i>
   </div>
@@ -8,19 +8,20 @@
   <nav class="nav-top">
     <ul class="list-inline">
       <li class="list-inline-item">Top Categories:</li>
-      <li class="list-inline-item"  routerLink="/"><a>Italian</a></li>
-      <li class="list-inline-item"  routerLink="/"><a>Mexican</a></li>
-      <li class="list-inline-item"  routerLink="/"><a>Indian</a></li>
-      <li class="list-inline-item"  routerLink="/categories/0/create"><a>Create Category</a></li>
+      <li class="list-inline-item"  routerLink="/categories/-KlKFSCV1U1RMhi6Ck0-"><a>Italian</a></li>
+      <li class="list-inline-item"  routerLink="/categories/-KlKFUoBK45066iquJvO"><a>Mexican</a></li>
+      <li class="list-inline-item"  routerLink="/categories/-KlKFWK8sXwIf8713MLH"><a>Indian</a></li>
+      <!--<li class="list-inline-item"  routerLink="/categories/0/create"><a>Create Category</a></li>-->
     </ul>
 
-    <form class="form-inline">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for...">
+    <form class="form-inline" (ngSubmit)="onSearchByCategory(searchByCategoryForm.value)" #searchByCategoryForm="ngForm">
+        <select class="form-control" id="categorySelect" name="categorySelect" ngModel>
+          <option value="">Select Category</option>
+          <option *ngFor="let category of categories | async" [value]="category.key">{{category.title}}</option>
+        </select>
         <span class="input-group-btn">
-        <button class="btn btn-success" type="button">Go!</button>
+        <button class="btn btn-success" type="submit">Go!</button>
       </span>
-      </div>
     </form>
   </nav>
 </div>

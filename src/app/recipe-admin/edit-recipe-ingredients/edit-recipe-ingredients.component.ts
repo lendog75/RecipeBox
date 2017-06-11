@@ -3,6 +3,7 @@ import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 
 import { RecipeService } from '../../providers/recipe.service';
 import { Ingredient, RecipeDetail } from '../../shared/model/recipe-detail';
+import { forEach } from "@angular/router/src/utils/collection";
 
 @Component({
   selector: 'edit-recipe-ingredients',
@@ -27,9 +28,12 @@ export class EditRecipeIngredientsComponent implements OnInit {
       this.recipeSvc.getRecipeDetails(this.recipeId).subscribe(x => {
         this.recipeDetail = x;
 
+
         this.recipeDetail.ingredients.forEach(i => {
           this.addIngredient(i);
         });
+
+
       });
     }
   }
