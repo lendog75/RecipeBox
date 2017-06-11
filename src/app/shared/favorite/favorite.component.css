@@ -1,0 +1,11 @@
+span {
+  border-radius: 1em;
+  padding: .5em;
+  background-color: gray; }
+  span i {
+    color: #fff; }
+
+span.active {
+  background-color: #ff5a00; }
+
+/*# sourceMappingURL=favorite.component.css.map */
