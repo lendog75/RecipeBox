@@ -1,24 +1,10 @@
-
 <div class="card-img-overlay" style="height:8em;">
-
-
-  <favorite></favorite>
-
+  <favorite [recipeId]="recipe.key"></favorite>
 </div>
 <img class="card-img-top img-fluid" src="{{recipe.imagePath + '?raw=true'}}raw=true" alt="Card image cap">
-
 <div class="card-block">
-
   <h4><a [routerLink]="['/recipes',recipe.key]">{{ recipe.title }}</a></h4>
   <p class="subheader">by: lenny reed</p>
   <p-rating [ngModel]="recipe.rating" readonly="true" stars="5" [cancel]="false"></p-rating>
-
 </div>
-
-
-
-<!--//BORDER-->
-<!--border-radius: 1em;-->
-<!--border: red solid .1em;-->
-<!--padding: .25em;-->
 

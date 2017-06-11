@@ -3,5 +3,7 @@ export interface IUser {
   // userName: string;
   // isAdmin: boolean;
   displayName: string;
-
+  email: string;
+  photoURL: string;
+  uid: string;
 }
