@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { GrowlService } from '../../providers/growl.service';
+import { GrowlService } from '../../shared/providers/growl.service';
 import { ActivatedRoute } from '@angular/router';
-import { RecipeService } from '../../providers/recipe.service';
+import { RecipeService } from '../../shared/providers/recipe.service';
 
 @Component({
   selector: 'recipe-edit-container',

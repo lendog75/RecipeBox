@@ -3,9 +3,10 @@ import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
-import { AuthGuard } from '../providers/auth-guard.service';
+import { AuthGuard } from '../shared/providers/auth-guard.service';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
-import { RecipeResolver } from '../providers/recipe.resolver';
+import { RecipeResolver } from '../shared/providers/recipe.resolver';
+import { SharedModule } from '../shared/shared.module';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
+    SharedModule,
     RouterModule.forChild(routes),
   ],
   exports: [

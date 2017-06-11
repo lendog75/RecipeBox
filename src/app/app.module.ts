@@ -6,10 +6,10 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './user/login/login.component';
 import { HomeComponent } from './home/home.component';
-import {AuthService} from './providers/auth.service';
+import {AuthService} from './shared/providers/auth.service';
 import { NavbarTopComponent } from './navbar-top/navbar-top.component';
 import {AngularFireModule} from 'angularfire2';
-import {AuthGuard} from './providers/auth-guard.service';
+import {AuthGuard} from './shared/providers/auth-guard.service';
 import {AngularFireAuth} from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 
@@ -22,18 +22,21 @@ import {
 
 import { SearchBoxComponent } from './search-box/search-box.component';
 import { AppFooterComponent } from './app-footer/app-footer.component';
-import { RecipeService } from './providers/recipe.service';
+
+
 import { NavbarMobileComponent } from './navbar-mobile/navbar-mobile.component';
 import { RecipeModule } from './recipe/recipe.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CategoryService } from './providers/category.service';
+import { CategoryService } from './shared/providers/category.service';
 import { CategoryModule } from './category/category.module';
-import { GrowlService } from './providers/growl.service';
+import { GrowlService } from './shared/providers/growl.service';
 import { AppRoutingModule } from './app-routing.module';
 import { RecipeAdminModule } from './recipe-admin/recipe-admin.module';
 import { UserModule } from './user/user.module';
-import { RecipeResolver } from './providers/recipe.resolver';
-import { RecipesPerCategoryService } from "./providers/recipes-per-category.service";
+import { RecipeResolver } from './shared/providers/recipe.resolver';
+import { RecipesPerCategoryService } from "./shared/providers/recipes-per-category.service";
+
+import { SharedModule } from './shared/shared.module';
 
 
 // Must export the config
@@ -63,13 +66,14 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     MessagesModule,
     BrowserAnimationsModule,
-
     AccordionModule,
     ToolbarModule,
     ButtonModule,
     SplitButtonModule,
     GrowlModule,
     RatingModule,
+
+    SharedModule,
 
     RecipeModule,
     RecipeAdminModule,
@@ -82,7 +86,6 @@ export const firebaseConfig = {
     AuthGuard,
     AngularFireAuth,
     AngularFireDatabase,
-    RecipeService,
     CategoryService,
     GrowlService,
     RecipeResolver,

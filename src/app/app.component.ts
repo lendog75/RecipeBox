@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from './providers/auth.service';
+import { AuthService } from './shared/providers/auth.service';
 import {Message} from 'primeng/primeng';
-import { GrowlService } from './providers/growl.service';
+import { GrowlService } from './shared/providers/growl.service';
 
 @Component({
   selector: 'app-root',

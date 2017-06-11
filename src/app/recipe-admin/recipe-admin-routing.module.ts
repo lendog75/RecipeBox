@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
-import { AuthGuard } from '../providers/auth-guard.service';
+import { AuthGuard } from '../shared/providers/auth-guard.service';
 import { RecipeEditContainerComponent } from './recipe-edit-container/recipe-edit-container.component';
 
 

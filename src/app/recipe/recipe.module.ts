@@ -9,6 +9,7 @@ import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { RecipeCardComponent } from './recipe-card/recipe-card.component';
 import { RecipeRoutingModule } from './recipe-routing.module';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { RecipeRoutingModule } from './recipe-routing.module';
     TabViewModule,
     RouterModule,
     PanelModule,
-    RecipeRoutingModule
+    RecipeRoutingModule,
+    SharedModule
   ],
   exports: [
     RecipeDetailComponent,

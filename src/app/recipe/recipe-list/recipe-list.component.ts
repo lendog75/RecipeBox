@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { RecipeService } from '../../providers/recipe.service';
+import { RecipeService } from '../../shared/providers/recipe.service';
 import { Observable } from 'rxjs/Observable';
 import { Recipe } from '../../shared/model/recipe';
 import { ActivatedRoute } from '@angular/router';
-import { CategoryService } from '../../providers/category.service';
+import { CategoryService } from '../../shared/providers/category.service';
 
 @Component({
   selector: 'recipe-list',

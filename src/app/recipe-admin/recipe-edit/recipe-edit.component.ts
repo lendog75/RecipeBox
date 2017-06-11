@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { RecipeService } from '../../providers/recipe.service';
+import { RecipeService } from '../../shared/providers/recipe.service';
 import { ActivatedRoute } from '@angular/router';
-import { GrowlService, growlSeverity } from '../../providers/growl.service';
+import { GrowlService, growlSeverity } from '../../shared/providers/growl.service';
 import { Recipe } from "../../shared/model/recipe";
 
 @Component({
