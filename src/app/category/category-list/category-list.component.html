@@ -3,9 +3,11 @@
     CATEGORIES
   </div>
   <div class="card-block">
-    <span *ngFor="let category of categories | async" [routerLink]="['/categories', category.key]">
-      <a [routerLink]="['/categories', category.key,'edit']"><i class="fa fa-pencil"></i></a>
-      {{category.shortTitle}},&nbsp;
-    </span>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let category of categories | async" [routerLink]="['/categories', category.key]">
+        <div><a [routerLink]="['/categories', category.key,'edit']"><i class="fa fa-pencil"></i></a></div>
+        <div style="padding-left: 1em">{{category.title}}</div>
+      </li>
+    </ul>
   </div>
 </div>
