@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UserRoutingModule } from './user-routing.module';
 import { LoginComponent } from './login/login.component';
+import { RecipeModule } from '../recipe/recipe.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     ReactiveFormsModule,
     RouterModule,
-    UserRoutingModule
+    UserRoutingModule,
+    RecipeModule
   ],
   exports: [
     UserDetailComponent,

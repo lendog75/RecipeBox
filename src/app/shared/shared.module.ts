@@ -9,18 +9,19 @@ import { GrowlService } from './providers/growl.service';
 import { RecipeResolver } from './providers/recipe.resolver';
 import { RecipesPerCategoryService } from './providers/recipes-per-category.service';
 import { FavoriteService } from './providers/favorite.service';
+import { UserDetailService } from './providers/user-detail.service';
+import { Chef } from './model/chef';
 
 @NgModule({
   declarations: [
     FavoriteComponent,
-
   ],
   imports: [
     BrowserModule,
 
   ],
   exports: [
-    FavoriteComponent
+    FavoriteComponent,
   ],
   providers: [
     AuthService,
@@ -30,7 +31,8 @@ import { FavoriteService } from './providers/favorite.service';
     RecipeResolver,
     RecipeService,
     RecipesPerCategoryService,
-    FavoriteService
+    FavoriteService,
+    UserDetailService
   ]
 })
 export class SharedModule { }

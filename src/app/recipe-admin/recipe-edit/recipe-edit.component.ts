@@ -77,7 +77,7 @@ export class RecipeEditComponent implements OnInit {
     this.submitted = true; // set form submit to true
 
     if (this.isEdit) {
-       this.recipe.key = this.id;
+      this.recipe.$key = this.id;
       this.recipe.title = recipe.title;
       this.recipe.subTitle = recipe.subTitle;
       this.recipe.description = recipe.description;

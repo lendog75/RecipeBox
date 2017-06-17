@@ -36,13 +36,14 @@ export class RecipeService {
       );
   }
 
-  getRecipesPerCategory(libKey: string): Observable<Recipe[]> {
-    // get the keys for the categories
-    const recipesPerCategory$ = this.db.list(`recipesPerCategory/${libKey}`);
+  getRecipesByRefPath(path) {
+    console.log('getting recipes referenced in path: ' + path);
+    // get the keys for path
+    const ref$ = this.db.list(path);
 
     // map the returned list of keys
     // and get their details from the recipe node
-    return recipesPerCategory$
+    return ref$
       .map((RecipeKeys) => RecipeKeys
         .map( (recipeKey) => {
           return this.db.object(`recipes/${recipeKey.$key}`);
@@ -51,7 +52,6 @@ export class RecipeService {
         return Observable.combineLatest(res);
       });
   }
-
 
   createRecipe(recipe: Recipe) {
     console.log('create');
@@ -65,7 +65,7 @@ export class RecipeService {
   }
 
   updateRecipe(recipe: Recipe) {
-    this.db.object('recipes/' + recipe.key).update(recipe);
+    this.db.object('recipes/' + recipe.$key).update(recipe);
   }
 
   updateRecipeDetails(recipeId: string, recipeDetails: RecipeDetail) {

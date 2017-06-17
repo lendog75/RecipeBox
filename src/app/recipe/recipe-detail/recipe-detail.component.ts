@@ -18,7 +18,7 @@ export class RecipeDetailComponent implements OnInit {
   ngOnInit() {
     this.recipe = this.route.snapshot.data['recipe'];
 
-    this.recipeSvc.getRecipeDetails(this.recipe.key).subscribe(x => {
+    this.recipeSvc.getRecipeDetails(this.recipe.$key).subscribe(x => {
       this.recipeDetail = x;
     });
   }

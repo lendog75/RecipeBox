@@ -11,34 +11,23 @@ import { CategoryService } from '../../shared/providers/category.service';
   styleUrls: ['./recipe-list.component.scss']
 })
 export class RecipeListComponent implements OnInit {
+  @Input() header: string;
 
   @Input()
-  set categoryId(id: string) {
-    this.loadData(id);
+  set path(path: string) {
+    this.loadRecipes(path);
   }
 
   recipes: Observable<Recipe[]>;
 
-
   constructor(private recipeSvc: RecipeService,
-              private categorySvc: CategoryService,
               private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      const id = params['id'];
-      this.loadData(id);
-    });
+
   }
 
-  loadData(id: string) {
-    if (id) {
-      console.log('id:' + id);
-      this.loadRecipes(id);
-    }
-  }
-
-  loadRecipes(id: string) {
-    this.recipes = this.recipeSvc.getRecipesPerCategory(id);
+  loadRecipes(path: string) {
+    this.recipes = this.recipeSvc.getRecipesByRefPath(path);
   }
 }

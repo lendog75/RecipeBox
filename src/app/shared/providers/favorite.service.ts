@@ -3,36 +3,34 @@ import { AuthService } from './auth.service';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Favorite } from '../model/favorite';
 import { Observable } from 'rxjs';
+import { UserDetailService } from './user-detail.service';
+import { map } from 'rxjs/operator/map';
 
 @Injectable()
 export class FavoriteService {
 
   favorites: FirebaseListObservable<Favorite[]>;
 
-  constructor (private db: AngularFireDatabase) {
+  constructor (private db: AngularFireDatabase, private chefSvc: UserDetailService) {
 
     this.favorites = db.list('/favorites');
   }
 
-  get(recipeId: any): Observable<Favorite> {
-    return this.db.object('favorites/' + recipeId)
-      .map(Favorite.fromJson);
+  get(recipeId: string): Observable<any> {
+    const path = `chefs/${this.chefSvc.currentUserId}/favorites/${recipeId}`;
+    console.log('checking fav status for: ' + path);
+    return this.db.object(path);
   }
 
-
-  add(recipeId, chefId) {
+  add(recipeId) {
     console.log('adding favorite');
-    const favorite: Favorite = new Favorite(recipeId,  chefId);
-    this.db.object('favorites/' + recipeId).update(favorite);
+    const item = this.db.object(`chefs/${this.chefSvc.currentUserId}/favorites/${recipeId}`);
+    item.set(true);
   }
 
-  remove(recipeId, chefId) {
-    console.log('removing favorite')
-    const itemObservable = this.db.object('favorites/' + recipeId)
-    itemObservable.remove();
+  remove(recipeId) {
+    console.log('removing favorite');
+    const item = this.db.object(`chefs/${this.chefSvc.currentUserId}/favorites/${recipeId}`);
+    item.remove();
   }
-
-
-
-
 }

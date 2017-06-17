@@ -1,9 +1,24 @@
-<p>
-  user-detail works!
-</p>
 
-<h5>Actions</h5>
-<ul>
-  <li routerLink="/categories/0/create"><a>Create Category</a></li>
-  <li routerLink="/recipes/0/create"><a>Create Recipe</a></li>
-</ul>
+
+<br><br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-lg-2">
+      <h4>Actions</h4>
+      <ul>
+        <li><a>Logout</a></li>
+        <li routerLink="/categories/0/create"><a>Create Category</a></li>
+        <li routerLink="/recipes/0/create"><a>Create Recipe</a></li>
+      </ul>
+    </div>
+
+    <div class="col-12 col-lg-9">
+      <recipe-list header="My Recipes" [path]="myRecipes$" ></recipe-list>
+      <recipe-list header="Favorites" [path]="favorites$"></recipe-list>
+    </div>
+  </div>
+</div>
+
+
+
+

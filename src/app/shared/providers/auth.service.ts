@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
-import {IUser} from '../model/user';
+import { Chef } from '../model/chef';
 import {Router} from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 
 @Injectable()
 export class AuthService {
-  authState: BehaviorSubject<IUser> = new BehaviorSubject<IUser>(null);
+  authState: BehaviorSubject<Chef> = new BehaviorSubject<Chef>(null);
   redirectUrl: string;
   user: Observable<firebase.User>;
 
@@ -38,7 +38,8 @@ export class AuthService {
     const userFromStorage = localStorage.getItem('user');
     if (userFromStorage) {
       const user = JSON.parse(userFromStorage);
-      this.authState.next(user);
+      const chef: Chef = Chef.fromJson(user);
+      this.authState.next(chef);
     } else {
       this.authState.next(null);
     }

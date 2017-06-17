@@ -12,17 +12,18 @@ export class CategoryDetailComponent implements OnInit {
   category: Category;
   id: string;
 
+  public path: string;
+
   constructor (private categorySvc: CategoryService,
                private route: ActivatedRoute) { }
 
   ngOnInit () {
     this.route.params.subscribe(params => {
       this.id = params['id'];
-
+      this.path = `recipesPerCategory/${this.id}`;
       this.categorySvc.getCategory(this.id).subscribe(x => {
         this.category = x;
       });
     });
   }
-
 }

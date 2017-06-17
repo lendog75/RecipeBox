@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../shared/providers/auth.service';
-import { IUser } from '../shared/model/user';
+import { Chef } from '../shared/model/chef';
 import { Router } from '@angular/router';
 import { CategoryService } from '../shared/providers/category.service';
 import { Observable } from 'rxjs';
@@ -13,7 +13,7 @@ import { Category } from '../shared/model/category';
 })
 export class NavbarTopComponent implements OnInit {
 
-  currentUser: IUser;
+  currentUser: Chef;
   categories: Observable<Category[]>;
   categorySelect = '';
   constructor (private authSvc: AuthService,

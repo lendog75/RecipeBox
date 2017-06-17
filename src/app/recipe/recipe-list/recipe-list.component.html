@@ -1,3 +1,4 @@
+<h4 *ngIf="header">{{header}}</h4>
 <div style="margin: 1em">
   <div class="card-columns">
     <div class="card card-outline-primary" *ngFor="let recipe of recipes | async" recipe-card [recipe]="recipe"></div>
@@ -9,5 +10,5 @@
     <!--</div>-->
   <!--</div>-->
 </div>
-<br><br>
+
 

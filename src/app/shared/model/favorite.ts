@@ -4,12 +4,11 @@ export class Favorite {
     return array.map(Favorite.fromJson);
   }
 
-  static fromJson ({$key, chefId }): Favorite {
-    return new Favorite($key, chefId);
+  static fromJson ({$value}): Favorite {
+    return new Favorite($value);
   }
 
-  constructor (public key: string,
-               public chefId: string
+  constructor (public $value: string
   ) {}
 }
 
