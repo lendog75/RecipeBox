@@ -28,12 +28,6 @@ export class NavbarTopComponent implements OnInit {
     this.categories = this.categorySvc.getCategories();
   }
 
-  logout () {
-    this.authSvc.logout();
-    this.router.navigate(['/login']);
-  }
-
-
   onSearchByCategory(form) {
     this.router.navigate(['/categories', form.categorySelect]);
   }

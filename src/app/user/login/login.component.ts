@@ -1,15 +1,13 @@
 import { Component } from '@angular/core';
-import {Router} from '@angular/router';
-import {AuthService} from '../../shared/providers/auth.service';
-
+import { AuthService } from '../../shared/providers/auth.service';
 
 @Component({
-
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  constructor(public authService: AuthService, private router: Router) {}
+  constructor(public authService: AuthService) {}
+
   login() {
     this.authService.login();
   }

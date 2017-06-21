@@ -16,12 +16,17 @@ export class FavoriteComponent implements OnInit {
   constructor(private favoriteSvc: FavoriteService, private authSvc: AuthService) { }
 
   ngOnInit() {
-
-    this.favoriteSvc.get(this.recipeId).subscribe(x => {
-      if (x.$exists()) {
-        this.setIconClass(true);
-      }
+    this.authSvc.authState.subscribe(user => {
+      this.currentUser = user;
     });
+
+    if (this.currentUser) {
+      this.favoriteSvc.get(this.recipeId).subscribe(x => {
+        if (x.$exists()) {
+          this.setIconClass(true);
+        }
+      });
+    }
   }
 
   setIconClass(isActive: boolean) {
@@ -33,6 +38,10 @@ export class FavoriteComponent implements OnInit {
   }
 
   toggle() {
+    if (!this.currentUser) {
+      return null;
+    }
+
     this.isActive = !this.isActive;
     this.setIconClass(this.isActive);
 

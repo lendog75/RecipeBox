@@ -7,12 +7,13 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UserRoutingModule } from './user-routing.module';
 import { LoginComponent } from './login/login.component';
 import { RecipeModule } from '../recipe/recipe.module';
-
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
     UserDetailComponent,
-    LoginComponent
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +24,8 @@ import { RecipeModule } from '../recipe/recipe.module';
   ],
   exports: [
     UserDetailComponent,
-    LoginComponent
+    LoginComponent,
+    LogoutComponent
   ]
 })
 export class UserModule {

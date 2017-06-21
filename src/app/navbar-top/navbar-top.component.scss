@@ -49,7 +49,7 @@ h1.brand {
   }
 }
 
-i.user, i.signout, i.alerts {
+i.user, i.signout, i.signin, i.alerts {
   margin:.25em;
   border: none;
 }
@@ -58,7 +58,8 @@ i.user {
   right: 0;
   order: 3;
 }
- i.signout  {
+ i.signout, i.signin  {
+   font-weight: bold;
    margin-top: 1em;
    right: 0;
    order: 2;
@@ -74,4 +75,3 @@ i.alerts {
   color: $brand-primary;
 }
 
-// http://paletton.com/#uid=12i0u0ktMjbltqKqcn9AMeCMz9j

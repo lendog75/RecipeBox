@@ -1,17 +1,17 @@
 <div class="hidden-sm-down">
   <div class="heading">
     <h1 class="brand"><a routerLink="/">RecipeBOX</a></h1>
-    <i class="fa fa-sign-out signout " (click)="logout()"></i>
-    <i routerLink="/user/detail" class="fa fa-user-circle fa-2x user"></i>
+    <i class="fa fa-sign-out signout" *ngIf="currentUser" routerLink="/logout"></i>
+    <i class="fa fa-sign-in signin" *ngIf="!currentUser" routerLink="/login"> Login</i>
+    <i routerLink="/user/detail" *ngIf="currentUser" class="fa fa-user-circle fa-2x user"></i>
   </div>
-
   <nav class="nav-top">
+
     <ul class="list-inline">
       <li class="list-inline-item">Top Categories:</li>
       <li class="list-inline-item"  routerLink="/categories/-KlKFSCV1U1RMhi6Ck0-"><a>Italian</a></li>
       <li class="list-inline-item"  routerLink="/categories/-KlKFUoBK45066iquJvO"><a>Mexican</a></li>
       <li class="list-inline-item"  routerLink="/categories/-KlKFWK8sXwIf8713MLH"><a>Indian</a></li>
-      <!--<li class="list-inline-item"  routerLink="/categories/0/create"><a>Create Category</a></li>-->
     </ul>
 
     <form class="form-inline" (ngSubmit)="onSearchByCategory(searchByCategoryForm.value)" #searchByCategoryForm="ngForm">

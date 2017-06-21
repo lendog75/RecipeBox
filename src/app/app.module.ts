@@ -4,26 +4,22 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './user/login/login.component';
 import { HomeComponent } from './home/home.component';
-import {AuthService} from './shared/providers/auth.service';
+import { AuthService } from './shared/providers/auth.service';
 import { NavbarTopComponent } from './navbar-top/navbar-top.component';
-import {AngularFireModule} from 'angularfire2';
-import {AuthGuard} from './shared/providers/auth-guard.service';
-import {AngularFireAuth} from 'angularfire2/auth';
+import { AngularFireModule } from 'angularfire2';
+import { AuthGuard } from './shared/providers/auth-guard.service';
+import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
-
 
 import {AccordionModule} from 'primeng/components/accordion/accordion';
 import {
   RatingModule, ToolbarModule, ButtonModule,
-  SplitButtonModule, MessagesModule, GrowlModule, TabViewModule
+  SplitButtonModule, MessagesModule, GrowlModule
 } from 'primeng/primeng';
 
 import { SearchBoxComponent } from './search-box/search-box.component';
 import { AppFooterComponent } from './app-footer/app-footer.component';
-
-
 import { NavbarMobileComponent } from './navbar-mobile/navbar-mobile.component';
 import { RecipeModule } from './recipe/recipe.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -34,10 +30,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { RecipeAdminModule } from './recipe-admin/recipe-admin.module';
 import { UserModule } from './user/user.module';
 import { RecipeResolver } from './shared/providers/recipe.resolver';
-import { RecipesPerCategoryService } from "./shared/providers/recipes-per-category.service";
+import { RecipesPerCategoryService } from './shared/providers/recipes-per-category.service';
 
 import { SharedModule } from './shared/shared.module';
-
 
 // Must export the config
 export const firebaseConfig = {
@@ -72,7 +67,6 @@ export const firebaseConfig = {
     SplitButtonModule,
     GrowlModule,
     RatingModule,
-
     SharedModule,
 
     RecipeModule,
