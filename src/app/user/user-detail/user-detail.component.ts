@@ -3,7 +3,7 @@ import { UserDetailService } from '../../shared/providers/user-detail.service';
 
 @Component({
   templateUrl: './user-detail.component.html',
-  styleUrls: ['./user-detail.component.css']
+  styleUrls: ['./user-detail.component.scss']
 })
 export class UserDetailComponent implements OnInit {
   public userId: string;
