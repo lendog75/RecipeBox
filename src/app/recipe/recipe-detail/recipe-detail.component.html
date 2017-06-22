@@ -7,10 +7,14 @@
   <div class="heading">
     <h3>{{recipe.title}}</h3>
     <small>{{recipe.subTitle}}</small>
+
   </div>
   <div class="card" style="border:none">
     <div class="row">
       <div class="col-md-6">
+        <div class="card-img-overlay" *ngIf="recipe.imagePath" style="height:8em;">
+          <favorite [recipeId]="recipe.$key"></favorite>
+        </div>
         <img class="card-img-top img-fluid" src="{{recipe.imagePath + '?raw=true'}}raw=true" alt="Card image cap">
       </div>
       <div class="col-md-6" style="padding-left:1em; padding-top:1em;">
