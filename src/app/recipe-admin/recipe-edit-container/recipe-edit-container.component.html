@@ -1,33 +1,19 @@
 
-<!--<div class="container">-->
-  <!--<p-tabView>-->
-    <!--<div class="card">-->
-      <!--&lt;!&ndash;<div class="card"  *ngIf="!isLoading">&ndash;&gt;-->
-      <!--<div class="card-header bg-success" style="color:white">-->
-        <!--Create/Edit Recipe:-->
-      <!--</div>-->
-      <!--<div class="card-block">-->
-        <!--<p-tabPanel header="Summary Info">-->
-          <!--<recipe-edit id="{{id}}"></recipe-edit>-->
-        <!--</p-tabPanel>-->
+<div class="container">
+  <p-tabView>
+    <div class="card">
+      <!--<div class="card"  *ngIf="!isLoading">-->
+      <div class="card-header bg-success" style="color:white">
+        Create/Edit Recipe:
+      </div>
+      <div class="card-block">
 
-        <!--<p-tabPanel header="Ingredients" [disabled]="!isEdit">-->
-          <!--<edit-recipe-ingredients recipeId="{{id}}"></edit-recipe-ingredients>-->
-        <!--</p-tabPanel>-->
+          <recipe-edit id="{{id}}"></recipe-edit>
 
-        <!--<p-tabPanel header="Directions" [disabled]="!isEdit">-->
-          <!--<edit-recipe-directions recipeId="{{id}}"></edit-recipe-directions>-->
-        <!--</p-tabPanel>-->
 
-        <!--<p-tabPanel header="Other" [disabled]="!isEdit">-->
-          <!--<edit-recipe-other recipeId="{{id}}"></edit-recipe-other>-->
-        <!--</p-tabPanel>-->
 
-        <!--<p-tabPanel header="Categories" [disabled]="!isEdit">-->
-          <!--<edit-recipe-categories recipeId="{{id}}"></edit-recipe-categories>-->
-        <!--</p-tabPanel>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</p-tabView>-->
-<!--</div>-->
+      </div>
+    </div>
+  </p-tabView>
+</div>
 

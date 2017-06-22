@@ -13,12 +13,9 @@ import { Recipe } from "../../shared/model/recipe";
 export class RecipeEditComponent implements OnInit {
 
   @Input() id: string;
-
-
    public recipeForm: FormGroup;
    public submitted: boolean;
    recipe: Recipe;
-   // id: string;
    isEdit: boolean;
    isLoading = true;
 
@@ -77,16 +74,7 @@ export class RecipeEditComponent implements OnInit {
     this.submitted = true; // set form submit to true
 
     if (this.isEdit) {
-      this.recipe.$key = this.id;
-      this.recipe.title = recipe.title;
-      this.recipe.subTitle = recipe.subTitle;
-      this.recipe.description = recipe.description;
-      this.recipe.cookTime = recipe.cookTime;
-      this.recipe.imagePath = recipe.imagePath;
-      this.recipe.serves = recipe.serves;
-      this.recipe.calories = recipe.calories;
-      this.recipe.rating = recipe.rating;
-      this.recipeSvc.updateRecipe(this.recipe);
+      this.recipeSvc.updateRecipe(this.recipe.$key, recipe);
       this.growlService.add(growlSeverity.success, 'Update Complete', 'Recipe uppdated successully');
     } else {
       this.recipeSvc.createRecipe(recipe);

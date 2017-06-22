@@ -1,53 +1,73 @@
 <form [formGroup]="recipeForm" novalidate (ngSubmit)="save(recipeForm.value, recipeForm.valid)">
   <div class="container">
-    <div class="form-group">
-      <label for="title" class="col-2 col-form-label">Title</label>
-      <div class="col-12">
-        <input id="title" class="form-control" type="text" formControlName="title">
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label for="title" class="col-2 col-form-label">Title</label>
+        <div class="col-12">
+          <input id="title" class="form-control" type="text" formControlName="title">
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label for="title" class="col-2 col-form-label">subTitle</label>
-      <div class="col-12">
-        <input id="subTitle" class="form-control" type="text" formControlName="subTitle">
+      <div class="form-group col-md-6">
+        <label for="title" class="col-2 col-form-label">subTitle</label>
+        <div class="col-12">
+          <input id="subTitle" class="form-control" type="text" formControlName="subTitle">
+        </div>
       </div>
+
+
     </div>
+
+
+
+
     <div class="form-group">
       <label for="title" class="col-2 col-form-label">description</label>
       <div class="col-12">
-        <input id="description" class="form-control" type="text" formControlName="description">
+        <textarea id="description" class="form-control" type="text" formControlName="description" rows="5"></textarea>
       </div>
     </div>
-    <div class="form-group">
-      <label for="title" class="col-2 col-form-label">cookTime</label>
-      <div class="col-12">
-        <input id="cookTime" class="form-control" type="text" formControlName="cookTime">
-      </div>
-    </div>
+
     <div class="form-group">
       <label for="title" class="col-2 col-form-label">imagePath</label>
       <div class="col-12">
         <input id="imagePath" class="form-control" type="text" formControlName="imagePath">
       </div>
     </div>
-    <div class="form-group">
-      <label for="serves" class="col-2 col-form-label">serves</label>
-      <div class="col-12">
-        <input id="serves" class="form-control" type="number" formControlName="serves">
+    <div class="row">
+      <div class="form-group col-md-3">
+        <label for="title" class="col-2 col-form-label">cookTime</label>
+        <div class="col-12">
+          <input id="cookTime" class="form-control" type="text" formControlName="cookTime">
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label for="calories" class="col-2 col-form-label">calories</label>
-      <div class="col-12">
-        <input id="calories" class="form-control" type="number" formControlName="calories">
+      <div class="form-group col-md-3">
+        <label for="serves" class="col-2 col-form-label">serves</label>
+        <div class="col-12">
+          <input id="serves" class="form-control" type="number" formControlName="serves">
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label for="title" class="col-2 col-form-label">rating</label>
-      <div class="col-12">
-        <input id="rating" class="form-control" type="number" formControlName="rating">
+      <div class="form-group col-md-3">
+        <label for="calories" class="col-2 col-form-label">calories</label>
+        <div class="col-12">
+          <input id="calories" class="form-control" type="number" formControlName="calories">
+        </div>
       </div>
+
+      <div class="form-group col-md-3">
+        <label for="title" class="col-2 col-form-label">rating</label>
+        <div class="col-12">
+          <input id="rating" class="form-control" type="number" formControlName="rating">
+        </div>
+      </div>
+
     </div>
+
+
+
+
+
+
+
     <div class="form-group row">
       <div class="col-12 text-right">
         <button class="btn btn-success" type="submit">Save</button>

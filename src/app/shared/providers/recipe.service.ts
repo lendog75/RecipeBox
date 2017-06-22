@@ -64,8 +64,8 @@ export class RecipeService {
     this.recipeDetails.push(recipeDetail);
   }
 
-  updateRecipe(recipe: Recipe) {
-    this.db.object('recipes/' + recipe.$key).update(recipe);
+  updateRecipe(recipeId: string, recipe: Recipe) {
+    this.db.object('recipes/' + recipeId).update(recipe);
   }
 
   updateRecipeDetails(recipeId: string, recipeDetails: RecipeDetail) {
