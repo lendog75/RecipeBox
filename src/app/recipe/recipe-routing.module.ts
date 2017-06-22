@@ -11,7 +11,6 @@ const routes: Routes = [
   {
     path: 'recipes/:id',
     component: RecipeDetailComponent,
-    canActivate: [ AuthGuard ],
     resolve: {recipe: RecipeResolver}
   },
   { path: 'recipes', component: RecipeListComponent }
