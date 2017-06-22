@@ -6,7 +6,10 @@
 <div class="container">
   <div class="heading">
     <h3>{{recipe.title}}</h3>
-    <small>{{recipe.subTitle}}</small>
+    <small style="margin-right: 1em;">{{recipe.subTitle}}</small>
+
+    <p-rating [ngModel]="recipe.rating" readonly="true" stars="5" [cancel]="false"
+              style="display: inline-block"></p-rating>
 
   </div>
   <div class="card" style="border:none">
@@ -32,17 +35,13 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-6 col-md-3">
-        <p-rating [ngModel]="recipe.rating" readonly="true" stars="5" [cancel]="false"
-                  style="display: inline-block"></p-rating>
-      </div>
-      <div class="col-sm-6  col-md-3">
+      <div class="col-sm-6  col-md-4">
         <i class="fa fa-clock-o"></i> time {{recipe.cookTime}}
       </div>
-      <div class="col-sm-6  col-md-3">
+      <div class="col-sm-6  col-md-4">
         <i class="fa fa-users"></i> serves {{recipe.serves}}
       </div>
-      <div class="col-sm-6  col-md-3">
+      <div class="col-sm-6  col-md-4">
         <i class="fa fa-dashboard"></i> calories {{recipe.calories}}
       </div>
     </div>
