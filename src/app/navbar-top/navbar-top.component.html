@@ -1,6 +1,10 @@
 <div class="hidden-sm-down">
   <div class="heading">
-    <h1 class="brand"><a routerLink="/">Recipe<span style="color:#36454f">BOX</span></a></h1>
+    <h1 class="brand">
+      <a routerLink="/" >
+        <i class="fa fa-cutlery" ></i> Recipe<span >BOX</span></a>
+    </h1>
+
     <i class="fa fa-sign-out signout" *ngIf="currentUser" routerLink="/logout"></i>
     <i class="fa fa-sign-in signin" *ngIf="!currentUser" routerLink="/login"> Login</i>
     <i routerLink="/user/detail" *ngIf="currentUser" class="fa fa-user-circle fa-2x user"></i>

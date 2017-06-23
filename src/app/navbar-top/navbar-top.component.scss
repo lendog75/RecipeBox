@@ -10,9 +10,12 @@ h1.brand {
   margin: .25em;
   font-weight: 600;
 
-  a {
-    color: #4E6E00;
-    text-decoration: none;
+  a, i {
+    color: #36454f;
+    text-decoration: underline;
+    span {
+      color: #91c11e;
+    }
   }
 }
 
@@ -50,7 +53,7 @@ h1.brand {
 }
 
 i.user, i.signout, i.signin, i.alerts {
-  margin:.25em;
+  margin: .25em;
   border: none;
 }
 
@@ -58,12 +61,14 @@ i.user {
   right: 0;
   order: 3;
 }
- i.signout, i.signin  {
-   font-weight: bold;
-   margin-top: 1em;
-   right: 0;
-   order: 2;
+
+i.signout, i.signin {
+  font-weight: bold;
+  margin-top: 1em;
+  right: 0;
+  order: 2;
 }
+
 i.alerts {
   margin-top: 1em;
   margin-right: 0;

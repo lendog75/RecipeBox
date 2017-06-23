@@ -7,9 +7,11 @@ h1.brand {
   font-family: 'ABeeZee', sans-serif;
   margin: .25em;
   font-weight: 600; }
-  h1.brand a {
-    color: #4E6E00;
-    text-decoration: none; }
+  h1.brand a, h1.brand i {
+    color: #36454f;
+    text-decoration: underline; }
+    h1.brand a span, h1.brand i span {
+      color: #91c11e; }
 
 .heading {
   display: flex; }
