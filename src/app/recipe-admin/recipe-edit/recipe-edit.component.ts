@@ -52,7 +52,11 @@ export class RecipeEditComponent implements OnInit {
       imagePath: new FormControl(''),
       serves: new FormControl(''),
       calories: new FormControl(''),
-      rating: new FormControl('')
+      rating: new FormControl(''),
+      ingredients: new FormControl(''),
+      directions: new FormControl(''),
+      tips: new FormControl(''),
+      equipment: new FormControl(''),
     });
     this.isLoading = false;
   }
@@ -66,7 +70,11 @@ export class RecipeEditComponent implements OnInit {
       imagePath: new FormControl(recipe.imagePath),
       serves: new FormControl(recipe.serves),
       calories: new FormControl(recipe.calories),
-      rating: new FormControl(recipe.rating)
+      rating: new FormControl(recipe.rating),
+      ingredients: new FormControl(recipe.ingredients),
+      directions: new FormControl(recipe.directions),
+      tips: new FormControl(recipe.tips),
+      equipment: new FormControl(recipe.equipment),
     });
   }
 

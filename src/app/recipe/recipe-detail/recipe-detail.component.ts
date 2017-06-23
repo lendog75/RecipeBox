@@ -22,4 +22,11 @@ export class RecipeDetailComponent implements OnInit {
       this.recipeDetail = x;
     });
   }
+
+
+
+  convertToStringArray(val: string): Array<string> {
+    if (!val) { return new Array<string>(); }
+    return val.split('\n');
+  }
 }

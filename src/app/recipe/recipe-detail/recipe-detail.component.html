@@ -22,12 +22,15 @@
       </div>
       <div class="col-md-6" style="padding-left:1em; padding-top:1em;">
         {{recipe.description}}
+
+
       </div>
       <div class="col-sm-12 col-md-12" *ngIf="recipeDetail">
         <small>
           Tips
           <ul>
-            <li *ngFor="let tip of recipeDetail.tips">{{tip.value}}</li>
+            <!--<li *ngFor="let tip of recipeDetail.tips">{{tip.value}}</li>-->
+            <li *ngFor="let i of convertToStringArray(recipe.tips)">{{i}}</li>
           </ul>
         </small>
         <hr>
@@ -50,24 +53,24 @@
       <div class="col-md-4">
         <ul class="list-group">
           <li class="active list-group-item">Ingredients</li>
-          <li *ngFor="let ingredient of recipeDetail.ingredients" class="list-group-item">
-            {{ingredient.amount}}
-            {{ingredient.unit}}
-            {{ingredient.name}}
-          </li>
-          <li class="active list-group-item">Other Items</li>
-          <li *ngFor="let stuff of recipeDetail.otherStuff" class="list-group-item">
-            {{stuff.name}}
-          </li>
+          <li class="list-group-item" *ngFor="let i of convertToStringArray(recipe.ingredients)">{{i}}</li>
+          <li class="active list-group-item">Equipment</li>
+          <li class="list-group-item" *ngFor="let i of convertToStringArray(recipe.equipment)">{{i}}</li>
+          <!--<li *ngFor="let stuff of recipeDetail.otherStuff" class="list-group-item">-->
+            <!--{{stuff.name}}-->
+          <!--</li>-->
         </ul>
       </div>
       <div class="col-md-8">
         <h5>Directions</h5>
         <ol>
-          <li *ngFor="let direction of recipeDetail.directions">
-            <h5>{{direction.title}}</h5>
-            {{direction.value}}
+          <li  *ngFor="let i of convertToStringArray(recipe.directions)">
+            {{i}}
           </li>
+          <!--<li *ngFor="let direction of recipeDetail.directions">-->
+            <!--<h5>{{direction.title}}</h5>-->
+            <!--{{direction.value}}-->
+          <!--</li>-->
         </ol>
       </div>
     </div>
