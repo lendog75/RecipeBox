@@ -4,6 +4,21 @@
   padding: .25em;
 }
 
+h4 {
+  color:#36454f;
+  text-decoration: underline;
+
+  i {
+    display: inline;
+    padding: 0;
+    margin: 0;
+  }
+  span {
+    color: white;
+  }
+}
+
+
 .navbar-mobile{
   color: $white;
 }
