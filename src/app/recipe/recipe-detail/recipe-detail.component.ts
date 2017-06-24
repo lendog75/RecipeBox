@@ -12,6 +12,7 @@ export class RecipeDetailComponent implements OnInit {
   recipe: Recipe;
   recipeDetail: RecipeDetail;
   id: string;
+  displayIngredients = true;
   constructor(private recipeSvc: RecipeService,
               private route: ActivatedRoute) { }
 
@@ -23,7 +24,13 @@ export class RecipeDetailComponent implements OnInit {
     });
   }
 
-
+  toggleDisplayIngredients(displayOption) {
+    if (displayOption) {
+      this.displayIngredients = true;
+    } else {
+      this.displayIngredients = false;
+    }
+  }
 
   convertToStringArray(val: string): Array<string> {
     if (!val) { return new Array<string>(); }

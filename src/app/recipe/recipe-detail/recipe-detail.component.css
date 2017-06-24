@@ -9,4 +9,10 @@
 h5 {
   margin-top: .5em; }
 
+.activeTab {
+  color: #ff5a00;
+  font: bold;
+  text-decoration: underline;
+  text-decoration-color: #ff5a00; }
+
 /*# sourceMappingURL=recipe-detail.component.css.map */
