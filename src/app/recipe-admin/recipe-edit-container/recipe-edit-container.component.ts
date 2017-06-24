@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
 import { GrowlService } from '../../shared/providers/growl.service';
 import { ActivatedRoute } from '@angular/router';
-import { RecipeService } from '../../shared/providers/recipe.service';
+
 
 @Component({
   selector: 'recipe-edit-container',
@@ -12,6 +11,7 @@ import { RecipeService } from '../../shared/providers/recipe.service';
 export class RecipeEditContainerComponent implements OnInit {
   id: string;
   isEdit: boolean;
+  displayedTab = 'details';
 
   constructor (private route: ActivatedRoute) { }
 
@@ -23,4 +23,9 @@ export class RecipeEditContainerComponent implements OnInit {
       }
     });
   }
+
+  toggleDisplayedTab(tabOption) {
+    this.displayedTab = tabOption;
+  }
+
 }

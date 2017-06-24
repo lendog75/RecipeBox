@@ -1,86 +1,61 @@
 <form [formGroup]="recipeForm" novalidate (ngSubmit)="save(recipeForm.value, recipeForm.valid)">
-  <div class="container">
-    <div class="row">
-      <div class="form-group col-md-6">
-        <label for="title" class="col-2 col-form-label">Title</label>
-        <div class="col-12">
-          <input id="title" class="form-control" type="text" formControlName="title">
-        </div>
-      </div>
-      <div class="form-group col-md-6">
-        <label for="title" class="col-2 col-form-label">SubTitle</label>
-        <div class="col-12">
-          <input id="subTitle" class="form-control" type="text" formControlName="subTitle">
-        </div>
-      </div>
+  <!--<div class="container">-->
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label for="title">Title</label>
+      <input id="title" class="form-control" type="text" formControlName="title">
     </div>
-    <div class="form-group">
-      <label for="title" class="col-2 col-form-label">Description</label>
-      <div class="col-12">
-        <textarea id="description" class="form-control" type="text" formControlName="description" rows="5"></textarea>
-      </div>
+    <div class="form-group col-md-6">
+      <label for="title">SubTitle</label>
+      <input id="subTitle" class="form-control" type="text" formControlName="subTitle">
     </div>
-    <div class="form-group">
-      <label for="title" class="col-2 col-form-label">imagePath</label>
-      <div class="col-12">
-        <input id="imagePath" class="form-control" type="text" formControlName="imagePath">
-      </div>
+  </div>
+  <div class="form-group">
+    <label for="title">Description</label>
+    <textarea id="description" class="form-control" type="text" formControlName="description" rows="5"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="title">imagePath</label>
+    <input id="imagePath" class="form-control" type="text" formControlName="imagePath">
+  </div>
+  <div class="row">
+    <div class="form-group col-4">
+      <label for="title">CookTime</label>
+      <input id="cookTime" class="form-control" type="text" formControlName="cookTime">
     </div>
-    <div class="row">
-      <div class="form-group col-md-3">
-        <label for="title" class="col-2 col-form-label">CookTime</label>
-        <div class="col-12">
-          <input id="cookTime" class="form-control" type="text" formControlName="cookTime">
-        </div>
-      </div>
-      <div class="form-group col-md-3">
-        <label for="serves" class="col-2 col-form-label">Serves</label>
-        <div class="col-12">
-          <input id="serves" class="form-control" type="number" formControlName="serves">
-        </div>
-      </div>
-      <div class="form-group col-md-3">
-        <label for="calories" class="col-2 col-form-label">Calories</label>
-        <div class="col-12">
-          <input id="calories" class="form-control" type="number" formControlName="calories">
-        </div>
-      </div>
-      <div class="form-group col-md-3">
-        <label for="title" class="col-2 col-form-label">Rating</label>
-        <div class="col-12">
-          <input id="rating" class="form-control" type="number" formControlName="rating">
-        </div>
-      </div>
+    <div class="form-group col-4">
+      <label for="serves">Serves</label>
+      <input id="serves" class="form-control" type="number" formControlName="serves">
     </div>
-    <div class="form-group">
-      <label for="title" class="col-2 col-form-label">Ingredients</label>
-      <div class="col-12">
-        <textarea id="ingredients" class="form-control" type="text" formControlName="ingredients" rows="8"></textarea>
-      </div>
+    <div class="form-group col-4">
+      <label for="calories">Calories</label>
+      <input id="calories" class="form-control" type="number" formControlName="calories">
     </div>
-    <div class="form-group">
-      <label for="title" class="col-2 col-form-label">Directions</label>
-      <div class="col-12">
-        <textarea id="directions" class="form-control" type="text" formControlName="directions" rows="8"></textarea>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="title" class="col-2 col-form-label">Tips</label>
-      <div class="col-12">
-        <textarea id="tips" class="form-control" type="text" formControlName="tips" rows="8"></textarea>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="title" class="col-2 col-form-label">Equipment</label>
-      <div class="col-12">
-        <textarea id="equipment" class="form-control" type="text" formControlName="equipment" rows="8"></textarea>
-      </div>
-    </div>
-    <div class="form-group row">
-      <div class="col-12 text-right">
-        <button class="btn btn-default" type="button" (click)="cancel()">Cancel</button>
-        <button class="btn btn-success" type="submit">Save</button>
-      </div>
+  </div>
+  <div class="form-group">
+    <label for="title" >Rating</label>
+    <input id="rating" class="form-control" type="number" formControlName="rating">
+  </div>
+  <div class="form-group">
+    <label for="ingredients">Ingredients</label>
+      <textarea id="ingredients" class="form-control" type="text" formControlName="ingredients" rows="8"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="title">Directions</label>
+      <textarea id="directions" class="form-control" type="text" formControlName="directions" rows="8"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="title">Tips</label>
+      <textarea id="tips" class="form-control" type="text" formControlName="tips" rows="8"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="title">Equipment</label>
+      <textarea id="equipment" class="form-control" type="text" formControlName="equipment" rows="8"></textarea>
+  </div>
+  <div class="form-group row">
+    <div class="col-12 text-right">
+      <button class="btn btn-default" type="button" (click)="cancel()" style="margin-right: 1em">Cancel</button>
+      <button class="btn btn-success" type="submit">Save</button>
     </div>
   </div>
 </form>

@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AACA,GAAI;EACF,KAAK,EAAE,IAAI",
-"sources": ["edit-recipe-other.component.scss"],
-"names": [],
-"file": "edit-recipe-other.component.css"
-}

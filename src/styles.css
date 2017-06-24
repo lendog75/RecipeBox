@@ -3,4 +3,9 @@ hr {
   border-bottom: 1px solid #36454f;
   height: 1px; }
 
+@media (max-width: 576px) {
+  div.container-fluid {
+    padding: 0;
+    margin: 0 !important; } }
+
 /*# sourceMappingURL=styles.css.map */

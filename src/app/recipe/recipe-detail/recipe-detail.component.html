@@ -46,34 +46,7 @@
       </div>
     </div>
 
-
-    <!--<div class="hidden-md-up">-->
-      <!--<br>-->
-      <!--<div class="row">-->
-        <!--<div class="col-6" (click)="toggleDisplayIngredients(true)"-->
-             <!--[ngClass]="{'activeTab': displayIngredients }"><h5>Ingredients</h5></div>-->
-        <!--<div class="col-6" (click)="toggleDisplayIngredients(false)"-->
-             <!--[ngClass]="{'activeTab': !displayIngredients }" ><h5>Directions</h5></div>-->
-      <!--</div>-->
-      <!--<div *ngIf="displayIngredients">-->
-
-        <!--<ul >-->
-          <!--<li  *ngFor="let i of convertToStringArray(recipe.ingredients)">{{i}}</li>-->
-        <!--</ul>-->
-        <!--<ul *ngIf="recipe.equipment">-->
-          <!--<li >Equipment</li>-->
-          <!--<li  *ngFor="let i of convertToStringArray(recipe.equipment)">{{i}}</li>-->
-        <!--</ul>-->
-      <!--</div>-->
-      <!--<div *ngIf="!displayIngredients">-->
-
-        <!--<ol>-->
-          <!--<li *ngFor="let i of convertToStringArray(recipe.directions)">{{i}}</li>-->
-        <!--</ol>-->
-      <!--</div>-->
-    <!--</div>-->
-
-
+    <!-- desktop view only -->
     <div class="row hidden-sm-down" style="margin-top: 1em">
       <div class="col-md-4">
         <ul class="list-group">
@@ -90,40 +63,35 @@
         </ol>
       </div>
     </div>
-
-
   </div>
 </div>
 
-
+<!-- mobile view only -->
 <div class="card  hidden-md-up" style="margin-top: 2em;">
-
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item">
         <a class="nav-link" [ngClass]="{'active': displayIngredients }" (click)="toggleDisplayIngredients(true)">Ingredients</a>
       </li>
-      <li class="nav-item"  (click)="toggleDisplayIngredients(false)">
-        <a class="nav-link" [ngClass]="{'active': !displayIngredients }" >Directions</a>
+      <li class="nav-item" (click)="toggleDisplayIngredients(false)">
+        <a class="nav-link" [ngClass]="{'active': !displayIngredients }">Directions</a>
       </li>
-
     </ul>
   </div>
   <div class="card-block">
     <div *ngIf="displayIngredients">
-
       <ul class="list-group">
-        <li class="list-group-item"  *ngFor="let i of convertToStringArray(recipe.ingredients)">{{i}}</li>
+        <li class="list-group-item" *ngFor="let i of convertToStringArray(recipe.ingredients)">{{i}}</li>
       </ul>
       <br>
-      <h6>Equipment</h6>
-      <ul class="list-group" *ngIf="recipe.equipment">
-
-        <li class="list-group-item" *ngFor="let i of convertToStringArray(recipe.equipment)">{{i}}</li>
-      </ul>
+      <div *ngIf="recipe.equipment">
+        <h6>Equipment</h6>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let i of convertToStringArray(recipe.equipment)">{{i}}</li>
+        </ul>
+      </div>
     </div>
     <div *ngIf="!displayIngredients">
-
       <ol>
         <li *ngFor="let i of convertToStringArray(recipe.directions)">{{i}}</li>
       </ol>
@@ -131,22 +99,4 @@
   </div>
 </div>
 <br><br>
-<!--<div *ngIf="recipeDetail">-->
-<!--<h2>Ingredients</h2>-->
-<!--<p *ngFor="let x of recipeDetail.ingredients">{{x.amount}} {{x.unit}} {{x.name}}</p>-->
-
-
-<!--<h2>Directions</h2>-->
-<!--<p *ngFor="let x of recipeDetail.directions">{{x.title}}::{{x.value}}</p>-->
-
-
-<!--<h2>Tips</h2>-->
-<!--<p *ngFor="let x of recipeDetail.tips">{{x.value}}</p>-->
-
-
-<!--<h2>Equipment</h2>-->
-<!--<p *ngFor="let x of recipeDetail.otherStuff">{{x.name}}</p>-->
-
-<!--</div>-->
-
 

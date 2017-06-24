@@ -7,3 +7,10 @@ hr {
   //background-image: linear-gradient(left, #f0f0f0, #8c8c8c, #f0f0f0);
 }
 
+
+@media (max-width: 576px) {
+  div.container-fluid {
+    padding: 0;
+    margin: 0 !important;
+  }
+}

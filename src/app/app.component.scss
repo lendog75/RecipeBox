@@ -1,3 +1,7 @@
 body {
   margin:0 !important;
 }
+
+/deep/ .ui-growl {
+  z-index: 100000 !important;
+}
