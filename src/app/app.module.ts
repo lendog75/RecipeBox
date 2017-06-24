@@ -15,7 +15,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import {AccordionModule} from 'primeng/components/accordion/accordion';
 import {
   RatingModule, ToolbarModule, ButtonModule,
-  SplitButtonModule, MessagesModule, GrowlModule
+  SplitButtonModule, MessagesModule, GrowlModule, InputSwitchModule
 } from 'primeng/primeng';
 
 import { SearchBoxComponent } from './search-box/search-box.component';
@@ -62,6 +62,7 @@ export const firebaseConfig = {
     MessagesModule,
     BrowserAnimationsModule,
     AccordionModule,
+
     ToolbarModule,
     ButtonModule,
     SplitButtonModule,
