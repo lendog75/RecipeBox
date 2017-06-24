@@ -34,6 +34,8 @@ export class RecipeDetailComponent implements OnInit {
 
   convertToStringArray(val: string): Array<string> {
     if (!val) { return new Array<string>(); }
+
+    val = val.replace(/\n\n/g, '\n');
     return val.split('\n');
   }
 }
