@@ -11,7 +11,7 @@ import { RecipeEditContainerComponent } from './recipe-edit-container/recipe-edi
 //import { EditRecipeOtherComponent } from './edit-recipe-other/edit-recipe-other.component';
 //import { EditRecipeDirectionsComponent } from './edit-recipe-directions/edit-recipe-directions.component';
 //import { EditRecipeIngredientsComponent } from './edit-recipe-ingredients/edit-recipe-ingredients.component';
-//import { EditRecipeCategoriesComponent } from './edit-recipe-categories/edit-recipe-categories.component';
+import { EditRecipeCategoriesComponent } from './edit-recipe-categories/edit-recipe-categories.component';
 
 
 @NgModule({
@@ -21,7 +21,7 @@ import { RecipeEditContainerComponent } from './recipe-edit-container/recipe-edi
     //EditRecipeOtherComponent,
     //EditRecipeDirectionsComponent,
     //EditRecipeIngredientsComponent,
-    //EditRecipeCategoriesComponent,
+    EditRecipeCategoriesComponent
   ],
   imports: [
     BrowserModule,

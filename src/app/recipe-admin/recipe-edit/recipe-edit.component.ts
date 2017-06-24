@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { RecipeService } from '../../shared/providers/recipe.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GrowlService, growlSeverity } from '../../shared/providers/growl.service';
 import { Recipe } from "../../shared/model/recipe";
 
@@ -22,7 +22,8 @@ export class RecipeEditComponent implements OnInit {
   constructor (private recipeSvc: RecipeService,
                private route: ActivatedRoute,
                private growlService: GrowlService,
-               private _fb: FormBuilder) { }
+               private _fb: FormBuilder,
+               private router: Router) { }
 
   ngOnInit () {
 
@@ -41,7 +42,6 @@ export class RecipeEditComponent implements OnInit {
       }
     });
   }
-
 
   initForm () {
     this.recipeForm = new FormGroup({
@@ -87,5 +87,10 @@ export class RecipeEditComponent implements OnInit {
     } else {
       this.recipeSvc.createRecipe(recipe);
     }
+  }
+
+  cancel() {
+    this.growlService.add(growlSeverity.warn, 'Update canceled');
+    this.router.navigate(['/recipes', this.recipe.$key]);
   }
 }

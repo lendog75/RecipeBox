@@ -11,17 +11,22 @@ import { RecipesPerCategoryService } from './providers/recipes-per-category.serv
 import { FavoriteService } from './providers/favorite.service';
 import { UserDetailService } from './providers/user-detail.service';
 import { Chef } from './model/chef';
+import { MyRecipeComponent } from './my-recipe/my-recipe.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     FavoriteComponent,
+    MyRecipeComponent
   ],
   imports: [
     BrowserModule,
+    RouterModule
 
   ],
   exports: [
     FavoriteComponent,
+    MyRecipeComponent
   ],
   providers: [
     AuthService,

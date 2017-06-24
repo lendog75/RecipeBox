@@ -8,7 +8,7 @@ export class UserDetailService {
   private chefDetail;
   private chefRef;
 
-  constructor(private db: AngularFireDatabase, private authSvc: AuthService) {
+  constructor (private db: AngularFireDatabase, private authSvc: AuthService) {
     this.authSvc.authState.subscribe(chef => {
       if (chef) {
         this.currentUserId = chef.uid;
@@ -16,5 +16,13 @@ export class UserDetailService {
         this.currentUserId = null;
       }
     });
+  }
+
+
+  isMyRecipe (recipeId: string): any {
+
+    const path = `chefs/${this.currentUserId}/my-recipes/${recipeId}`;
+    console.log(path);
+    return this.db.object(path);
   }
 }

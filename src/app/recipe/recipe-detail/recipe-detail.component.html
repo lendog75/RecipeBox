@@ -5,12 +5,12 @@
 <br>
 <div class="container">
   <div class="heading">
+    <my-recipe [recipeId]="recipe.$key" style="float: right"></my-recipe>
     <h3>{{recipe.title}}</h3>
     <small style="margin-right: 1em;">{{recipe.subTitle}}</small>
 
     <p-rating [ngModel]="recipe.rating" readonly="true" stars="5" [cancel]="false"
               style="display: inline-block"></p-rating>
-
   </div>
   <div class="card" style="border:none">
     <div class="row">
@@ -18,62 +18,68 @@
         <div class="card-img-overlay" *ngIf="recipe.imagePath" style="height:8em;">
           <favorite [recipeId]="recipe.$key"></favorite>
         </div>
-        <img class="card-img-top img-fluid" src="{{recipe.imagePath + '?raw=true'}}raw=true" alt="Card image cap">
+        <img *ngIf="recipe.imagePath" class="card-img-top img-fluid" src="{{recipe.imagePath + '?raw=true'}}raw=true" alt="Card image cap">
       </div>
       <div class="col-md-6" style="padding-left:1em; padding-top:1em;">
         {{recipe.description}}
-
-
       </div>
-      <div class="col-sm-12 col-md-12" *ngIf="recipeDetail">
+      <div class="col-sm-12 col-md-12" *ngIf="recipe.tips">
         <small>
           Tips
           <ul>
-            <!--<li *ngFor="let tip of recipeDetail.tips">{{tip.value}}</li>-->
             <li *ngFor="let i of convertToStringArray(recipe.tips)">{{i}}</li>
           </ul>
         </small>
-        <hr>
       </div>
+      <hr>
     </div>
-
     <div class="row">
       <div class="col-sm-6  col-md-4">
-        <i class="fa fa-clock-o"></i> time {{recipe.cookTime}}
+        <i class="fa fa-clock-o"></i> {{recipe.cookTime}} min
       </div>
       <div class="col-sm-6  col-md-4">
         <i class="fa fa-users"></i> serves {{recipe.serves}}
       </div>
-      <div class="col-sm-6  col-md-4">
-        <i class="fa fa-dashboard"></i> calories {{recipe.calories}}
+      <div class="col-sm-6  col-md-4" *ngIf="recipe.calories">
+        <i class="fa fa-dashboard" ></i> calories x{{recipe.calories}}x
       </div>
     </div>
-
     <div class="row" *ngIf="recipeDetail" style="margin-top: 1em">
       <div class="col-md-4">
         <ul class="list-group">
           <li class="active list-group-item">Ingredients</li>
           <li class="list-group-item" *ngFor="let i of convertToStringArray(recipe.ingredients)">{{i}}</li>
-          <li class="active list-group-item">Equipment</li>
+          <li class="active list-group-item" *ngIf="recipe.equipment">Equipment</li>
           <li class="list-group-item" *ngFor="let i of convertToStringArray(recipe.equipment)">{{i}}</li>
-          <!--<li *ngFor="let stuff of recipeDetail.otherStuff" class="list-group-item">-->
-            <!--{{stuff.name}}-->
-          <!--</li>-->
         </ul>
       </div>
       <div class="col-md-8">
         <h5>Directions</h5>
         <ol>
-          <li  *ngFor="let i of convertToStringArray(recipe.directions)">
-            {{i}}
-          </li>
-          <!--<li *ngFor="let direction of recipeDetail.directions">-->
-            <!--<h5>{{direction.title}}</h5>-->
-            <!--{{direction.value}}-->
-          <!--</li>-->
+          <li  *ngFor="let i of convertToStringArray(recipe.directions)">{{i}}</li>
         </ol>
       </div>
     </div>
   </div>
 </div>
+
+<br><br>
+<!--<div *ngIf="recipeDetail">-->
+  <!--<h2>Ingredients</h2>-->
+  <!--<p *ngFor="let x of recipeDetail.ingredients">{{x.amount}} {{x.unit}} {{x.name}}</p>-->
+
+
+  <!--<h2>Directions</h2>-->
+  <!--<p *ngFor="let x of recipeDetail.directions">{{x.title}}::{{x.value}}</p>-->
+
+
+  <!--<h2>Tips</h2>-->
+  <!--<p *ngFor="let x of recipeDetail.tips">{{x.value}}</p>-->
+
+
+  <!--<h2>Equipment</h2>-->
+  <!--<p *ngFor="let x of recipeDetail.otherStuff">{{x.name}}</p>-->
+
+<!--</div>-->
+
 

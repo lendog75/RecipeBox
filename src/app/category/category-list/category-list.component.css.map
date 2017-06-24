@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAEA,YAAa;EACX,KAAK,EAAE,eAAiB",
+"mappings": "AAKA,YAAa;EACX,KAAK,EAAE,eAAiB",
 "sources": ["category-list.component.scss"],
 "names": [],
 "file": "category-list.component.css"

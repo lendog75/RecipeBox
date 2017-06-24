@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { Recipe } from '../model/recipe';
 import { RecipeDetail } from '../model/recipe-detail';
 import { Router } from "@angular/router";
+import { UserDetailService } from './user-detail.service';
 
 @Injectable()
 export class RecipeService {
@@ -13,6 +14,7 @@ export class RecipeService {
   recipeDetails: FirebaseListObservable<RecipeDetail[]>;
 
   constructor (private db: AngularFireDatabase,
+               private chefSvc: UserDetailService,
                private router: Router) {
     this.recipes = db.list('/recipes');
     this.recipeDetails = db.list('/recipeDetails');
@@ -56,20 +58,20 @@ export class RecipeService {
   createRecipe(recipe: Recipe) {
     console.log('create');
     const recipeResponse = this.recipes.push(recipe);
-    this.router.navigate(['/recipes', recipeResponse.key, 'edit']);
-  }
+    const myRecipes = this.db.object(`chefs/${this.chefSvc.currentUserId}/my-recipes/${recipeResponse.key}`);
+    myRecipes.set(true);
 
-  createRecipeDetails(recipeId: string, recipeDetail: RecipeDetail) {
-    console.log('create');
-    this.recipeDetails.push(recipeDetail);
+    this.router.navigate(['/recipes', recipeResponse.key]);
   }
 
   updateRecipe(recipeId: string, recipe: Recipe) {
     this.db.object('recipes/' + recipeId).update(recipe);
+    this.router.navigate(['/recipes', recipeId]);
   }
 
   updateRecipeDetails(recipeId: string, recipeDetails: RecipeDetail) {
     this.db.object('recipes/' + recipeId).update(recipeDetails);
   }
+
 }
 
