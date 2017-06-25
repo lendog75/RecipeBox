@@ -12,19 +12,19 @@
               <a class="nav-link" [ngClass]="{'active': displayedTab === 'details' }"
                  (click)="toggleDisplayedTab('details')">Details</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" *ngIf="recipe">
               <a class="nav-link" [ngClass]="{'active': displayedTab === 'categories' }"
                  (click)="toggleDisplayedTab('categories')">Categories</a>
             </li>
           </ul>
         </div>
-        <div class="card-block">
+        <div class="card-block" *ngIf="!isEdit || recipe">
           <div *ngIf="displayedTab === 'details'">
-            <recipe-edit id="{{id}}"></recipe-edit>
+            <recipe-edit [recipe]="recipe"></recipe-edit>
           </div>
 
-          <div *ngIf="displayedTab === 'categories'">
-            <edit-recipe-categories recipeId="{{id}}"></edit-recipe-categories>
+          <div *ngIf="recipe && displayedTab === 'categories'">
+            <edit-recipe-categories [recipe]="recipe"></edit-recipe-categories>
           </div>
         </div>
       </div>

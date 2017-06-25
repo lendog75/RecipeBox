@@ -31,11 +31,19 @@ export class RecipesPerCategoryService {
     recipeCategoriesObservable.remove();
   }
 
-  add(categoryId, recipeId) {
+  add(categoryList: string[], recipeId) {
+    this.removeAll(recipeId);
+    categoryList.forEach(x => {
+      this.addIndividual(x, recipeId);
+    });
+  }
 
-   this.removeAll(recipeId);
 
-   this.remove(categoryId, recipeId)
+  private addIndividual(categoryId, recipeId) {
+
+   //this.removeAll(recipeId);
+
+   //this.remove(categoryId, recipeId)
 
     const itemObservable = this.db.object('/recipesPerCategory/' + categoryId + '/' + recipeId);
     itemObservable.set(true);

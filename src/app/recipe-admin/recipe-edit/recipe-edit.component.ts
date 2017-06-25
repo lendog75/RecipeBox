@@ -11,36 +11,21 @@ import { Recipe } from "../../shared/model/recipe";
   styleUrls: ['./recipe-edit.component.scss']
 })
 export class RecipeEditComponent implements OnInit {
-
-  @Input() id: string;
+  @Input() recipe: Recipe;
    public recipeForm: FormGroup;
    public submitted: boolean;
-   recipe: Recipe;
    isEdit: boolean;
    isLoading = true;
 
   constructor (private recipeSvc: RecipeService,
-               private route: ActivatedRoute,
                private growlService: GrowlService,
-               private _fb: FormBuilder,
                private router: Router) { }
 
   ngOnInit () {
-
     this.initForm();
-
-    this.route.params.subscribe(params => {
-      this.id = params['id'];
-
-      if (this.id && this.id !== '0') {
-        this.isEdit = true;
-        this.recipeSvc.getRecipe(this.id).subscribe(x => {
-          this.recipe = x;
-          console.log(this.recipe);
-          this.loadForm(this.recipe);
-        });
-      }
-    });
+    if (this.recipe) {
+     this.loadForm(this.recipe);
+    }
   }
 
   initForm () {
@@ -62,23 +47,26 @@ export class RecipeEditComponent implements OnInit {
   }
 
   loadForm (recipe: Recipe) {
-    this.recipeForm = new FormGroup({
-      title: new FormControl(recipe.title),
-      subTitle: new FormControl(recipe.subTitle),
-      description: new FormControl(recipe.description),
-      cookTime: new FormControl(recipe.cookTime),
-      imagePath: new FormControl(recipe.imagePath),
-      serves: new FormControl(recipe.serves),
-      calories: new FormControl(recipe.calories),
-      rating: new FormControl(recipe.rating),
-      ingredients: new FormControl(recipe.ingredients),
-      directions: new FormControl(recipe.directions),
-      tips: new FormControl(recipe.tips),
-      equipment: new FormControl(recipe.equipment),
+    this.recipeForm.patchValue({
+      title: recipe.title,
+      subTitle: recipe.subTitle,
+      description: recipe.description,
+      cookTime: recipe.cookTime,
+      imagePath: recipe.imagePath,
+      serves: recipe.serves,
+      calories: recipe.calories,
+      rating: recipe.rating,
+      ingredients: recipe.ingredients,
+      directions: recipe.directions,
+      tips: recipe.tips,
+      equipment: recipe.equipment
     });
   }
 
   save (recipe: Recipe, isValid: boolean) {
+
+
+
     this.submitted = true; // set form submit to true
 
     if (this.isEdit) {

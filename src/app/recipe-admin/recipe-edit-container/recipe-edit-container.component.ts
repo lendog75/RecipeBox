@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GrowlService } from '../../shared/providers/growl.service';
 import { ActivatedRoute } from '@angular/router';
+import { RecipeService } from '../../shared/providers/recipe.service';
+import { Recipe } from '../../shared/model/recipe';
 
 
 @Component({
@@ -9,18 +11,27 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./recipe-edit-container.component.scss']
 })
 export class RecipeEditContainerComponent implements OnInit {
-  id: string;
+  //id: stringg; //remove
+  recipe: Recipe;
   isEdit: boolean;
   displayedTab = 'details';
 
-  constructor (private route: ActivatedRoute) { }
+  constructor (private route: ActivatedRoute,
+               private recipeSvc: RecipeService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.id = params['id'];
-      if (this.id && this.id !== '0') {
+      const id = params['id'];
+      if (id && id !== '0') {
         this.isEdit = true;
+        this.getRecipe(id);
       }
+    });
+  }
+
+  getRecipe(recipeId: string) {
+    this.recipeSvc.getRecipe(recipeId).subscribe(x => {
+      this.recipe = x;
     });
   }
 

@@ -6,11 +6,11 @@ export class Recipe {
   static fromJson ({
                      $key, title, subTitle, description, cookTime,
                      imagePath, serves, calories, rating, ingredients,
-                     tips, directions, equipment
+                     tips, directions, equipment, categories
                    }): Recipe {
     return new Recipe(
       $key, title, subTitle, description, cookTime, imagePath, serves,
-      calories, rating, ingredients, tips, directions, equipment);
+      calories, rating, ingredients, tips, directions, equipment, categories);
   }
 
   constructor ( public $key: string,
@@ -25,7 +25,8 @@ export class Recipe {
                 public ingredients: string,
                 public tips: string,
                 public directions: string,
-                public equipment: string) {}
+                public equipment: string,
+                public categories: any) {}
 }
 
 
