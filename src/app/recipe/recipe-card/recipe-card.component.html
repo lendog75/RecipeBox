@@ -1,7 +1,9 @@
+<a [routerLink]="['/recipes',recipe.$key]">
 <div class="card-img-overlay" *ngIf="recipe.imagePath" style="height:8em;">
   <favorite [recipeId]="recipe.$key"></favorite>
 </div>
 <img class="card-img-top img-fluid" *ngIf="recipe.imagePath" src="{{recipe.imagePath }}?raw=true" alt="Card image cap">
+</a>
 <div class="card-block">
   <h4><a [routerLink]="['/recipes',recipe.$key]">{{ recipe.title }}</a>
     <my-recipe [recipeId]="recipe.$key" style="float: right"></my-recipe>
