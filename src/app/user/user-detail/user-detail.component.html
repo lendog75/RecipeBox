@@ -18,7 +18,10 @@
     <a class="nav-link" routerLink="/recipes/0/create">Made It</a>
   </li>
 </ul>
-
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="/">Home</a></li>
+  <li class="breadcrumb-item active">User Detail</li>
+</ol>
 <br>
 
 <recipe-list header="My Recipes" [path]="myRecipes$"></recipe-list>
