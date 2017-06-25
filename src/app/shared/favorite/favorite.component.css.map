@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAGA,IAAK;EACH,aAAa,EAAE,GAAG;EAClB,OAAO,EAAE,IAAI;EACb,gBAAgB,EAAE,IAAI;EACtB,MAAE;IACA,KAAK,EC04BqB,IAAM;;ADt4BpC,WAAY;EACV,gBAAgB,EC6sBY,OAAc",
+"mappings": "AAGA,IAAK;EACH,aAAa,EAAE,GAAG;EAClB,OAAO,EAAE,IAAI;EACb,gBAAgB,EAAE,IAAI;EACtB,MAAE;IACA,KAAK,EC64BqB,IAAM;;ADz4BpC,WAAY;EACV,gBAAgB,ECgtBY,OAAc",
 "sources": ["favorite.component.scss","../../../assets/themes/_variables.scss"],
 "names": [],
 "file": "favorite.component.css"

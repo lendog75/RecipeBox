@@ -1,16 +1,16 @@
 
 <div class="container" *ngIf="category">
-  <div class="row">
-    <div class="col col-sm-12 col-md-12 col-lg-12" >
-      <h3>{{category.title}}</h3>
+  <h3 style="margin-bottom: -.5em;">{{category.title}}</h3>
+  <hr>
+  <div class="row hidden-sm-down">
+    <div class="col col-md-12" style="margin-bottom: 2em;">
       <div style="display: inline-flex" class="hidden-sm-down">
         <span > {{category.description}}</span>
         <img src="../../assets/img/categories/{{category.shortTitle}}.jpg"
-             class="img-fluid" alt="picture of space" style="height:15em">
+             class="img-fluid" alt="picture of space" style="max-height:15em">
       </div>
-      <hr>
     </div>
-  </div>
 
-  <recipe-list [path]="path"></recipe-list>
+  </div>
 </div>
+<recipe-list [path]="path"></recipe-list>

@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAEA,gBAAiB;EACf,KAAK,EAAE,eAAiB;;AAG1B,WAAY;EACV,OAAO,EAAE,CAAC",
+"sources": ["recipe-edit-container.component.scss"],
 "names": [],
 "file": "recipe-edit-container.component.css"
 }

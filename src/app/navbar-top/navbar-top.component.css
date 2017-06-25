@@ -8,8 +8,7 @@ h1.brand {
   margin: .25em;
   font-weight: 600; }
   h1.brand a, h1.brand i {
-    color: #36454f;
-    text-decoration: underline; }
+    color: #36454f; }
     h1.brand a span, h1.brand i span {
       color: #91c11e; }
 

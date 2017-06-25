@@ -1,16 +1,38 @@
-<div class="hidden-md-up" style="margin-bottom: 3em;">
-  <div class="navbar-mobile fixed-top bg-primary">
-    <div class="row justify-content-center">
-      <div class="col-3 text-center" style="left:.5em; top:.5em">
-        <h4 routerLink="/"><i class="fa fa-cutlery"></i>Recipe<span>BOX</span></h4>
-      </div>
-      <div class="col-9 text-right">
-        <i class="fa fa-th-list fa-2x" routerLink="/categories"></i>
-        <i class="fa fa-sign-out signout  fa-2x" *ngIf="currentUser" routerLink="/logout"></i>
-        <i class="fa fa-sign-in signin  fa-2x" *ngIf="!currentUser" routerLink="/login"></i>
-        <i class="fa fa-user-circle fa-2x" routerLink="/user/detail" *ngIf="currentUser"></i>
-      </div>
-    </div>
-  </div>
-</div>
+<!--<div class="hidden-md-up" style="margin-bottom: 3em;">-->
+  <!--<div class="navbar-mobile fixed-top bg-primary">-->
+    <!--<div class="row justify-content-center">-->
+      <!--<div class="col-3 text-left" style="left:.5em; top:.5em">-->
+        <!--<h4 routerLink="/"><i class="fa fa-cutlery"></i>Recipe<span>BOX</span></h4>-->
+      <!--</div>-->
+      <!--<div class="col-5 text-right">-->
+        <!--<i class="fa fa-th-list fa-2x" routerLink="/categories"></i>-->
+        <!--<i class="fa fa-sign-out signout  fa-2x" *ngIf="currentUser" routerLink="/logout"></i>-->
+        <!--<i class="fa fa-sign-in signin  fa-2x" *ngIf="!currentUser" routerLink="/login"></i>-->
+        <!--<i class="fa fa-user-circle fa-2x" routerLink="/user/detail" *ngIf="currentUser"></i>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
 
+
+<ul class="nav hidden-md-up nav-fill bg-primary navbar-mobile">
+  <li class="nav-item">
+    <h4 routerLink="/" style="margin-top:.5em"><i class="fa fa-cutlery"></i>Recipe<span>BOX</span></h4>
+  </li>
+  <i class="nav-item fa fa-th-list fa-2x" routerLink="/categories"></i>
+  <i class="nav-item fa fa-sign-out signout  fa-2x" *ngIf="currentUser" routerLink="/logout"></i>
+  <i class="nav-item fa fa-sign-in signin  fa-2x" *ngIf="!currentUser" routerLink="/login"></i>
+  <i class="nav-item fa fa-user-circle fa-2x" routerLink="/user/detail" *ngIf="currentUser"></i>
+
+
+  <!---->
+  <!--<li class="nav-item">-->
+  <!--<a class="nav-link" href="#">Link</a>-->
+  <!--</li>-->
+  <!--<li class="nav-item">-->
+  <!--<a class="nav-link" href="#">Link</a>-->
+  <!--</li>-->
+  <!--<li class="nav-item">-->
+  <!--<a class="nav-link disabled" href="#">Disabled</a>-->
+  <!--</li>-->
+</ul>
