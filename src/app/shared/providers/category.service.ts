@@ -14,6 +14,8 @@ export class CategoryService {
     this.categories = db.list('/categories');
   }
 
+
+
   getCategories(): Observable<Category[]> {
     return this.db.list('categories')
       .map(Category.fromJsonList);

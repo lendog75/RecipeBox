@@ -30,12 +30,12 @@ selectedCategories: string[] = [];
   }
 
   save(model: any) {
-    console.log('insert recipeId: ' + this.recipeId + ' into fb.recipesPerCategory: ' + model);
+    const recipeRef = '/recipes/' + this.recipeId;
+    console.log(model);
 
-    // remove from all categories, cold later enhance to remove from categories where not in
-    this.categories.forEach(category => {
-      this.recipesPerCategoryService.remove(category.key, this.recipeId);
-    });
+    if (model.length === 0) {
+      this.recipesPerCategoryService.removeAll(this.recipeId);
+    }
 
     model.forEach(category => {
       this.recipesPerCategoryService.add(category, this.recipeId);
