@@ -18,7 +18,7 @@
         <div class="card-img-overlay" *ngIf="recipe.imagePath" style="height:8em;">
           <favorite [recipeId]="recipe.$key"></favorite>
         </div>
-        <img *ngIf="recipe.imagePath" class="card-img-top img-fluid" src="{{recipe.imagePath + '?raw=true'}}raw=true"
+        <img *ngIf="recipe.imagePath" class="card-img-top img-fluid" [src]="getImage()"
              alt="Card image cap">
       </div>
       <div class="col-md-6" style="padding-left:1em; padding-top:1em;">

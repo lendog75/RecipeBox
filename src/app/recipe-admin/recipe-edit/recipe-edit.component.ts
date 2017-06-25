@@ -3,7 +3,9 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { RecipeService } from '../../shared/providers/recipe.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GrowlService, growlSeverity } from '../../shared/providers/growl.service';
-import { Recipe } from "../../shared/model/recipe";
+import { Recipe } from '../../shared/model/recipe';
+import { UploadService } from '../../shared/providers/upload.service';
+import { Upload } from '../../shared/model/upload';
 
 @Component({
   selector: 'recipe-edit',
@@ -13,17 +15,20 @@ import { Recipe } from "../../shared/model/recipe";
 export class RecipeEditComponent implements OnInit {
 
   @Input() id: string;
-   public recipeForm: FormGroup;
-   public submitted: boolean;
-   recipe: Recipe;
-   isEdit: boolean;
-   isLoading = true;
+  public recipeForm: FormGroup;
+  public submitted: boolean;
+  selectedFiles: FileList;
+  currentUpload: Upload;
+  recipe: Recipe;
+  isEdit: boolean;
+  isLoading = true;
 
   constructor (private recipeSvc: RecipeService,
                private route: ActivatedRoute,
                private growlService: GrowlService,
                private _fb: FormBuilder,
-               private router: Router) { }
+               private router: Router,
+               private upSvc: UploadService) { }
 
   ngOnInit () {
 
@@ -78,7 +83,26 @@ export class RecipeEditComponent implements OnInit {
     });
   }
 
-  save (recipe: Recipe, isValid: boolean) {
+  detectFiles (event) {
+    this.selectedFiles = event.target.files;
+  }
+
+  uploadSingle () {
+    const file = this.selectedFiles.item(0);
+    this.currentUpload = new Upload(file);
+    this.upSvc.pushUpload(this.recipe.$key, this.currentUpload).subscribe(x => {
+      this.recipe.imagePath = x.url;
+      this.recipeForm.get('imagePath').patchValue(x.url);
+    });
+
+  }
+
+  cancel () {
+    this.growlService.add(growlSeverity.warn, 'Update canceled');
+    this.router.navigate(['/recipes', this.recipe.$key]);
+  }
+
+  save (recipe: Recipe) {
     this.submitted = true; // set form submit to true
 
     if (this.isEdit) {
@@ -89,8 +113,5 @@ export class RecipeEditComponent implements OnInit {
     }
   }
 
-  cancel() {
-    this.growlService.add(growlSeverity.warn, 'Update canceled');
-    this.router.navigate(['/recipes', this.recipe.$key]);
-  }
+
 }

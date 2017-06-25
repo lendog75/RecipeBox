@@ -38,4 +38,8 @@ export class RecipeDetailComponent implements OnInit {
     val = val.replace(/\n\n/g, '\n');
     return val.split('\n');
   }
+
+  getImage() {
+    return this.recipe.imagePath;
+  }
 }

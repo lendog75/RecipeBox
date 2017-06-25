@@ -1,4 +1,4 @@
-<form [formGroup]="recipeForm" novalidate (ngSubmit)="save(recipeForm.value, recipeForm.valid)">
+<form [formGroup]="recipeForm" novalidate >
   <!--<div class="container">-->
   <div class="row">
     <div class="form-group col-md-6">
@@ -14,14 +14,19 @@
     <label for="title">Description</label>
     <textarea id="description" class="form-control" type="text" formControlName="description" rows="5"></textarea>
   </div>
-  <div class="form-group">
+  <div class="form-group" *ngIf="recipe?.$key">
     <label for="title">imagePath</label>
     <input id="imagePath" class="form-control" type="text" formControlName="imagePath">
   </div>
 
-  <div class="form-group">
+  <div class="form-group" *ngIf="recipe?.$key">
     <label for="title">imagePath</label>
-    <input id="imagePath1" class="form-control" type="file" >
+    <input type="file" class="button" (change)="detectFiles($event)">
+    <button class="button is-primary"
+            [disabled]="!selectedFiles"
+            (click)="uploadSingle()">
+      Upload
+    </button>
   </div>
   <div class="row">
     <div class="form-group col-4">
@@ -61,7 +66,7 @@
   <div class="form-group row">
     <div class="col-12 text-right">
       <button class="btn btn-default" type="button" (click)="cancel()" style="margin-right: 1em">Cancel</button>
-      <button class="btn btn-success" type="submit">Save</button>
+      <button class="btn btn-success" type="button" (click)="save(recipeForm.value)">Save</button>
     </div>
   </div>
 </form>

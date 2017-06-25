@@ -13,6 +13,7 @@ import { UserDetailService } from './providers/user-detail.service';
 import { Chef } from './model/chef';
 import { MyRecipeComponent } from './my-recipe/my-recipe.component';
 import { RouterModule } from '@angular/router';
+import { UploadService } from './providers/upload.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { RouterModule } from '@angular/router';
     RecipeService,
     RecipesPerCategoryService,
     FavoriteService,
-    UserDetailService
+    UserDetailService,
+    UploadService
   ]
 })
 export class SharedModule { }
