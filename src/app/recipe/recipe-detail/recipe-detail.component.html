@@ -5,8 +5,8 @@
 <br>
 <div class="container">
   <div class="heading">
-    <my-recipe [recipeId]="recipe.$key" style="float: right"></my-recipe>
-    <h3>{{recipe.title}}</h3>
+
+    <h4>{{recipe.title}} <my-recipe [recipeId]="recipe.$key" style="float: right"></my-recipe></h4>
     <small style="margin-right: 1em;">{{recipe.subTitle}}</small>
 
     <p-rating [ngModel]="recipe.rating" readonly="true" stars="5" [cancel]="false"
