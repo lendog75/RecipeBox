@@ -11,5 +11,17 @@ hr {
   div.container-fluid {
     padding: 0;
     margin: 0 !important; } }
+/* Slide transition */
+div.app-page {
+  animation-duration: .5s;
+  animation-name: slideIn;
+  animation-fill-mode: forwards;
+  transition: transform .5s ease; }
+
+@keyframes slideIn {
+  from {
+    transform: translate(200px); }
+  to {
+    transform: translate(0px); } }
 
 /*# sourceMappingURL=styles.css.map */

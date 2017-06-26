@@ -1,13 +1,16 @@
-<div class="card card-outline-success">
-  <div class="card-header bg-success">
-    CATEGORIES
-  </div>
-  <div class="card-block">
-    <ul class="list-group">
-      <li class="list-group-item" *ngFor="let category of categories | async" [routerLink]="['/categories', category.key]">
-        <div><a [routerLink]="['/categories', category.key,'edit']"><i class="fa fa-pencil"></i></a></div>
-        <div style="padding-left: 1em">{{category.title}}</div>
-      </li>
-    </ul>
+<div class="app-page">
+  <div class="card card-outline-success">
+    <div class="card-header bg-success">
+      CATEGORIES
+    </div>
+    <div class="card-block">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let category of categories | async"
+            [routerLink]="['/categories', category.key]">
+          <div><a [routerLink]="['/categories', category.key,'edit']"><i class="fa fa-pencil"></i></a></div>
+          <div style="padding-left: 1em">{{category.title}}</div>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

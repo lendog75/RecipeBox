@@ -1,16 +1,18 @@
-
-<div class="container" *ngIf="category">
-  <h3 style="margin-bottom: -.5em;">{{category.title}}</h3>
-  <hr>
-  <div class="row hidden-sm-down">
-    <div class="col col-md-12" style="margin-bottom: 2em;">
-      <div style="display: inline-flex" class="hidden-sm-down">
-        <span > {{category.description}}</span>
-        <img src="../../assets/img/categories/{{category.shortTitle}}.jpg"
-             class="img-fluid" alt="picture of space" style="max-height:15em">
+<div class="app-page">
+  <div class="container" *ngIf="category">
+    <h3 style="margin-bottom: -.5em;">{{category.title}}</h3>
+    <hr>
+    <div class="row hidden-sm-down">
+      <div class="col col-md-12" style="margin-bottom: 2em;">
+        <div style="display: inline-flex" class="hidden-sm-down">
+          <span> {{category.description}}</span>
+          <img src="../../assets/img/categories/{{category.shortTitle}}.jpg"
+               class="img-fluid" alt="picture of space" style="max-height:15em">
+        </div>
       </div>
-    </div>
 
+    </div>
   </div>
+  <recipe-list [path]="path"></recipe-list>
 </div>
-<recipe-list [path]="path"></recipe-list>
+
