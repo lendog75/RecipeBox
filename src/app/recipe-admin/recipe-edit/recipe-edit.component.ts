@@ -24,6 +24,7 @@ export class RecipeEditComponent implements OnInit {
   ngOnInit () {
     this.initForm();
     if (this.recipe) {
+      this.isEdit = true;
      this.loadForm(this.recipe);
     }
   }
@@ -64,12 +65,8 @@ export class RecipeEditComponent implements OnInit {
   }
 
   save (recipe: Recipe, isValid: boolean) {
-
-
-
     this.submitted = true; // set form submit to true
-
-    if (this.isEdit) {
+    if (this.recipe) {
       this.recipeSvc.updateRecipe(this.recipe.$key, recipe);
       this.growlService.add(growlSeverity.success, 'Update Complete', 'Recipe uppdated successully');
     } else {
