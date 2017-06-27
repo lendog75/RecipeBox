@@ -1,40 +1,55 @@
 <form [formGroup]="recipeForm" novalidate (ngSubmit)="save(recipeForm.value, recipeForm.valid)">
   <!--<div class="container">-->
   <div class="row">
-    <div class="form-group col-md-6">
+
+
+
+    <div class="form-group col-md-6"
+         [ngClass]="{'has-danger': recipeForm.get('title').hasError('required') && recipeForm.get('title').touched}">
       <label for="title">Title</label>
-      <input id="title" class="form-control" type="text" formControlName="title">
+      <input id="title" class="form-control" type="text" formControlName="title"
+             [ngClass]="{'form-control-danger': recipeForm.get('title').hasError('required') && recipeForm.get('title').touched}"
+        placeholder="what should we call your recipe">
+      <small class="text-danger" *ngIf="recipeForm.get('title').hasError('required') && recipeForm.get('title').touched">
+        title is required
+      </small>
     </div>
     <div class="form-group col-md-6">
       <label for="title">SubTitle</label>
-      <input id="subTitle" class="form-control" type="text" formControlName="subTitle">
+      <input id="subTitle" class="form-control" type="text" formControlName="subTitle"
+             placeholder="you know your recipe needs a sub title">
     </div>
   </div>
   <div class="form-group">
     <label for="title">Description</label>
-    <textarea id="description" class="form-control" type="text" formControlName="description" rows="5"></textarea>
+    <textarea id="description" class="form-control" type="text" formControlName="description" rows="5"
+              placeholder="every recipe should have a description"></textarea>
   </div>
   <div class="form-group">
     <label for="title">imagePath</label>
-    <input id="imagePath" class="form-control" type="text" formControlName="imagePath">
+    <input id="imagePath" class="form-control" type="text" formControlName="imagePath"
+           placeholder="url to the image you want to use">
   </div>
 
-  <div class="form-group">
-    <label for="title">imagePath</label>
-    <input id="imagePath1" class="form-control" type="file" >
-  </div>
+  <!--<div class="form-group">-->
+    <!--<label for="title">imagePath</label>-->
+    <!--<input id="imagePath1" class="form-control" type="file" >-->
+  <!--</div>-->
   <div class="row">
     <div class="form-group col-4">
       <label for="title">CookTime</label>
-      <input id="cookTime" class="form-control" type="text" formControlName="cookTime">
+      <input id="cookTime" class="form-control" type="text" formControlName="cookTime"
+             placeholder="minutes">
     </div>
     <div class="form-group col-4">
       <label for="serves">Serves</label>
-      <input id="serves" class="form-control" type="number" formControlName="serves">
+      <input id="serves" class="form-control" type="number" formControlName="serves"
+             placeholder="# of people?">
     </div>
     <div class="form-group col-4">
       <label for="calories">Calories</label>
-      <input id="calories" class="form-control" type="number" formControlName="calories">
+      <input id="calories" class="form-control" type="number" formControlName="calories"
+             placeholder="really calories?">
     </div>
   </div>
   <div class="form-group">
@@ -42,26 +57,43 @@
     <p-rating formControlName="rating" stars="5" [cancel]="false" id="rating" style="display: inline-block"></p-rating>
     <!--<input id="rating" class="form-control" type="number" formControlName="rating">-->
   </div>
-  <div class="form-group">
+  <div class="form-group"
+       [ngClass]="{'has-danger': recipeForm.get('ingredients').hasError('required') && recipeForm.get('ingredients').touched}">
     <label for="ingredients">Ingredients</label>
-      <textarea id="ingredients" class="form-control" type="text" formControlName="ingredients" rows="8"></textarea>
+      <textarea id="ingredients" class="form-control" type="text" formControlName="ingredients" rows="8"
+                [ngClass]="{'form-control-danger':
+                recipeForm.get('ingredients').hasError('required') && recipeForm.get('ingredients').touched}"
+                placeholder="press enter once or twice after each"></textarea>
+    <small class="text-danger" *ngIf="recipeForm.get('ingredients').hasError('required') && recipeForm.get('ingredients').touched">
+      ingredients are required
+    </small>
   </div>
-  <div class="form-group">
+
+  <div class="form-group"
+       [ngClass]="{'has-danger': recipeForm.get('directions').hasError('required') && recipeForm.get('directions').touched}">
     <label for="title">Directions</label>
-      <textarea id="directions" class="form-control" type="text" formControlName="directions" rows="8"></textarea>
+      <textarea id="directions" class="form-control" type="text" formControlName="directions" rows="8"
+                [ngClass]="{'form-control-danger':
+                recipeForm.get('directions').hasError('required') && recipeForm.get('directions').touched}"
+                placeholder="press enter once or twice after each"></textarea>
+    <div class="text-danger" *ngIf="recipeForm.get('directions').hasError('required') && recipeForm.get('directions').touched">
+      directions are required
+    </div>
   </div>
   <div class="form-group">
     <label for="title">Tips</label>
-      <textarea id="tips" class="form-control" type="text" formControlName="tips" rows="8"></textarea>
+      <textarea id="tips" class="form-control" type="text" formControlName="tips" rows="8"
+                placeholder="press enter once or twice after each"></textarea>
   </div>
   <div class="form-group">
     <label for="title">Equipment</label>
-      <textarea id="equipment" class="form-control" type="text" formControlName="equipment" rows="8"></textarea>
+      <textarea id="equipment" class="form-control" type="text" formControlName="equipment" rows="8"
+                placeholder="press enter once or twice after each"></textarea>
   </div>
   <div class="form-group row">
     <div class="col-12 text-right">
       <button class="btn btn-default" type="button" (click)="cancel()" style="margin-right: 1em">Cancel</button>
-      <button class="btn btn-success" type="submit">Save</button>
+      <button class="btn btn-success" type="submit"  [disabled]="recipeForm.invalid">Save</button>
     </div>
   </div>
 </form>

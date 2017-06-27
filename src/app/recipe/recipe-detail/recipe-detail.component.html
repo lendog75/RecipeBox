@@ -37,10 +37,10 @@
       <hr>
     </div>
     <div class="row">
-      <div class="col-sm-6  col-md-4">
+      <div class="col-sm-6  col-md-4" *ngIf="recipe.cookTime">
         <i class="fa fa-clock-o"></i> {{recipe.cookTime}} min
       </div>
-      <div class="col-sm-6  col-md-4">
+      <div class="col-sm-6  col-md-4" *ngIf="recipe.serves">
         <i class="fa fa-users"></i> serves {{recipe.serves}}
       </div>
       <div class="col-sm-6  col-md-4" *ngIf="recipe.calories">

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { RecipeService } from '../../shared/providers/recipe.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GrowlService, growlSeverity } from '../../shared/providers/growl.service';
@@ -31,7 +31,7 @@ export class RecipeEditComponent implements OnInit {
 
   initForm () {
     this.recipeForm = new FormGroup({
-      title: new FormControl(''),
+      title: new FormControl('',  Validators.required),
       subTitle: new FormControl(''),
       description: new FormControl(''),
       cookTime: new FormControl(''),
@@ -39,8 +39,8 @@ export class RecipeEditComponent implements OnInit {
       serves: new FormControl(''),
       calories: new FormControl(''),
       rating: new FormControl(''),
-      ingredients: new FormControl(''),
-      directions: new FormControl(''),
+      ingredients: new FormControl('',  Validators.required),
+      directions: new FormControl('',  Validators.required),
       tips: new FormControl(''),
       equipment: new FormControl(''),
     });
@@ -65,13 +65,13 @@ export class RecipeEditComponent implements OnInit {
   }
 
   save (recipe: Recipe, isValid: boolean) {
-    this.submitted = true; // set form submit to true
-    if (this.recipe) {
-      this.recipeSvc.updateRecipe(this.recipe.$key, recipe);
-      this.growlService.add(growlSeverity.success, 'Update Complete', 'Recipe uppdated successully');
-    } else {
-      this.recipeSvc.createRecipe(recipe);
-    }
+    //this.submitted = true; // set form submit to true
+    //if (this.recipe) {
+    //  this.recipeSvc.updateRecipe(this.recipe.$key, recipe);
+    //  this.growlService.add(growlSeverity.success, 'Update Complete', 'Recipe uppdated successully');
+    //} else {
+    //  this.recipeSvc.createRecipe(recipe);
+    //}
   }
 
   cancel() {
