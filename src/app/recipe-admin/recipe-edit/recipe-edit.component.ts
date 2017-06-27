@@ -65,13 +65,13 @@ export class RecipeEditComponent implements OnInit {
   }
 
   save (recipe: Recipe, isValid: boolean) {
-    //this.submitted = true; // set form submit to true
-    //if (this.recipe) {
-    //  this.recipeSvc.updateRecipe(this.recipe.$key, recipe);
-    //  this.growlService.add(growlSeverity.success, 'Update Complete', 'Recipe uppdated successully');
-    //} else {
-    //  this.recipeSvc.createRecipe(recipe);
-    //}
+    this.submitted = true; // set form submit to true
+    if (this.recipe) {
+      this.recipeSvc.updateRecipe(this.recipe.$key, recipe);
+      this.growlService.add(growlSeverity.success, 'Update Complete', 'Recipe uppdated successully');
+    } else {
+      this.recipeSvc.createRecipe(recipe);
+    }
   }
 
   cancel() {

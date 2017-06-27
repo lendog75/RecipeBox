@@ -11,7 +11,7 @@
              [ngClass]="{'form-control-danger': recipeForm.get('title').hasError('required') && recipeForm.get('title').touched}"
         placeholder="what should we call your recipe">
       <small class="text-danger" *ngIf="recipeForm.get('title').hasError('required') && recipeForm.get('title').touched">
-        title is required
+        come on man, title is required...
       </small>
     </div>
     <div class="form-group col-md-6">
@@ -65,7 +65,7 @@
                 recipeForm.get('ingredients').hasError('required') && recipeForm.get('ingredients').touched}"
                 placeholder="press enter once or twice after each"></textarea>
     <small class="text-danger" *ngIf="recipeForm.get('ingredients').hasError('required') && recipeForm.get('ingredients').touched">
-      ingredients are required
+      no ingredients?  ingredients are required...
     </small>
   </div>
 
@@ -76,9 +76,9 @@
                 [ngClass]="{'form-control-danger':
                 recipeForm.get('directions').hasError('required') && recipeForm.get('directions').touched}"
                 placeholder="press enter once or twice after each"></textarea>
-    <div class="text-danger" *ngIf="recipeForm.get('directions').hasError('required') && recipeForm.get('directions').touched">
-      directions are required
-    </div>
+    <small class="text-danger" *ngIf="recipeForm.get('directions').hasError('required') && recipeForm.get('directions').touched">
+      really... directions are required...
+    </small>
   </div>
   <div class="form-group">
     <label for="title">Tips</label>
