@@ -13,6 +13,7 @@ export class FavoriteComponent implements OnInit {
   iconClass = 'none';
   private currentUser;
 
+
   constructor(private favoriteSvc: FavoriteService, private authSvc: AuthService) { }
 
   ngOnInit() {
@@ -20,6 +21,7 @@ export class FavoriteComponent implements OnInit {
       this.currentUser = user;
     });
 
+    // is this one of my favorites
     if (this.currentUser) {
       this.favoriteSvc.get(this.recipeId).subscribe(x => {
         if (x.$exists()) {
@@ -28,6 +30,8 @@ export class FavoriteComponent implements OnInit {
       });
     }
   }
+
+
 
   setIconClass(isActive: boolean) {
     if (isActive) {
