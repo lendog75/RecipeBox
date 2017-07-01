@@ -6,6 +6,7 @@ import { Recipe } from '../model/recipe';
 import { RecipeDetail } from '../model/recipe-detail';
 import { Router } from "@angular/router";
 import { UserDetailService } from './user-detail.service';
+import { ViewsService } from './views.service';
 
 @Injectable()
 export class RecipeService {
@@ -15,7 +16,8 @@ export class RecipeService {
 
   constructor (private db: AngularFireDatabase,
                private chefSvc: UserDetailService,
-               private router: Router) {
+               private router: Router,
+               private viewsService: ViewsService) {
     this.recipes = db.list('/recipes');
     this.recipeDetails = db.list('/recipeDetails');
   }
@@ -27,8 +29,10 @@ export class RecipeService {
   }
 
   getRecipe(recipeId: any): Observable<Recipe> {
+    this.viewsService.add(recipeId);
+
     return this.db.object('recipes/' + recipeId)
-      .map(Recipe.fromJson);
+      .map(Recipe.fromJson );
   }
 
   getRecipeDetails(recipeId: any) {
@@ -72,6 +76,5 @@ export class RecipeService {
   updateRecipeDetails(recipeId: string, recipeDetails: RecipeDetail) {
     this.db.object('recipes/' + recipeId).update(recipeDetails);
   }
-
 }
 

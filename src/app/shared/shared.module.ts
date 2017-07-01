@@ -13,11 +13,13 @@ import { UserDetailService } from './providers/user-detail.service';
 import { Chef } from './model/chef';
 import { MyRecipeComponent } from './my-recipe/my-recipe.component';
 import { RouterModule } from '@angular/router';
+import { ViewsComponent } from './views/views.component';
 
 @NgModule({
   declarations: [
     FavoriteComponent,
-    MyRecipeComponent
+    MyRecipeComponent,
+    ViewsComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,8 @@ import { RouterModule } from '@angular/router';
   ],
   exports: [
     FavoriteComponent,
-    MyRecipeComponent
+    MyRecipeComponent,
+    ViewsComponent
   ],
   providers: [
     AuthService,

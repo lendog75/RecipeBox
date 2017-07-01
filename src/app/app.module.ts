@@ -33,6 +33,7 @@ import { RecipeResolver } from './shared/providers/recipe.resolver';
 import { RecipesPerCategoryService } from './shared/providers/recipes-per-category.service';
 
 import { SharedModule } from './shared/shared.module';
+import { ViewsService } from './shared/providers/views.service';
 
 // Must export the config
 export const firebaseConfig = {
@@ -84,7 +85,8 @@ export const firebaseConfig = {
     CategoryService,
     GrowlService,
     RecipeResolver,
-    RecipesPerCategoryService
+    RecipesPerCategoryService,
+    ViewsService
   ],
   bootstrap: [AppComponent]
 })

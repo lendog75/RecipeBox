@@ -9,6 +9,8 @@
     <my-recipe [recipeId]="recipe.$key" style="float: right"></my-recipe>
   </h4>
   <i class="fa fa-heart" style=""></i> {{favCount}}
+  <views-count [resourceId]="recipe.$key"></views-count>
   <p class="subheader">by: lenny reed</p>
   <p-rating [ngModel]="recipe.rating" readonly="true" stars="5" [cancel]="false"></p-rating>
+
 </div>
