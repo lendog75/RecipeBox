@@ -9,7 +9,7 @@ import { ViewsService } from '../providers/views.service';
 export class ViewsComponent implements OnInit {
 
   @Input() resourceId: string;
-  public totalViews: number;
+  public totalViews: number = 0;
 
   constructor(private viewsService: ViewsService) { }
 
