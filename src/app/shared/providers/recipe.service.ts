@@ -19,7 +19,6 @@ export class RecipeService {
                private router: Router,
                private viewsService: ViewsService) {
     this.recipes = db.list('/recipes');
-    this.recipeDetails = db.list('/recipeDetails');
   }
 
 
@@ -33,13 +32,6 @@ export class RecipeService {
 
     return this.db.object('recipes/' + recipeId)
       .map(Recipe.fromJson );
-  }
-
-  getRecipeDetails(recipeId: any) {
-    return this.db.object('recipeDetails/' + recipeId)
-      .map(
-        RecipeDetail.fromJson
-      );
   }
 
   getRecipesByRefPath(path) {

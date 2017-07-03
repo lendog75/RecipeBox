@@ -9,6 +9,7 @@ export class ViewsService {
   }
 
   add (resourceId: string) {
+    console.log(resourceId)
     const ref = `/views/${resourceId}`;
     this.db.list(ref).push({value: true});
   }
