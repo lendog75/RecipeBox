@@ -1,8 +1,6 @@
 <form [formGroup]="recipeForm" novalidate (ngSubmit)="save(recipeForm.value, recipeForm.valid)">
-  <!--<div class="container">-->
+
   <div class="row">
-
-
     <div class="form-group col-md-6"
          [ngClass]="{'has-danger': recipeForm.get('title').hasError('required') && recipeForm.get('title').touched}">
       <label for="title">Title</label>

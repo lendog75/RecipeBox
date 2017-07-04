@@ -8,9 +8,7 @@ import { CategoryListComponent } from './category-list/category-list.component';
 
 const routes: Routes = [
   { path: 'categories', component: CategoryListComponent },
-  { path: 'categories/:id', component: CategoryDetailComponent },
-  { path: 'categories/0/create', component: CategoryEditComponent, canActivate: [ AuthGuard ] },
-  { path: 'categories/:id/edit', component: CategoryEditComponent, canActivate: [ AuthGuard ] },
+  { path: 'categories/:id', component: CategoryDetailComponent }
 ];
 
 @NgModule({
